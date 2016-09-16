@@ -99,10 +99,46 @@ Projects wishing to use pom-scijava as a parent project need to override the &lt
 	</ciManagement>
 
 	<properties>
-		<!-- These properties are intended for downstream override. -->
+		<!-- Project configuration -->
+
+		<!--
+		The main class of the project. Used in several ways:
+		* Set as the Main-Class attribute of the JAR manifest.
+		* dist profile: main class for the JavaFX launchers.
+		* exec profile: main class to execute.
+		* jdb profile: main class when launching jdb.
+		-->
 		<main-class />
+
+		<!-- Package-Name attribute of the JAR artifact. -->
 		<package-name />
+
+		<!-- Project blurb to use in license headers atop each file. -->
 		<license.projectName>${project.description}</license.projectName>
+
+		<!-- Extra maven-surefire-plugin args. -->
+		<argLine />
+
+		<!-- Extra maven-surefile-plugin args used with debug-port profile. -->
+		<argLineDebug />
+
+		<!-- Target version of the Java platform. -->
+		<scijava.jvm.version>1.8</scijava.jvm.version>
+		<scijava.jvm.test.version>${scijava.jvm.version}</scijava.jvm.test.version>
+
+		<!-- Minimum required Maven version to build the project. -->
+		<scijava.mvn.version>3.0.4</scijava.mvn.version>
+
+		<!-- Additional configuration -->
+
+		<!-- NB: Avoid platform encoding warning when copying resources. -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- NB: Specify formatting of the maven.build.timestamp property. -->
+		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
+
+		<!-- Managed dependency versions -->
 
 		<!--
 		If two artifacts on the classpath use two different versions of the same
@@ -352,27 +388,6 @@ Projects wishing to use pom-scijava as a parent project need to override the &lt
 		<slf4j-jdk14.version>${slf4j.version}</slf4j-jdk14.version>
 		<slf4j-nop.version>${slf4j.version}</slf4j-nop.version>
 		<slf4j-simple.version>${slf4j.version}</slf4j-simple.version>
-
-		<!-- Additional configuration -->
-
-		<!-- NB: Avoid platform encoding warning when copying resources. -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<!-- NB: Specify formatting of the maven.build.timestamp property. -->
-		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
-
-		<!-- NB: Override argLine property for extra maven-surefire-plugin args. -->
-		<argLine />
-
-		<!-- NB: Override argLineDebug property via debug-port profile. -->
-		<argLineDebug />
-
-		<!-- Require the Java 8 platform. -->
-		<scijava.jvm.version>1.8</scijava.jvm.version>
-		<scijava.jvm.test.version>${scijava.jvm.version}</scijava.jvm.test.version>
-
-		<scijava.mvn.version>3.0.4</scijava.mvn.version>
 	</properties>
 
 	<dependencyManagement>
