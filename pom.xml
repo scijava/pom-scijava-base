@@ -129,6 +129,9 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 		<!-- Minimum required Maven version to build the project. -->
 		<scijava.mvn.version>3.0.4</scijava.mvn.version>
 
+		<!-- List of groupIds for which build reproducibility is enforced. -->
+		<scijava.groupIds>org.scijava,net.imagej,net.imglib2,io.scif,sc.fiji</scijava.groupIds>
+
 		<!-- Additional configuration -->
 
 		<!-- NB: Avoid platform encoding warning when copying resources. -->
@@ -534,7 +537,7 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 						</requirePluginVersions>
 						<requirePrerequisites />
 						<requireReproducibleBuilds implementation="org.scijava.maven.plugin.RequireReproducibleBuilds">
-							<groupIds>org.scijava</groupIds>
+							<groupIds>${scijava.groupIds}</groupIds>
 						</requireReproducibleBuilds>
 						<enforceBytecodeVersion>
 							<maxJdkVersion>${scijava.jvm.version}</maxJdkVersion>
