@@ -486,6 +486,15 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 					<groupId>org.scijava</groupId>
 					<artifactId>scijava-maven-plugin</artifactId>
 					<version>${scijava-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>set-rootdir</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>set-rootdir</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
