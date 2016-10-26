@@ -572,6 +572,28 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 				<artifactId>maven-graph-plugin</artifactId>
 			</plugin>
 
+			<!--
+			Enable copying the artifacts and dependencies by setting
+			the 'imagej.app.directory' property to a valid directory.
+			-->
+			<plugin>
+				<groupId>net.imagej</groupId>
+				<artifactId>imagej-maven-plugin</artifactId>
+				<version>0.6.0</version>
+				<configuration>
+					<deleteOtherVersions>true</deleteOtherVersions>
+				</configuration>
+				<executions>
+					<execution>
+						<id>copy-jars</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-jars</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- Enable 'jfx:' goals. -->
 			<plugin>
 				<groupId>com.zenjava</groupId>
