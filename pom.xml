@@ -668,6 +668,7 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 						<link>http://javadoc.imagej.net/Eclipse/</link>
 						<link>http://javadoc.imagej.net/Javassist/</link>
 						<link>http://javadoc.imagej.net/JHotDraw/</link>
+						<link>http://javadoc.imagej.net/Weka/</link>
 					</links>
 				</configuration>
 			</plugin>
