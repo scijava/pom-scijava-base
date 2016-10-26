@@ -3,16 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.scijava</groupId>
-	<artifactId>pom-scijava</artifactId>
-	<version>11.5.1-SNAPSHOT</version>
+	<artifactId>pom-scijava-base</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>SciJava Projects</name>
-	<description>SciJava aims to provide an overview of available Java libraries for scientific computing. This POM provides a parent from which participating projects can declare their build configurations. It ensures that projects all use a compatible build environment, including Java version, as well as versions of dependencies and plugins.
+	<name>SciJava Base POM</name>
+	<description>This POM is a base which SciJava-based projects can extend to inherit helpful build configuration. It ensures that projects all use a compatible build environment, including versions of Maven plugins and Java itself. It does _not_ provide any dependency version management; see org.scijava:pom-scijava for that.
 
-Projects wishing to use pom-scijava as a parent project need to override the &lt;name&gt;, &lt;description&gt;, &lt;url&gt;, &lt;inceptionYear&gt;, &lt;organization&gt;, &lt;licenses&gt;, &lt;developers&gt;, &lt;contributors&gt;, &lt;mailingLists&gt;, &lt;scm&gt;, &lt;issueManagement&gt; and &lt;ciManagement&gt; sections.</description>
+Projects wishing to use pom-scijava-base as a parent project need to override the &lt;name&gt;, &lt;description&gt;, &lt;url&gt;, &lt;inceptionYear&gt;, &lt;organization&gt;, &lt;licenses&gt;, &lt;developers&gt;, &lt;contributors&gt;, &lt;mailingLists&gt;, &lt;scm&gt;, &lt;issueManagement&gt; and &lt;ciManagement&gt; sections.</description>
 	<url>http://www.scijava.org/</url>
-	<inceptionYear>2011</inceptionYear>
+	<inceptionYear>2016</inceptionYear>
 	<organization>
 		<name>SciJava</name>
 		<url>http://www.scijava.org/</url>
@@ -84,18 +84,18 @@ Projects wishing to use pom-scijava as a parent project need to override the &lt
 	</prerequisites>
 
 	<scm>
-		<connection>scm:git:git://github.com/scijava/pom-scijava</connection>
-		<developerConnection>scm:git:git@github.com:scijava/pom-scijava</developerConnection>
+		<connection>scm:git:git://github.com/scijava/pom-scijava-base</connection>
+		<developerConnection>scm:git:git@github.com:scijava/pom-scijava-base</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/scijava/pom-scijava</url>
+		<url>https://github.com/scijava/pom-scijava-base</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/scijava/pom-scijava/issues</url>
+		<url>https://github.com/scijava/pom-scijava-base/issues</url>
 	</issueManagement>
 	<ciManagement>
 		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/pom-scijava/</url>
+		<url>http://jenkins.imagej.net/job/pom-scijava-base/</url>
 	</ciManagement>
 
 	<properties>
