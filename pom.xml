@@ -535,7 +535,6 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 						<requirePluginVersions>
 							<message>Plugins need to be versioned!</message>
 						</requirePluginVersions>
-						<requirePrerequisites />
 						<requireReproducibleBuilds implementation="org.scijava.maven.plugin.RequireReproducibleBuilds">
 							<groupIds>${scijava.groupIds}</groupIds>
 						</requireReproducibleBuilds>
