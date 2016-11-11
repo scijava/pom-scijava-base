@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -131,6 +131,12 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 
 		<!-- List of groupIds for which build reproducibility is enforced. -->
 		<scijava.groupIds>org.scijava,net.imagej,net.imglib2,io.scif,sc.fiji</scijava.groupIds>
+
+		<!--
+		List of valid developer and contributor roles.
+		See: http://imagej.net/Team
+		-->
+		<scijava.team.roles>founder,lead,developer,debugger,reviewer,support,maintainer</scijava.team.roles>
 
 		<!-- Additional configuration -->
 
@@ -535,9 +541,21 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 						<requirePluginVersions>
 							<message>Plugins need to be versioned!</message>
 						</requirePluginVersions>
+						<!--
+						Require developers and contributors to use SciJava team roles.
+						See: http://imagej.net/Team
+						-->
+						<requireDeveloperRoles>
+							<validRoles>${scijava.team.roles}</validRoles>
+						</requireDeveloperRoles>
+						<requireContributorRoles>
+							<validRoles>${scijava.team.roles}</validRoles>
+						</requireContributorRoles>
+						<!--
 						<requireReproducibleBuilds implementation="org.scijava.maven.plugin.RequireReproducibleBuilds">
 							<groupIds>${scijava.groupIds}</groupIds>
 						</requireReproducibleBuilds>
+						-->
 						<enforceBytecodeVersion>
 							<maxJdkVersion>${scijava.jvm.version}</maxJdkVersion>
 							<excludes>
