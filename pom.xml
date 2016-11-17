@@ -523,7 +523,6 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 				<executions>
 					<execution>
 						<id>enforce-rules</id>
-						<phase>validate</phase>
 						<goals>
 							<goal>enforce</goal>
 						</goals>
