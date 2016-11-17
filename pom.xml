@@ -531,16 +531,25 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 				</executions>
 				<configuration>
 					<rules>
-						<banClasses implementation="org.scijava.maven.plugin.enforcer.BanDuplicateClasses">
-							<message>No Duplicate Classes Allowed! For duplicate transitive dependencies, add dependency exclusions. For duplications between direct dependencies, resolve or add ignored classes to this rule's configuration.</message>
-							<findAllDuplicates>true</findAllDuplicates>
-						</banClasses>
 						<requireMavenVersion>
 							<version>${scijava.mvn.version}</version>
 						</requireMavenVersion>
 						<requirePluginVersions>
 							<message>Plugins need to be versioned!</message>
 						</requirePluginVersions>
+
+						<!--
+						Ensure no two dependencies ship the same class.
+						Otherwise, much havoc may be wreaked at runtime.
+						-->
+						<banDuplicateClasses>
+							<message>No Duplicate Classes Allowed!
+- For duplicate transitive dependencies, add dependency exclusions.
+- For duplications between direct dependencies, resolve or add
+  ignored classes to this rule's configuration.</message>
+							<findAllDuplicates>true</findAllDuplicates>
+						</banDuplicateClasses>
+
 						<!--
 						Require developers and contributors to use SciJava team roles.
 						See: http://imagej.net/Team
