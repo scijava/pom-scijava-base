@@ -8,9 +8,7 @@
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
-	<description>This POM is a base which SciJava-based projects can extend to inherit helpful build configuration. It ensures that projects all use a compatible build environment, including versions of Maven plugins and Java itself. It does _not_ provide any dependency version management; see org.scijava:pom-scijava for that.
-
-Projects wishing to use pom-scijava-base as a parent project need to override the &lt;name&gt;, &lt;description&gt;, &lt;url&gt;, &lt;inceptionYear&gt;, &lt;organization&gt;, &lt;licenses&gt;, &lt;developers&gt;, &lt;contributors&gt;, &lt;mailingLists&gt;, &lt;scm&gt;, &lt;issueManagement&gt; and &lt;ciManagement&gt; sections.</description>
+	<description>This POM is a base which SciJava-based projects can extend to inherit helpful build configuration. It ensures that projects all use a compatible build environment, including versions of Maven plugins and Java itself. It does _not_ provide any dependency version management; see org.scijava:pom-scijava for that.</description>
 	<url>http://www.scijava.org/</url>
 	<inceptionYear>2016</inceptionYear>
 	<organization>
@@ -595,6 +593,24 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 						org.scijava:scijava-maven-plugin
 						https://github.com/scijava/scijava-maven-plugin
 						-->
+
+						<!-- Require inheriting POMs to populate key elements. -->
+						<requireElements implementation="org.scijava.maven.plugin.enforcer.RequireElements">
+							<elements>
+								<element>name</element>
+								<element>description</element>
+								<element>url</element>
+								<element>inceptionYear</element>
+								<element>organization</element>
+								<element>licenses</element>
+								<element>developers</element>
+								<element>contributors</element>
+								<element>mailingLists</element>
+								<element>scm</element>
+								<element>issueManagement</element>
+								<element>ciManagement</element>
+							</elements>
+						</requireElements>
 
 						<!--
 						Require builds to be reproducible.
