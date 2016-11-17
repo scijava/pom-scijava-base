@@ -150,7 +150,7 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 		<!-- Plugin versions -->
 
 		<!-- SciJava Maven Plugin - https://github.com/scijava/scijava-maven-plugin -->
-		<scijava-maven-plugin.version>0.5.1</scijava-maven-plugin.version>
+		<scijava-maven-plugin.version>1.0.0</scijava-maven-plugin.version>
 	</properties>
 
 	<build>
@@ -600,7 +600,7 @@ Projects wishing to use pom-scijava-base as a parent project need to override th
 						Require builds to be reproducible.
 						This means no snapshot dependencies!
 						-->
-						<requireReproducibleBuilds implementation="org.scijava.maven.plugin.RequireReproducibleBuilds">
+						<requireReproducibleBuilds implementation="org.scijava.maven.plugin.enforcer.RequireReproducibleBuilds">
 							<groupIds>${scijava.groupIds}</groupIds>
 						</requireReproducibleBuilds>
 					</rules>
