@@ -111,8 +111,17 @@
 		<!-- Package-Name attribute of the JAR artifact. -->
 		<package-name />
 
+		<!--
+		The License which license-maven-plugin will use to populate.
+		See: license:update-file-header, license:update-project-license
+		-->
+		<license.licenseName>N/A</license.licenseName>
+
 		<!-- Project blurb to use in license headers atop each file. -->
 		<license.projectName>${project.description}</license.projectName>
+
+		<!-- Copyright owners to use in license headers atop each file. -->
+		<license.copyrightOwners>N/A</license.copyrightOwners>
 
 		<!-- Extra maven-surefire-plugin args. -->
 		<argLine />
@@ -609,6 +618,8 @@
 								<element>scm</element>
 								<element>issueManagement</element>
 								<element>ciManagement</element>
+								<element>properties//license.licenseName</element>
+								<element>properties//license.copyrightOwners</element>
 							</elements>
 						</requireElements>
 
