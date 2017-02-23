@@ -245,9 +245,9 @@
 								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 								<mainClass>${main-class}</mainClass>
 								<packageName>${package-name}</packageName>
-								<premainClass>${premain-class}</premainClass>
 							</manifest>
 							<manifestEntries>
+								<Premain-Class>${premain-class}</Premain-Class>
 								<!-- Add SCM revision from buildnumber plugin, if available. -->
 								<Implementation-Build>${buildNumber}</Implementation-Build>
 								<!-- Add a formatted timestamp for the build. -->
