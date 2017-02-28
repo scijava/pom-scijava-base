@@ -92,8 +92,8 @@
 		<url>https://github.com/scijava/pom-scijava-base/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/pom-scijava-base/</url>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/scijava/pom-scijava-base</url>
 	</ciManagement>
 
 	<properties>
