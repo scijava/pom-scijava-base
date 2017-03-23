@@ -19,12 +19,13 @@ use [pom-scijava](https://github.com/scijava/pom-scijava) as parent.
 
 See these examples for guidance:
 
-* [ImageJ1 plugin template](https://github.com/imagej/minimal-ij1-plugin)
-* [ImageJ2 tutorials](http://github.com/imagej/imagej-tutorials)
+* [ImageJ command template](https://github.com/imagej/example-imagej-command)
+* [ImageJ 1.x plugin template](https://github.com/imagej/example-legacy-plugin)
+* [ImageJ tutorials](https://github.com/imagej/tutorials)
 
 ## Getting help with Maven
 
 For more information about Maven, see:
 
-* [ImageJ Maven overview](http://imagej.net/Maven)
-* [ImageJ Maven FAQ](http://imagej.net/Maven_-_Frequently_Asked_Questions)
+* [ImageJ Maven overview](https://imagej.net/Maven)
+* [ImageJ Maven FAQ](https://imagej.net/Maven_-_Frequently_Asked_Questions)
