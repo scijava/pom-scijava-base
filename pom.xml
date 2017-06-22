@@ -1182,7 +1182,10 @@
 			</distributionManagement>
 		</profile>
 
-		<!-- This profile helps Eclipse parse SciJava annotations of imported projects. -->
+		<!--
+		This profile lets Eclipse parse SciJava annotations of imported projects,
+		and maps Maven plugin goals to Eclipse executions.
+		-->
 		<profile>
 			<id>only-eclipse</id>
 			<activation>
