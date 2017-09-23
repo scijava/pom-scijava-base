@@ -153,6 +153,9 @@
 		<!-- NB: Specify formatting of the maven.build.timestamp property. -->
 		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
 
+		<!-- NB: Deploy to OSS Sonatype repository by default when releasing. -->
+		<releaseProfiles>sonatype-oss-release</releaseProfiles>
+
 		<!-- Plugin versions -->
 
 		<!-- SciJava Maven Plugin - https://github.com/scijava/scijava-maven-plugin -->
