@@ -328,6 +328,7 @@
 					<!-- Build source artifact in addition to main artifact. -->
 					<executions>
 						<execution>
+							<id>attach-sources</id>
 							<goals>
 								<goal>jar-no-fork</goal>
 							</goals>
