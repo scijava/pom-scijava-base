@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>3.1.3-SNAPSHOT</version>
+	<version>3.1.3</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -80,7 +80,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/scijava/pom-scijava-base</connection>
 		<developerConnection>scm:git:git@github.com:scijava/pom-scijava-base</developerConnection>
-		<tag>HEAD</tag>
+		<tag>pom-scijava-base-3.1.3</tag>
 		<url>https://github.com/scijava/pom-scijava-base</url>
 	</scm>
 	<issueManagement>
