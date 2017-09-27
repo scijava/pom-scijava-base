@@ -330,7 +330,12 @@
 						<execution>
 							<id>attach-sources</id>
 							<goals>
-								<goal>jar-no-fork</goal>
+								<!--
+								NB: We use jar rather than jar-no-fork to avoid a bug where
+								the -sources JAR gets generated and deployed twice. See:
+								https://issues.apache.org/jira/browse/MNG-5939
+								-->
+								<goal>jar</goal>
 							</goals>
 						</execution>
 					</executions>
@@ -1192,18 +1197,6 @@
 							</execution>
 						</executions>
 					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
 				</plugins>
 			</build>
 
@@ -1268,18 +1261,6 @@
 						<configuration>
 							<useAgent>true</useAgent>
 						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
