@@ -962,7 +962,6 @@
 						</executions>
 					</plugin>
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
 						<executions>
 							<!-- Replace default-compile as it is treated specially. -->
@@ -1183,7 +1182,6 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
 						<configuration>
 							<skip>${javadoc.skip}</skip>
@@ -1239,14 +1237,12 @@
 					</plugin>
 					<plugin>
 						<inherited>true</inherited>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-deploy-plugin</artifactId>
 						<configuration>
 							<skip>true</skip>
 						</configuration>
 					</plugin>
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
 						<version>1.6</version>
 						<executions>
@@ -1263,7 +1259,6 @@
 						</configuration>
 					</plugin>
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
 						<executions>
 							<execution>
@@ -1497,7 +1492,6 @@
 					See: https://gist.github.com/aslakknutsen/9648594#gistcomment-1588906
 					-->
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
 						<configuration>
 							<source>${scijava.jvm.test.version}</source>
@@ -1529,7 +1523,6 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
 						<executions>
 							<execution>
