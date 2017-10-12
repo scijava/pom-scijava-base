@@ -1519,6 +1519,20 @@
 		</profile>
 
 		<!--
+		This profile signs artifacts using GPG.
+		-->
+		<profile>
+			<id>sign</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-gpg-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!--
 		This profile aggregates javadocs for the project
 		and its direct dependencies.
 		-->
