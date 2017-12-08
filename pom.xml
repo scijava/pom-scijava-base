@@ -131,7 +131,8 @@
 		<!-- Target version of the Java platform. -->
 		<scijava.jvm.version>1.8</scijava.jvm.version>
 		<scijava.jvm.test.version>${scijava.jvm.version}</scijava.jvm.test.version>
-		<scijava.jvm.build.version>1.5</scijava.jvm.build.version>
+		<!-- NB: 1.8.0_101 is needed for SciJava Maven repository HTTPS support. -->
+		<scijava.jvm.build.version>1.8.0-101</scijava.jvm.build.version>
 
 		<!-- Minimum required Maven version to build the project. -->
 		<scijava.mvn.version>3.0.4</scijava.mvn.version>
