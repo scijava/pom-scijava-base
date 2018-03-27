@@ -617,6 +617,9 @@
 								<exclude>com.headius:invokebinder</exclude>
 								<exclude>com.sun:tools</exclude>
 							</excludes>
+							<ignoreClasses>
+								<ignoreClass>module-info</ignoreClass>
+							</ignoreClasses>
 							<ignoredScopes>
 								<ignoredScope>test</ignoredScope>
 							</ignoredScopes>
