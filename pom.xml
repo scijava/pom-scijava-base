@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>3.2.2-SNAPSHOT</version>
+	<version>3.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -218,6 +218,11 @@
 							<version>${scijava-maven-plugin.version}</version>
 						</dependency>
 					</dependencies>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>2.21.0</version>
 				</plugin>
 
 				<plugin>
