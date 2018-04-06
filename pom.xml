@@ -193,7 +193,7 @@
 		<javafx-maven-plugin.version>8.6.0</javafx-maven-plugin.version>
 		<nar-maven-plugin.version>3.5.1</nar-maven-plugin.version>
 		<scijava-maven-plugin.version>1.0.0</scijava-maven-plugin.version>
-		<imagej-maven-plugin.version>0.6.0</imagej-maven-plugin.version>
+		<imagej-maven-plugin.version>0.7.0</imagej-maven-plugin.version>
 		<groovy-maven-plugin.version>1.5</groovy-maven-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
 		<lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
