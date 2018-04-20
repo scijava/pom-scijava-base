@@ -590,15 +590,6 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<!-- Create -sources.jar when building. -->
-			<plugin>
-				<artifactId>maven-source-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-
 			<!-- Check desired rules during maven lifecycle. -->
 			<plugin>
 				<artifactId>maven-enforcer-plugin</artifactId>
@@ -714,6 +705,15 @@
 						</requireReproducibleBuilds>
 					</rules>
 				</configuration>
+			</plugin>
+
+			<!-- Create -sources.jar when building. -->
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
 			</plugin>
 
 			<!-- Generate a package-friendly version property. -->
