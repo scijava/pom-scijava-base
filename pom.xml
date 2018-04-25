@@ -199,7 +199,7 @@
 		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
 
 		<!-- Plugin dependencies -->
-		<extra-enforcer-rules.version>1.0-beta-6</extra-enforcer-rules.version>
+		<extra-enforcer-rules.version>1.0-beta-7</extra-enforcer-rules.version>
 		<velocity.version>1.7</velocity.version>
 
 		<!-- Build extensions -->
