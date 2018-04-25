@@ -196,7 +196,6 @@
 		<imagej-maven-plugin.version>0.7.0</imagej-maven-plugin.version>
 		<groovy-maven-plugin.version>1.5</groovy-maven-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
-		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.0-beta-7</extra-enforcer-rules.version>
@@ -1460,7 +1459,11 @@
 						<plugin>
 							<groupId>org.eclipse.m2e</groupId>
 							<artifactId>lifecycle-mapping</artifactId>
-							<version>${lifecycle-mapping.version}</version>
+							<!--
+							NB: Eclipse cannot handle an overridden version property here!
+							The version needs to stay hardcoded at 1.0.0.
+							-->
+							<version>1.0.0</version>
 							<configuration>
 								<lifecycleMappingMetadata>
 									<pluginExecutions>
