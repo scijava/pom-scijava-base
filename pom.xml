@@ -138,7 +138,7 @@
 		<scijava.jvm.build.version>1.8.0-101</scijava.jvm.build.version>
 
 		<!-- Minimum required Maven version to build the project. -->
-		<scijava.mvn.version>3.0.4</scijava.mvn.version>
+		<scijava.mvn.version>3.3.9</scijava.mvn.version>
 
 		<!-- List of groupIds for which build reproducibility is enforced. -->
 		<scijava.groupIds>org.scijava,net.imagej,net.imglib2,io.scif,sc.fiji</scijava.groupIds>
