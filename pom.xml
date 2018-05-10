@@ -353,24 +353,45 @@
 						-->
 						<use>false</use>
 						<links>
-							<link>http://javadoc.imagej.net/Java/</link>
-							<link>http://javadoc.imagej.net/ImageJ/</link>
-							<link>http://javadoc.imagej.net/ImgLib2/</link>
-							<link>http://javadoc.imagej.net/SCIFIO/</link>
-							<link>http://javadoc.imagej.net/SciJava/</link>
-							<link>http://javadoc.imagej.net/Fiji/</link>
-							<link>http://javadoc.imagej.net/ImageJ1/</link>
-							<link>http://javadoc.imagej.net/Bio-Formats/</link>
-							<link>http://javadoc.imagej.net/MPI-CBG/</link>
-							<link>http://javadoc.imagej.net/Icy/</link>
-							<link>http://javadoc.imagej.net/KNIME/</link>
-							<link>http://javadoc.imagej.net/OMERO/</link>
-							<link>http://javadoc.imagej.net/MiToBo/</link>
-							<link>http://javadoc.imagej.net/Java3D/</link>
-							<link>http://javadoc.imagej.net/Pivot/</link>
-							<link>http://javadoc.imagej.net/Eclipse/</link>
-							<link>http://javadoc.imagej.net/Javassist/</link>
-							<link>http://javadoc.imagej.net/JHotDraw/</link>
+							<!-- Core Java. -->
+							<link>http://javadoc.scijava.org/Java/</link>
+							<!-- SciJava and related projects and forks. -->
+							<link>http://javadoc.scijava.org/SciJava/</link>
+							<link>http://javadoc.scijava.org/Alida/</link>
+							<link>http://javadoc.scijava.org/Bio-Formats/</link>
+							<link>http://javadoc.scijava.org/Fiji/</link>
+							<link>http://javadoc.scijava.org/Icy/</link>
+							<link>http://javadoc.scijava.org/ImageJ/</link>
+							<link>http://javadoc.scijava.org/ImageJ1/</link>
+							<link>http://javadoc.scijava.org/ImgLib2/</link>
+							<link>http://javadoc.scijava.org/Java3D/</link>
+							<link>http://javadoc.scijava.org/KNIME/</link>
+							<link>http://javadoc.scijava.org/LOCI/</link>
+							<link>http://javadoc.scijava.org/MiToBo/</link>
+							<link>http://javadoc.scijava.org/Micro-Manager-Core/</link>
+							<link>http://javadoc.scijava.org/Micro-Manager-Studio/</link>
+							<link>http://javadoc.scijava.org/MorphoLibJ/</link>
+							<link>http://javadoc.scijava.org/OMERO/</link>
+							<link>http://javadoc.scijava.org/SCIFIO/</link>
+							<link>http://javadoc.scijava.org/SLIM-Curve/</link>
+							<!-- Third party projects. -->
+							<link>http://javadoc.scijava.org/Apache-Commons-IO/</link>
+							<link>http://javadoc.scijava.org/Apache-Commons-Lang/</link>
+							<link>http://javadoc.scijava.org/Apache-Commons-Math/</link>
+							<link>http://javadoc.scijava.org/Apache-Commons-Text/</link>
+							<link>http://javadoc.scijava.org/Eclipse/</link>
+							<link>http://javadoc.scijava.org/Guava/</link>
+							<link>http://javadoc.scijava.org/JAMA/</link>
+							<link>http://javadoc.scijava.org/JFreeChart/</link>
+							<link>http://javadoc.scijava.org/JGraphT/</link>
+							<link>http://javadoc.scijava.org/JHotDraw/</link>
+							<link>http://javadoc.scijava.org/Javassist/</link>
+							<link>http://javadoc.scijava.org/MigLayout/</link>
+							<link>http://javadoc.scijava.org/NetBeans/</link>
+							<link>http://javadoc.scijava.org/Pivot/</link>
+							<link>http://javadoc.scijava.org/VisAD/</link>
+							<link>http://javadoc.scijava.org/Weka/</link>
+							<link>http://javadoc.scijava.org/ojAlgo/</link>
 						</links>
 					</configuration>
 				</plugin>
@@ -823,25 +844,45 @@
 					-->
 					<use>false</use>
 					<links>
-						<link>http://javadoc.imagej.net/Java/</link>
-						<link>http://javadoc.imagej.net/ImageJ/</link>
-						<link>http://javadoc.imagej.net/ImgLib2/</link>
-						<link>http://javadoc.imagej.net/SCIFIO/</link>
-						<link>http://javadoc.imagej.net/SciJava/</link>
-						<link>http://javadoc.imagej.net/Fiji/</link>
-						<link>http://javadoc.imagej.net/ImageJ1/</link>
-						<link>http://javadoc.imagej.net/Bio-Formats/</link>
-						<link>http://javadoc.imagej.net/MPI-CBG/</link>
-						<link>http://javadoc.imagej.net/Icy/</link>
-						<link>http://javadoc.imagej.net/KNIME/</link>
-						<link>http://javadoc.imagej.net/OMERO/</link>
-						<link>http://javadoc.imagej.net/MiToBo/</link>
-						<link>http://javadoc.imagej.net/Java3D/</link>
-						<link>http://javadoc.imagej.net/Pivot/</link>
-						<link>http://javadoc.imagej.net/Eclipse/</link>
-						<link>http://javadoc.imagej.net/Javassist/</link>
-						<link>http://javadoc.imagej.net/JHotDraw/</link>
-						<link>http://javadoc.imagej.net/Weka/</link>
+						<!-- Core Java. -->
+						<link>http://javadoc.scijava.org/Java/</link>
+						<!-- SciJava and related projects and forks. -->
+						<link>http://javadoc.scijava.org/SciJava/</link>
+						<link>http://javadoc.scijava.org/Alida/</link>
+						<link>http://javadoc.scijava.org/Bio-Formats/</link>
+						<link>http://javadoc.scijava.org/Fiji/</link>
+						<link>http://javadoc.scijava.org/Icy/</link>
+						<link>http://javadoc.scijava.org/ImageJ/</link>
+						<link>http://javadoc.scijava.org/ImageJ1/</link>
+						<link>http://javadoc.scijava.org/ImgLib2/</link>
+						<link>http://javadoc.scijava.org/Java3D/</link>
+						<link>http://javadoc.scijava.org/KNIME/</link>
+						<link>http://javadoc.scijava.org/LOCI/</link>
+						<link>http://javadoc.scijava.org/MiToBo/</link>
+						<link>http://javadoc.scijava.org/Micro-Manager-Core/</link>
+						<link>http://javadoc.scijava.org/Micro-Manager-Studio/</link>
+						<link>http://javadoc.scijava.org/MorphoLibJ/</link>
+						<link>http://javadoc.scijava.org/OMERO/</link>
+						<link>http://javadoc.scijava.org/SCIFIO/</link>
+						<link>http://javadoc.scijava.org/SLIM-Curve/</link>
+						<!-- Third party projects. -->
+						<link>http://javadoc.scijava.org/Apache-Commons-IO/</link>
+						<link>http://javadoc.scijava.org/Apache-Commons-Lang/</link>
+						<link>http://javadoc.scijava.org/Apache-Commons-Math/</link>
+						<link>http://javadoc.scijava.org/Apache-Commons-Text/</link>
+						<link>http://javadoc.scijava.org/Eclipse/</link>
+						<link>http://javadoc.scijava.org/Guava/</link>
+						<link>http://javadoc.scijava.org/JAMA/</link>
+						<link>http://javadoc.scijava.org/JFreeChart/</link>
+						<link>http://javadoc.scijava.org/JGraphT/</link>
+						<link>http://javadoc.scijava.org/JHotDraw/</link>
+						<link>http://javadoc.scijava.org/Javassist/</link>
+						<link>http://javadoc.scijava.org/MigLayout/</link>
+						<link>http://javadoc.scijava.org/NetBeans/</link>
+						<link>http://javadoc.scijava.org/Pivot/</link>
+						<link>http://javadoc.scijava.org/VisAD/</link>
+						<link>http://javadoc.scijava.org/Weka/</link>
+						<link>http://javadoc.scijava.org/ojAlgo/</link>
 					</links>
 				</configuration>
 			</plugin>
