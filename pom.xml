@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>3.5.3-SNAPSHOT</version>
+	<version>4.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -164,38 +164,38 @@
 		<!-- Plugin versions -->
 
 		<!-- Core Maven plugins -->
-		<maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
-		<maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
 		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-		<maven-dependency-plugin.version>3.0.0</maven-dependency-plugin.version>
+		<maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 		<maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
 		<maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
 		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
 		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-		<maven-invoker-plugin.version>2.0.0</maven-invoker-plugin.version>
+		<maven-invoker-plugin.version>3.1.0</maven-invoker-plugin.version>
 		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
-		<maven-plugin-plugin.version>3.5</maven-plugin-plugin.version>
+		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+		<maven-plugin-plugin.version>3.5.2</maven-plugin-plugin.version>
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
-		<maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-		<maven-site-plugin.version>3.6</maven-site-plugin.version>
+		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-site-plugin.version>3.7.1</maven-site-plugin.version>
 		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+		<maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
 
 		<!-- Third party Maven plugins -->
-		<build-helper-maven-plugin.version>1.12</build-helper-maven-plugin.version>
+		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
 		<buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
-		<exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
-		<license-maven-plugin.version>1.12</license-maven-plugin.version>
-		<versions-maven-plugin.version>2.3</versions-maven-plugin.version>
+		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+		<license-maven-plugin.version>1.16</license-maven-plugin.version>
+		<versions-maven-plugin.version>2.5</versions-maven-plugin.version>
 		<maven-graph-plugin.version>1.39</maven-graph-plugin.version>
-		<javafx-maven-plugin.version>8.6.0</javafx-maven-plugin.version>
-		<nar-maven-plugin.version>3.5.1</nar-maven-plugin.version>
+		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
+		<nar-maven-plugin.version>3.5.2</nar-maven-plugin.version>
 		<scijava-maven-plugin.version>1.0.0</scijava-maven-plugin.version>
 		<imagej-maven-plugin.version>0.7.0</imagej-maven-plugin.version>
 		<groovy-maven-plugin.version>1.5</groovy-maven-plugin.version>
-		<nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.0-beta-7</extra-enforcer-rules.version>
@@ -1062,7 +1062,7 @@
 			<properties>
 				<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 				<kotlin.compiler.jvmTarget>${scijava.jvm.version}</kotlin.compiler.jvmTarget>
-				<kotlin.version>1.2.41</kotlin.version>
+				<kotlin.version>1.2.50</kotlin.version>
 				<kotlin-maven-plugin.version>${kotlin.version}</kotlin-maven-plugin.version>
 				<dokka-maven-plugin.version>0.9.16</dokka-maven-plugin.version>
 			</properties>
@@ -1106,8 +1106,8 @@
 						</executions>
 					</plugin>
 					<plugin>
-						<artifactId>kotlin-maven-plugin</artifactId>
 						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-plugin</artifactId>
 						<version>${kotlin-maven-plugin.version}</version>
 						<executions>
 							<execution>
@@ -1418,8 +1418,8 @@
 						</configuration>
 					</plugin>
 					<plugin>
-						<inherited>true</inherited>
 						<artifactId>maven-deploy-plugin</artifactId>
+						<inherited>true</inherited>
 						<configuration>
 							<skip>true</skip>
 						</configuration>
@@ -1744,7 +1744,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<findbugs.maven.version>3.0.4</findbugs.maven.version>
+				<findbugs.maven.version>3.0.5</findbugs.maven.version>
 				<findbugs.failOnError>false</findbugs.failOnError>
 			</properties>
 			<build>
