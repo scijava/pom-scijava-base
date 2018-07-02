@@ -1725,6 +1725,9 @@
 
 							<!-- Remove the "${project.version} API" from the default title -->
 							<doctitle>${project.name}</doctitle>
+
+							<!-- Disable the strict Java 8 doclint. -->
+							<additionalJOption>-Xdoclint:none</additionalJOption>
 						</configuration>
 					</plugin>
 				</plugins>
