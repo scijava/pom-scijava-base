@@ -163,14 +163,14 @@ how best to override those values accordingly. The most common scenarios are:
       </mailingList>
     </mailingLists>
     ```
-    But actually, you are warmly welcome to use the
-    [ImageJ Forum](http://forum.imagej.net/) for discussing your project,
+    But you are warmly welcome to use the
+    [Image.sc Forum](https://forum.image.sc/) for discussing your project,
     so instead it is better to write:
     ```xml
     <mailingLists>
       <mailingList>
-        <name>ImageJ Forum</name>
-        <archive>http://forum.imagej.net/</archive>
+        <name>Image.sc Forum</name>
+        <archive>https://forum.image.sc/</archive>
       </mailingList>
     </mailingLists>
     ```
