@@ -109,7 +109,12 @@
 
 		<!-- Premain-Class attribute of the JAR artifact. -->
 		<premain-class />
-
+		
+		<!-- Automatic-Module-Name to be used (for Java 9+). Required if the auto-generated
+		name would not be acceptable (would include reserved words etc.).
+		Set to package name by default-->
+		<automatic-module-name>${package-name}</automatic-module-name>
+		
 		<!--
 		The License which license-maven-plugin will use to populate.
 		See: license:update-file-header, license:update-project-license
@@ -326,6 +331,9 @@
 								<Implementation-Build>${buildNumber}</Implementation-Build>
 								<!-- Add a formatted timestamp for the build. -->
 								<Implementation-Date>${maven.build.timestamp}</Implementation-Date>
+								<!-- Sets default java 9's automatic module name - in case the auto-generated one would contain reserved words etc. 
+								solves problems like this example: https://stackoverflow.com/a/46501811/478765 -->
+								<Automatic-Module-Name>${automatic-module-name}</Automatic-Module-Name>
 							</manifestEntries>
 						</archive>
 						<skipIfEmpty>true</skipIfEmpty>
