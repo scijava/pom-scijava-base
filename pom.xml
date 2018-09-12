@@ -200,8 +200,8 @@
 		<maven-graph-plugin.version>1.39</maven-graph-plugin.version>
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
 		<nar-maven-plugin.version>3.5.2</nar-maven-plugin.version>
-		<scijava-maven-plugin.version>1.0.0</scijava-maven-plugin.version>
-		<imagej-maven-plugin.version>0.7.0</imagej-maven-plugin.version>
+		<scijava-maven-plugin.version>1.1.0</scijava-maven-plugin.version>
+		<imagej-maven-plugin.version>0.7.1</imagej-maven-plugin.version>
 		<groovy-maven-plugin.version>1.5</groovy-maven-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 		<dokka-maven-plugin.version>0.9.16</dokka-maven-plugin.version>
@@ -778,28 +778,6 @@
 				<artifactId>maven-graph-plugin</artifactId>
 			</plugin>
 
-			<!--
-			Enable copying the artifacts and dependencies by setting
-			the 'imagej.app.directory' property to a valid directory.
-			-->
-			<plugin>
-				<groupId>net.imagej</groupId>
-				<artifactId>imagej-maven-plugin</artifactId>
-				<version>${imagej-maven-plugin.version}</version>
-				<configuration>
-					<deleteOtherVersions>true</deleteOtherVersions>
-				</configuration>
-				<executions>
-					<execution>
-						<id>copy-jars</id>
-						<phase>install</phase>
-						<goals>
-							<goal>copy-jars</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
 			<!-- Enable 'jfx:' goals. -->
 			<plugin>
 				<groupId>com.zenjava</groupId>
@@ -812,10 +790,25 @@
 				<artifactId>nar-maven-plugin</artifactId>
 			</plugin>
 
-			<!-- Enable 'scijava:' goals. -->
+			<!-- Enable 'scijava:' goals and copying the artifacts
+			and dependencies by setting the 'scijava.app.directory'
+			property to a valid directory.
+			-->
 			<plugin>
 				<groupId>org.scijava</groupId>
 				<artifactId>scijava-maven-plugin</artifactId>
+				<configuration>
+					<deleteOtherVersionsPolicy>older</deleteOtherVersionsPolicy>
+				</configuration>
+				<executions>
+					<execution>
+						<id>copy-jars</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-jars</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<!--
