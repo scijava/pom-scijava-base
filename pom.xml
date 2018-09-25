@@ -472,7 +472,7 @@
 
 				<!--
 				Build Helper Maven plugin -
-				http://www.mojohaus.org/build-helper-maven-plugin/
+				https://www.mojohaus.org/build-helper-maven-plugin/
 				-->
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -505,7 +505,7 @@
 
 				<!--
 				Build Number Maven plugin -
-				http://www.mojohaus.org/buildnumber-maven-plugin/
+				https://www.mojohaus.org/buildnumber-maven-plugin/
 				This plugin embeds a build number in the JAR manifest.
 				-->
 				<plugin>
@@ -528,7 +528,7 @@
 				</plugin>
 
 				<!-- Exec Maven plugin -
-				http://www.mojohaus.org/exec-maven-plugin/
+				https://www.mojohaus.org/exec-maven-plugin/
 				This plugin launches a Java class using Maven. -->
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -538,7 +538,7 @@
 
 				<!--
 				License Maven plugin -
-				http://www.mojohaus.org/license-maven-plugin/
+				https://www.mojohaus.org/license-maven-plugin/
 				This plugin manages project licenses and source file headers.
 				-->
 				<plugin>
@@ -559,7 +559,7 @@
 
 				<!--
 				Versions Maven plugin -
-				http://www.mojohaus.org/versions-maven-plugin/
+				https://www.mojohaus.org/versions-maven-plugin/
 				Check for new plugin versions using
 				"mvn versions:display-plugin-updates"
 				-->
@@ -660,7 +660,7 @@
 						<!--
 						Extra Enforcer Rules
 						org.codehaus.mojo:extra-enforcer-rules
-						http://www.mojohaus.org/extra-enforcer-rules/
+						https://www.mojohaus.org/extra-enforcer-rules/
 						-->
 
 						<!--
@@ -944,7 +944,7 @@
 					</plugin>
 
 						<!-- Groovy Maven plugin -
-						http://www.mojohaus.org/groovy-maven-plugin/
+						https://www.mojohaus.org/groovy-maven-plugin/
 						This plugin offers execution of Groovy scripts as part of the build.
 						SciJava uses it for automatic code generation with Apache Velocity. -->
 						<plugin>
