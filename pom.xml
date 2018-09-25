@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>4.1.1-SNAPSHOT</version>
+	<version>4.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -194,6 +194,7 @@
 		<!-- Third party Maven plugins -->
 		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
 		<buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
+		<cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
 		<exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
 		<license-maven-plugin.version>1.16</license-maven-plugin.version>
 		<versions-maven-plugin.version>2.5</versions-maven-plugin.version>
@@ -524,6 +525,23 @@
 					<configuration>
 						<getRevisionOnlyOnce>true</getRevisionOnlyOnce>
 						<revisionOnScmFailure>UNKNOWN</revisionOnScmFailure>
+					</configuration>
+				</plugin>
+
+				<!--
+				Cobertura Maven plugin -
+				https://www.mojohaus.org/cobertura-maven-plugin/
+				This plugin measures code coverage of tests.
+				-->
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>cobertura-maven-plugin</artifactId>
+					<version>${cobertura-maven-plugin.version}</version>
+					<configuration>
+						<formats>
+							<format>html</format>
+							<format>xml</format>
+						</formats>
 					</configuration>
 				</plugin>
 
