@@ -18,7 +18,7 @@
 	<licenses>
 		<license>
 			<name>CC0 1.0 Universal License</name>
-			<url>http://creativecommons.org/publicdomain/zero/1.0/</url>
+			<url>https://creativecommons.org/publicdomain/zero/1.0/</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -27,7 +27,7 @@
 		<developer>
 			<id>ctrueden</id>
 			<name>Curtis Rueden</name>
-			<url>http://imagej.net/User:Rueden</url>
+			<url>https://imagej.net/User:Rueden</url>
 			<roles>
 				<role>founder</role>
 				<role>lead</role>
@@ -42,27 +42,27 @@
 	<contributors>
 		<contributor>
 			<name>Mark Hiner</name>
-			<url>http://imagej.net/User:Hinerm</url>
+			<url>https://imagej.net/User:Hinerm</url>
 			<properties><id>hinerm</id></properties>
 		</contributor>
 		<contributor>
 			<name>Johannes Schindelin</name>
-			<url>http://imagej.net/User:Schindelin</url>
+			<url>https://imagej.net/User:Schindelin</url>
 			<properties><id>dscho</id></properties>
 		</contributor>
 		<contributor>
 			<name>Barry DeZonia</name>
-			<url>http://imagej.net/User:Bdezonia</url>
+			<url>https://imagej.net/User:Bdezonia</url>
 			<properties><id>bdezonia</id></properties>
 		</contributor>
 		<contributor>
 			<name>Jean-Yves Tinevez</name>
-			<url>http://imagej.net/User:JeanYvesTinevez</url>
+			<url>https://imagej.net/User:JeanYvesTinevez</url>
 			<properties><id>tinevez</id></properties>
 		</contributor>
 		<contributor>
 			<name>Lorenzo Scianatico</name>
-			<url>http://imagej.net/User:LoreScianatico</url>
+			<url>https://imagej.net/User:LoreScianatico</url>
 			<properties><id>LoreScianatico</id></properties>
 		</contributor>
 	</contributors>
@@ -153,7 +153,7 @@
 
 		<!--
 		List of valid developer and contributor roles.
-		See: http://imagej.net/Team
+		See: https://imagej.net/Team
 		-->
 		<scijava.team.roles>founder,lead,developer,debugger,reviewer,support,maintainer</scijava.team.roles>
 
@@ -362,49 +362,49 @@
 						<!--
 						Workaround for javadoc bug when classes in the default
 						package access classes from non-default packages. See:
-						http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5101868
+						https://bugs.java.com/bugdatabase/view_bug.do?bug_id=5101868
 						-->
 						<use>false</use>
 						<links>
 							<!-- Core Java. -->
-							<link>http://javadoc.scijava.org/Java/</link>
+							<link>https://javadoc.scijava.org/Java/</link>
 							<!-- SciJava and related projects and forks. -->
-							<link>http://javadoc.scijava.org/SciJava/</link>
-							<link>http://javadoc.scijava.org/Alida/</link>
-							<link>http://javadoc.scijava.org/Bio-Formats/</link>
-							<link>http://javadoc.scijava.org/Fiji/</link>
-							<link>http://javadoc.scijava.org/Icy/</link>
-							<link>http://javadoc.scijava.org/ImageJ/</link>
-							<link>http://javadoc.scijava.org/ImageJ1/</link>
-							<link>http://javadoc.scijava.org/ImgLib2/</link>
-							<link>http://javadoc.scijava.org/Java3D/</link>
-							<link>http://javadoc.scijava.org/KNIME/</link>
-							<link>http://javadoc.scijava.org/LOCI/</link>
-							<link>http://javadoc.scijava.org/MiToBo/</link>
-							<link>http://javadoc.scijava.org/Micro-Manager-Core/</link>
-							<link>http://javadoc.scijava.org/Micro-Manager-Studio/</link>
-							<link>http://javadoc.scijava.org/MorphoLibJ/</link>
-							<link>http://javadoc.scijava.org/OMERO/</link>
-							<link>http://javadoc.scijava.org/SCIFIO/</link>
-							<link>http://javadoc.scijava.org/SLIM-Curve/</link>
+							<link>https://javadoc.scijava.org/SciJava/</link>
+							<link>https://javadoc.scijava.org/Alida/</link>
+							<link>https://javadoc.scijava.org/Bio-Formats/</link>
+							<link>https://javadoc.scijava.org/Fiji/</link>
+							<link>https://javadoc.scijava.org/Icy/</link>
+							<link>https://javadoc.scijava.org/ImageJ/</link>
+							<link>https://javadoc.scijava.org/ImageJ1/</link>
+							<link>https://javadoc.scijava.org/ImgLib2/</link>
+							<link>https://javadoc.scijava.org/Java3D/</link>
+							<link>https://javadoc.scijava.org/KNIME/</link>
+							<link>https://javadoc.scijava.org/LOCI/</link>
+							<link>https://javadoc.scijava.org/MiToBo/</link>
+							<link>https://javadoc.scijava.org/Micro-Manager-Core/</link>
+							<link>https://javadoc.scijava.org/Micro-Manager-Studio/</link>
+							<link>https://javadoc.scijava.org/MorphoLibJ/</link>
+							<link>https://javadoc.scijava.org/OMERO/</link>
+							<link>https://javadoc.scijava.org/SCIFIO/</link>
+							<link>https://javadoc.scijava.org/SLIM-Curve/</link>
 							<!-- Third party projects. -->
-							<link>http://javadoc.scijava.org/Apache-Commons-IO/</link>
-							<link>http://javadoc.scijava.org/Apache-Commons-Lang/</link>
-							<link>http://javadoc.scijava.org/Apache-Commons-Math/</link>
-							<link>http://javadoc.scijava.org/Apache-Commons-Text/</link>
-							<link>http://javadoc.scijava.org/Eclipse/</link>
-							<link>http://javadoc.scijava.org/Guava/</link>
-							<link>http://javadoc.scijava.org/JAMA/</link>
-							<link>http://javadoc.scijava.org/JFreeChart/</link>
-							<link>http://javadoc.scijava.org/JGraphT/</link>
-							<link>http://javadoc.scijava.org/JHotDraw/</link>
-							<link>http://javadoc.scijava.org/Javassist/</link>
-							<link>http://javadoc.scijava.org/MigLayout/</link>
-							<link>http://javadoc.scijava.org/NetBeans/</link>
-							<link>http://javadoc.scijava.org/Pivot/</link>
-							<link>http://javadoc.scijava.org/VisAD/</link>
-							<link>http://javadoc.scijava.org/Weka/</link>
-							<link>http://javadoc.scijava.org/ojAlgo/</link>
+							<link>https://javadoc.scijava.org/Apache-Commons-IO/</link>
+							<link>https://javadoc.scijava.org/Apache-Commons-Lang/</link>
+							<link>https://javadoc.scijava.org/Apache-Commons-Math/</link>
+							<link>https://javadoc.scijava.org/Apache-Commons-Text/</link>
+							<link>https://javadoc.scijava.org/Eclipse/</link>
+							<link>https://javadoc.scijava.org/Guava/</link>
+							<link>https://javadoc.scijava.org/JAMA/</link>
+							<link>https://javadoc.scijava.org/JFreeChart/</link>
+							<link>https://javadoc.scijava.org/JGraphT/</link>
+							<link>https://javadoc.scijava.org/JHotDraw/</link>
+							<link>https://javadoc.scijava.org/Javassist/</link>
+							<link>https://javadoc.scijava.org/MigLayout/</link>
+							<link>https://javadoc.scijava.org/NetBeans/</link>
+							<link>https://javadoc.scijava.org/Pivot/</link>
+							<link>https://javadoc.scijava.org/VisAD/</link>
+							<link>https://javadoc.scijava.org/Weka/</link>
+							<link>https://javadoc.scijava.org/ojAlgo/</link>
 						</links>
 					</configuration>
 				</plugin>
@@ -589,7 +589,6 @@
 
 				<!--
 				Maven Graph Plugin -
-				http://mvnplugins.fusesource.org/maven/1.10/maven-graph-plugin/
 				Generate a dependency graph using "mvn graph:reactor"
 				-->
 				<plugin>
@@ -663,7 +662,7 @@
 					<rules>
 						<!--
 						Standard Rules
-						http://maven.apache.org/enforcer/enforcer-rules/
+						https://maven.apache.org/enforcer/enforcer-rules/
 						-->
 						<requireMavenVersion>
 							<version>${scijava.mvn.version}</version>
@@ -696,7 +695,7 @@
 
 						<!--
 						Require developers and contributors to use SciJava team roles.
-						See: http://imagej.net/Team
+						See: https://imagej.net/Team
 						-->
 						<requireDeveloperRoles>
 							<validRoles>${scijava.team.roles}</validRoles>
@@ -863,49 +862,49 @@
 					<!--
 					Workaround for javadoc bug when classes in the default
 					package access classes from non-default packages.
-					See: http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5101868
+					See: https://bugs.java.com/bugdatabase/view_bug.do?bug_id=5101868
 					-->
 					<use>false</use>
 					<links>
 						<!-- Core Java. -->
-						<link>http://javadoc.scijava.org/Java/</link>
+						<link>https://javadoc.scijava.org/Java/</link>
 						<!-- SciJava and related projects and forks. -->
-						<link>http://javadoc.scijava.org/SciJava/</link>
-						<link>http://javadoc.scijava.org/Alida/</link>
-						<link>http://javadoc.scijava.org/Bio-Formats/</link>
-						<link>http://javadoc.scijava.org/Fiji/</link>
-						<link>http://javadoc.scijava.org/Icy/</link>
-						<link>http://javadoc.scijava.org/ImageJ/</link>
-						<link>http://javadoc.scijava.org/ImageJ1/</link>
-						<link>http://javadoc.scijava.org/ImgLib2/</link>
-						<link>http://javadoc.scijava.org/Java3D/</link>
-						<link>http://javadoc.scijava.org/KNIME/</link>
-						<link>http://javadoc.scijava.org/LOCI/</link>
-						<link>http://javadoc.scijava.org/MiToBo/</link>
-						<link>http://javadoc.scijava.org/Micro-Manager-Core/</link>
-						<link>http://javadoc.scijava.org/Micro-Manager-Studio/</link>
-						<link>http://javadoc.scijava.org/MorphoLibJ/</link>
-						<link>http://javadoc.scijava.org/OMERO/</link>
-						<link>http://javadoc.scijava.org/SCIFIO/</link>
-						<link>http://javadoc.scijava.org/SLIM-Curve/</link>
+						<link>https://javadoc.scijava.org/SciJava/</link>
+						<link>https://javadoc.scijava.org/Alida/</link>
+						<link>https://javadoc.scijava.org/Bio-Formats/</link>
+						<link>https://javadoc.scijava.org/Fiji/</link>
+						<link>https://javadoc.scijava.org/Icy/</link>
+						<link>https://javadoc.scijava.org/ImageJ/</link>
+						<link>https://javadoc.scijava.org/ImageJ1/</link>
+						<link>https://javadoc.scijava.org/ImgLib2/</link>
+						<link>https://javadoc.scijava.org/Java3D/</link>
+						<link>https://javadoc.scijava.org/KNIME/</link>
+						<link>https://javadoc.scijava.org/LOCI/</link>
+						<link>https://javadoc.scijava.org/MiToBo/</link>
+						<link>https://javadoc.scijava.org/Micro-Manager-Core/</link>
+						<link>https://javadoc.scijava.org/Micro-Manager-Studio/</link>
+						<link>https://javadoc.scijava.org/MorphoLibJ/</link>
+						<link>https://javadoc.scijava.org/OMERO/</link>
+						<link>https://javadoc.scijava.org/SCIFIO/</link>
+						<link>https://javadoc.scijava.org/SLIM-Curve/</link>
 						<!-- Third party projects. -->
-						<link>http://javadoc.scijava.org/Apache-Commons-IO/</link>
-						<link>http://javadoc.scijava.org/Apache-Commons-Lang/</link>
-						<link>http://javadoc.scijava.org/Apache-Commons-Math/</link>
-						<link>http://javadoc.scijava.org/Apache-Commons-Text/</link>
-						<link>http://javadoc.scijava.org/Eclipse/</link>
-						<link>http://javadoc.scijava.org/Guava/</link>
-						<link>http://javadoc.scijava.org/JAMA/</link>
-						<link>http://javadoc.scijava.org/JFreeChart/</link>
-						<link>http://javadoc.scijava.org/JGraphT/</link>
-						<link>http://javadoc.scijava.org/JHotDraw/</link>
-						<link>http://javadoc.scijava.org/Javassist/</link>
-						<link>http://javadoc.scijava.org/MigLayout/</link>
-						<link>http://javadoc.scijava.org/NetBeans/</link>
-						<link>http://javadoc.scijava.org/Pivot/</link>
-						<link>http://javadoc.scijava.org/VisAD/</link>
-						<link>http://javadoc.scijava.org/Weka/</link>
-						<link>http://javadoc.scijava.org/ojAlgo/</link>
+						<link>https://javadoc.scijava.org/Apache-Commons-IO/</link>
+						<link>https://javadoc.scijava.org/Apache-Commons-Lang/</link>
+						<link>https://javadoc.scijava.org/Apache-Commons-Math/</link>
+						<link>https://javadoc.scijava.org/Apache-Commons-Text/</link>
+						<link>https://javadoc.scijava.org/Eclipse/</link>
+						<link>https://javadoc.scijava.org/Guava/</link>
+						<link>https://javadoc.scijava.org/JAMA/</link>
+						<link>https://javadoc.scijava.org/JFreeChart/</link>
+						<link>https://javadoc.scijava.org/JGraphT/</link>
+						<link>https://javadoc.scijava.org/JHotDraw/</link>
+						<link>https://javadoc.scijava.org/Javassist/</link>
+						<link>https://javadoc.scijava.org/MigLayout/</link>
+						<link>https://javadoc.scijava.org/NetBeans/</link>
+						<link>https://javadoc.scijava.org/Pivot/</link>
+						<link>https://javadoc.scijava.org/VisAD/</link>
+						<link>https://javadoc.scijava.org/Weka/</link>
+						<link>https://javadoc.scijava.org/ojAlgo/</link>
 					</links>
 				</configuration>
 			</plugin>
@@ -1625,7 +1624,7 @@
 										</pluginExecution>
 										<!--
 										NB: Make Eclipse generate code in a full build; see:
-										http://wiki.eclipse.org/M2E_plugin_execution_not_covered
+										https://www.eclipse.org/m2e/documentation/m2e-execution-not-covered.html
 										-->
 										<pluginExecution>
 											<pluginExecutionFilter>
