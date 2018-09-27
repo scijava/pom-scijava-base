@@ -56,6 +56,11 @@
 			<properties><id>bdezonia</id></properties>
 		</contributor>
 		<contributor>
+			<name>Stefan Helfrich</name>
+			<url>https://imagej.net/User:Stelfrich</url>
+			<properties><id>stelfrich</id></properties>
+		</contributor>
+		<contributor>
 			<name>Jean-Yves Tinevez</name>
 			<url>https://imagej.net/User:JeanYvesTinevez</url>
 			<properties><id>tinevez</id></properties>
@@ -64,6 +69,22 @@
 			<name>Lorenzo Scianatico</name>
 			<url>https://imagej.net/User:LoreScianatico</url>
 			<properties><id>LoreScianatico</id></properties>
+		</contributor>
+		<contributor>
+			<name>Jan Eglinger</name>
+			<url>https://imagej.net/User:Eglinger</url>
+			<properties><id>imagejan</id></properties>
+		</contributor>
+		<contributor>
+			<name>Ulrik Günther</name>
+			<url>https://imagej.net/User:Skalarproduktraum</url>
+			<properties><id>skalarproduktraum</id></properties>
+		</contributor>
+		<contributor>
+			<name>Igor Pisarev</name>
+		</contributor>
+		<contributor>
+			<name>Ed Savailonei</name>
 		</contributor>
 	</contributors>
 
