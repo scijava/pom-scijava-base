@@ -230,7 +230,7 @@
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.0-beta-9</extra-enforcer-rules.version>
-		<kotlin.version>1.2.50</kotlin.version>
+		<kotlin.version>1.2.71</kotlin.version>
 		<velocity.version>1.7</velocity.version>
 
 		<!-- Build extensions -->
