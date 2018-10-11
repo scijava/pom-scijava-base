@@ -221,6 +221,7 @@
 		<groovy-maven-plugin.version>1.5</groovy-maven-plugin.version>
 		<imagej-maven-plugin.version>0.7.1</imagej-maven-plugin.version>
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
 		<license-maven-plugin.version>1.16</license-maven-plugin.version>
 		<maven-graph-plugin.version>1.39</maven-graph-plugin.version>
 		<nar-maven-plugin.version>3.5.2</nar-maven-plugin.version>
@@ -557,6 +558,17 @@
 							<format>xml</format>
 						</formats>
 					</configuration>
+				</plugin>
+
+				<!--
+				JaCoCo Maven plugin -
+				https://www.jacoco.org/jacoco/trunk/doc/maven.html
+				This plugin measures code coverage of tests.
+				-->
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-maven-plugin.version}</version>
 				</plugin>
 
 				<!-- Exec Maven plugin -
