@@ -263,8 +263,10 @@
 						<target>${scijava.jvm.version}</target>
 						<testSource>${scijava.jvm.test.version}</testSource>
 						<testTarget>${scijava.jvm.test.version}</testTarget>
-						<!-- Workaround for a bug in maven-compiler-plugin.
-						See https://issues.apache.org/jira/browse/MCOMPILER-209 -->
+						<!--
+						Workaround for a bug in maven-compiler-plugin.
+						See https://issues.apache.org/jira/browse/MCOMPILER-209
+						-->
 						<useIncrementalCompilation>false</useIncrementalCompilation>
 					</configuration>
 				</plugin>
@@ -573,9 +575,11 @@
 					<version>${jacoco-maven-plugin.version}</version>
 				</plugin>
 
-				<!-- Exec Maven plugin -
+				<!--
+				Exec Maven plugin -
 				https://www.mojohaus.org/exec-maven-plugin/
-				This plugin launches a Java class using Maven. -->
+				This plugin launches a Java class using Maven.
+				-->
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
@@ -835,7 +839,8 @@
 				<artifactId>nar-maven-plugin</artifactId>
 			</plugin>
 
-			<!-- Enable 'scijava:' goals and copying the artifacts
+			<!--
+			Enable 'scijava:' goals and copying the artifacts
 			and dependencies by setting the 'scijava.app.directory'
 			property to a valid directory.
 			-->
@@ -990,10 +995,12 @@
 						</executions>
 					</plugin>
 
-						<!-- Groovy Maven plugin -
+						<!--
+						Groovy Maven plugin -
 						https://www.mojohaus.org/groovy-maven-plugin/
 						This plugin offers execution of Groovy scripts as part of the build.
-						SciJava uses it for automatic code generation with Apache Velocity. -->
+						SciJava uses it for automatic code generation with Apache Velocity.
+						-->
 						<plugin>
 							<groupId>org.codehaus.mojo</groupId>
 							<artifactId>groovy-maven-plugin</artifactId>
