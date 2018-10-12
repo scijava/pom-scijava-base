@@ -565,17 +565,6 @@
 				</plugin>
 
 				<!--
-				JaCoCo Maven plugin -
-				https://www.jacoco.org/jacoco/trunk/doc/maven.html
-				This plugin measures code coverage of tests.
-				-->
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>${jacoco-maven-plugin.version}</version>
-				</plugin>
-
-				<!--
 				Exec Maven plugin -
 				https://www.mojohaus.org/exec-maven-plugin/
 				This plugin launches a Java class using Maven.
@@ -620,19 +609,14 @@
 				</plugin>
 
 				<!--
-				Maven Graph Plugin -
-				Generate a dependency graph using "mvn graph:reactor"
+				JaCoCo Maven plugin -
+				https://www.jacoco.org/jacoco/trunk/doc/maven.html
+				This plugin measures code coverage of tests.
 				-->
 				<plugin>
-					<groupId>org.fusesource.mvnplugins</groupId>
-					<artifactId>maven-graph-plugin</artifactId>
-					<version>${maven-graph-plugin.version}</version>
-					<configuration>
-						<hideScopes>provided,runtime,system,test</hideScopes>
-						<hideTransitive>true</hideTransitive>
-						<label>Dependency Graph for ${project.name}</label>
-						<target>${project.build.directory}/dependency-graph.dot</target>
-					</configuration>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-maven-plugin.version}</version>
 				</plugin>
 
 				<!--
@@ -651,6 +635,22 @@
 						<mainClass>${main-class}</mainClass>
 						<nativeReleaseVersion>${sanitizedVersion}</nativeReleaseVersion>
 						<verbose>true</verbose>
+					</configuration>
+				</plugin>
+
+				<!--
+				Maven Graph Plugin -
+				Generate a dependency graph using "mvn graph:reactor"
+				-->
+				<plugin>
+					<groupId>org.fusesource.mvnplugins</groupId>
+					<artifactId>maven-graph-plugin</artifactId>
+					<version>${maven-graph-plugin.version}</version>
+					<configuration>
+						<hideScopes>provided,runtime,system,test</hideScopes>
+						<hideTransitive>true</hideTransitive>
+						<label>Dependency Graph for ${project.name}</label>
+						<target>${project.build.directory}/dependency-graph.dot</target>
 					</configuration>
 				</plugin>
 
