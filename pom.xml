@@ -995,57 +995,56 @@
 						</executions>
 					</plugin>
 
-						<!--
-						Groovy Maven plugin -
-						https://www.mojohaus.org/groovy-maven-plugin/
-						This plugin offers execution of Groovy scripts as part of the build.
-						SciJava uses it for automatic code generation with Apache Velocity.
-						-->
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>groovy-maven-plugin</artifactId>
-							<version>${groovy-maven-plugin.version}</version>
-							<dependencies>
-								<dependency>
-									<groupId>org.apache.velocity</groupId>
-									<artifactId>velocity</artifactId>
-									<version>${velocity.version}</version>
-								</dependency>
-							</dependencies>
-							<executions>
-								<execution>
-									<id>generate-sources</id>
-									<phase>generate-sources</phase>
-									<goals>
-										<goal>execute</goal>
-									</goals>
-									<configuration>
-										<properties>
-											<templateDirectory>${basedir}/src/main/templates</templateDirectory>
-											<outputDirectory>${project.build.directory}/generated-sources/from-template</outputDirectory>
-										</properties>
-										<source>${basedir}/src/main/groovy/generate.groovy</source>
-									</configuration>
-								</execution>
-								<execution>
-									<id>generate-test-sources</id>
-									<phase>generate-test-sources</phase>
-									<goals>
-										<goal>execute</goal>
-									</goals>
-									<configuration>
-										<properties>
-											<templateDirectory>${basedir}/src/test/templates</templateDirectory>
-											<outputDirectory>${project.build.directory}/generated-test-sources/from-template</outputDirectory>
-										</properties>
-										<source>${basedir}/src/main/groovy/generate.groovy</source>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
-
-					</plugins>
-				</build>
+					<!--
+					Groovy Maven plugin -
+					https://www.mojohaus.org/groovy-maven-plugin/
+					This plugin offers execution of Groovy scripts as part of the build.
+					SciJava uses it for automatic code generation with Apache Velocity.
+					-->
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>groovy-maven-plugin</artifactId>
+						<version>${groovy-maven-plugin.version}</version>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.velocity</groupId>
+								<artifactId>velocity</artifactId>
+								<version>${velocity.version}</version>
+							</dependency>
+						</dependencies>
+						<executions>
+							<execution>
+								<id>generate-sources</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<properties>
+										<templateDirectory>${basedir}/src/main/templates</templateDirectory>
+										<outputDirectory>${project.build.directory}/generated-sources/from-template</outputDirectory>
+									</properties>
+									<source>${basedir}/src/main/groovy/generate.groovy</source>
+								</configuration>
+							</execution>
+							<execution>
+								<id>generate-test-sources</id>
+								<phase>generate-test-sources</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<properties>
+										<templateDirectory>${basedir}/src/test/templates</templateDirectory>
+										<outputDirectory>${project.build.directory}/generated-test-sources/from-template</outputDirectory>
+									</properties>
+									<source>${basedir}/src/main/groovy/generate.groovy</source>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 
 		<!--
