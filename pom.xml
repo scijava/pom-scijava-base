@@ -222,7 +222,7 @@
 		<versions-maven-plugin.version>2.5</versions-maven-plugin.version>
 
 		<!-- Other Maven plugins -->
-		<dokka-maven-plugin.version>0.9.16</dokka-maven-plugin.version>
+		<dokka-maven-plugin.version>0.9.17</dokka-maven-plugin.version>
 		<imagej-maven-plugin.version>0.7.1</imagej-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
