@@ -1687,6 +1687,23 @@
 												<artifactId>kotlin-maven-plugin</artifactId>
 												<versionRange>${kotlin-maven-plugin.version}</versionRange>
 												<goals>
+													<goal>compile</goal>
+													<goal>test-compile</goal>
+												</goals>
+											</pluginExecutionFilter>
+											<action>
+												<execute>
+													<runOnIncremental>true</runOnIncremental>
+													<runOnConfiguration>true</runOnConfiguration>
+												</execute>
+											</action>
+										</pluginExecution>
+										<pluginExecution>
+											<pluginExecutionFilter>
+												<groupId>org.jetbrains.kotlin</groupId>
+												<artifactId>kotlin-maven-plugin</artifactId>
+												<versionRange>${kotlin-maven-plugin.version}</versionRange>
+												<goals>
 													<goal>kapt</goal>
 												</goals>
 											</pluginExecutionFilter>
