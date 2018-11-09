@@ -1857,5 +1857,75 @@
 			</build>
 		</profile>
 
+		<!--
+		The following profiles set the scijava.natives.classifier system property
+		to match the detected architecture. The main intended use case is for
+		platform-specific natives artifacts, so that they can be depended on using
+		<classifier>${scijava.natives.classifier}</classifier> in the dependency.
+		See https://github.com/slim-curve/slim-curve-ops for an example.
+		-->
+
+		<profile>
+			<id>scijava-natives-win64</id>
+			<activation>
+				<os>
+					<family>windows</family>
+					<arch>amd64</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.classifier>natives-windows_64</scijava.natives.classifier>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-natives-win32</id>
+			<activation>
+				<os>
+					<family>windows</family>
+					 <arch>x86</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.classifier>natives-windows_32</scijava.natives.classifier>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-natives-mac64</id>
+			<activation>
+				<os>
+					<family>mac</family>
+					<arch>x86_64</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.classifier>natives-osx_64</scijava.natives.classifier>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-natives-linux64</id>
+			<activation>
+				<os>
+					<family>unix</family>
+					<name>Linux</name>
+					<arch>amd64</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.classifier>natives-linux_64</scijava.natives.classifier>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-natives-linux32</id>
+			<activation>
+				<os>
+					<family>unix</family>
+					<name>Linux</name>
+					<arch>x86</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.classifier>natives-linux_32</scijava.natives.classifier>
+			</properties>
+		</profile>
 	</profiles>
 </project>
