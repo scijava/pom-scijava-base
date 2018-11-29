@@ -1769,6 +1769,7 @@
 		<profile>
 			<id>build-javadoc</id>
 			<build>
+				<defaultGoal>package</defaultGoal>
 				<plugins>
 					<plugin>
 						<artifactId>maven-javadoc-plugin</artifactId>
