@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>5.2.1-SNAPSHOT</version>
+	<version>6.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -1875,7 +1875,8 @@
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-windows_64</scijava.natives.classifier>
+				<scijava.natives.classifier>natives-win64</scijava.natives.classifier>
+				<scijava.natives.classifier.lwjgl>natives-windows</scijava.natives.classifier.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -1887,7 +1888,8 @@
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-windows_32</scijava.natives.classifier>
+				<scijava.natives.classifier>natives-win32</scijava.natives.classifier>
+				<scijava.natives.classifier.lwjgl>UNSUPPORTED</scijava.natives.classifier.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -1899,7 +1901,8 @@
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-osx_64</scijava.natives.classifier>
+				<scijava.natives.classifier>natives-macos</scijava.natives.classifier>
+				<scijava.natives.classifier.lwjgl>natives-macos</scijava.natives.classifier.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -1912,7 +1915,8 @@
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-linux_64</scijava.natives.classifier>
+				<scijava.natives.classifier>natives-linux64</scijava.natives.classifier>
+				<scijava.natives.classifier.lwjgl>natives-linux</scijava.natives.classifier.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -1925,7 +1929,8 @@
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-linux_32</scijava.natives.classifier>
+				<scijava.natives.classifier>natives-linux32</scijava.natives.classifier>
+				<scijava.natives.classifier.lwjgl>UNSUPPORTED</scijava.natives.classifier.lwjgl>
 			</properties>
 		</profile>
 	</profiles>
