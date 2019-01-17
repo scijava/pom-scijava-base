@@ -9,11 +9,11 @@
 
 	<name>SciJava Base POM</name>
 	<description>This POM is a base which SciJava-based projects can extend to inherit helpful build configuration. It ensures that projects all use a compatible build environment, including versions of Maven plugins and Java itself. It does _not_ provide any dependency version management; see org.scijava:pom-scijava for that.</description>
-	<url>http://www.scijava.org/</url>
+	<url>https://scijava.org/</url>
 	<inceptionYear>2016</inceptionYear>
 	<organization>
 		<name>SciJava</name>
-		<url>http://www.scijava.org/</url>
+		<url>https://scijava.org/</url>
 	</organization>
 	<licenses>
 		<license>
