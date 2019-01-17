@@ -1,4 +1,4 @@
-[![](https://img.shields.io/maven-central/v/org.scijava/pom-scijava-base.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.scijava%22%20AND%20a%3A%22pom-scijava-base%22)
+[![](https://img.shields.io/maven-central/v/org.scijava/pom-scijava-base.svg)](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.scijava%22%20AND%20a%3A%22pom-scijava-base%22)
 [![](https://travis-ci.org/scijava/pom-scijava-base.svg?branch=master)](https://travis-ci.org/scijava/pom-scijava-base)
 
 The pom-scijava-base project is a Maven POM that serves as the base for all
@@ -6,7 +6,7 @@ Maven-based SciJava software, including:
 
 | Fiji | ImageJ | ImgLib2 | KNIME | LOCI | SCIFIO | SciJava | SLIM Curve | Virtual Cell |
 |:----:|:------:|:-------:|:-----:|:----:|:------:|:-------:|:----------:|:------------:|
-| [![Fiji](http://www.scijava.org/icons/fiji-icon-64.png)](https://github.com/fiji) | [![ImageJ](http://www.scijava.org/icons/imagej2-icon-64.png)](https://github.com/imagej) | [![ImgLib2](http://www.scijava.org/icons/imglib2-icon-64.png)](https://github.com/imglib) | [![KNIME](http://www.scijava.org/icons/knime-icon-64.png)](http://www.knime.org) | [![LOCI](http://www.scijava.org/icons/loci-icon-64.png)](https://github.com/uw-loci) | [![SCIFIO](http://www.scijava.org/icons/scifio-icon-64.png)](https://github.com/scifio) | [![SciJava](http://www.scijava.org/icons/scijava-icon-64.png)](https://github.com/scijava) | [![SLIM Curve](http://www.scijava.org/icons/slim-curve-icon-64.png)](https://github.com/slim-curve) | [![Virtual Cell](http://www.scijava.org/icons/vcell-icon-64.png)](https://github.com/virtualcell) |
+| [![Fiji](https://scijava.org/icons/fiji-icon-64.png)](https://github.com/fiji) | [![ImageJ](https://scijava.org/icons/imagej2-icon-64.png)](https://github.com/imagej) | [![ImgLib2](https://scijava.org/icons/imglib2-icon-64.png)](https://github.com/imglib) | [![KNIME](https://scijava.org/icons/knime-icon-64.png)](https://www.knime.com) | [![LOCI](https://scijava.org/icons/loci-icon-64.png)](https://github.com/uw-loci) | [![SCIFIO](https://scijava.org/icons/scifio-icon-64.png)](https://github.com/scifio) | [![SciJava](https://scijava.org/icons/scijava-icon-64.png)](https://github.com/scijava) | [![SLIM Curve](https://scijava.org/icons/slim-curve-icon-64.png)](https://github.com/slim-curve) | [![Virtual Cell](https://scijava.org/icons/vcell-icon-64.png)](https://github.com/virtualcell) |
 
 ## pom-scijava-base vs. pom-scijava
 
@@ -15,7 +15,7 @@ use [pom-scijava](https://github.com/scijava/pom-scijava) as parent.
 
 | pom-scijava-base | pom-scijava |
 |:----------------:|:-----------:|
-| "Low level" base POM, _without_ dependency version management. Extend pom-scijava-base only if you are a Maven expert, and have good reasons for doing so. | _Friendly_ base POM for SciJava software, _including_ dependency version management. Extend pom-scijava to inherit the unified SciJava [Bill of Materials](http://imagej.net/BOM): component versions which have been tested to work together. |
+| "Low level" base POM, _without_ dependency version management. Extend pom-scijava-base only if you are a Maven expert, and have good reasons for doing so. | _Friendly_ base POM for SciJava software, _including_ dependency version management. Extend pom-scijava to inherit the unified SciJava [Bill of Materials](https://imagej.net/BOM): component versions which have been tested to work together. |
 
 See these examples for guidance:
 
@@ -26,7 +26,7 @@ See these examples for guidance:
 ## Enforcer rules declared in this parent
 
 The `pom-scijava-base` parent POM declares several
-[enforcer](http://maven.apache.org/enforcer/maven-enforcer-plugin/) rules which
+[enforcer](https://maven.apache.org/enforcer/maven-enforcer-plugin/) rules which
 we believe make SciJava-based projects more reproducible and more consistent:
 
 * __Plugin versions.__ Out of the box, Maven does not require plugins used to
@@ -57,7 +57,7 @@ we believe make SciJava-based projects more reproducible and more consistent:
     2. Introduce a third artifact to house the co-dependent code, which depends
        on the other two artifacts.
     3. If all else fails, write to the
-       [SciJava list](http://groups.google.com/group/scijava) for help.
+       [SciJava list](https://groups.google.com/group/scijava) for help.
 
 * __Reproducible builds.__ This rule means no `SNAPSHOT` dependencies, no
   `SNAPSHOT` parents, and no `SNAPSHOT` plugin versions. A snapshot version is
@@ -71,7 +71,7 @@ we believe make SciJava-based projects more reproducible and more consistent:
 
 * __Developer roles.__ SciJava-based projects define developers and
   contributors with roles matching the
-  [SciJava team roles](http://imagej.net/Team). Doing this is vital for
+  [SciJava team roles](https://imagej.net/Team). Doing this is vital for
   consistency, and for communicating expectations to the community. By being
   careful about which developers are pledging which sorts of responsibility,
   the social status of each project becomes much clearer, and which social
