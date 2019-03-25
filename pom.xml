@@ -223,7 +223,7 @@
 		<versions-maven-plugin.version>2.5</versions-maven-plugin.version>
 
 		<!-- Other Maven plugins -->
-		<dokka-maven-plugin.version>0.9.17</dokka-maven-plugin.version>
+		<dokka-maven-plugin.version>0.9.18</dokka-maven-plugin.version>
 		<imagej-maven-plugin.version>0.7.1</imagej-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
@@ -234,7 +234,7 @@
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.1</extra-enforcer-rules.version>
-		<kotlin.version>1.3.10</kotlin.version>
+		<kotlin.version>1.3.21</kotlin.version>
 		<velocity.version>1.7</velocity.version>
 
 		<!-- Build extensions -->
