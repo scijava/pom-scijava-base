@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>6.0.1-SNAPSHOT</version>
+	<version>7.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -151,14 +151,11 @@
 		<!-- Copyright owners to use in license headers atop each file. -->
 		<license.copyrightOwners>N/A</license.copyrightOwners>
 
-		<!-- Extra maven-surefire-plugin args. -->
-		<argLine />
-
-		<!-- Extra maven-surefile-plugin args used with debug-port profile. -->
-		<argLineDebug />
-
 		<!-- Classes the enforcer allows to be duplicated on the classpath. -->
 		<allowedDuplicateClasses />
+
+		<!-- Extra maven-surefire-plugin args. -->
+		<scijava.surefire.args />
 
 		<!-- Target version of the Java platform. -->
 		<scijava.jvm.version>1.8</scijava.jvm.version>
@@ -479,19 +476,17 @@
 					Make sure that:
 					A) unit tests run with sufficient RAM allocated;
 					B) unit tests do not pop a Java dock icon on OS X;
-					C) additional args can be given via argLine property;
+					C) additional args can be given via scijava.surefire.args property;
 
-					Sometimes, one needs to pass JVM options to the JVM
-					running the unit tests, such as -verbose:class or
-					-Djava.awt.headless=true.
+					Sometimes, one needs to pass JVM options to the JVM running the
+					unit tests, such as -verbose:class or -Djava.awt.headless=true.
 
-					Unfortunately, maven-surefire does not expose a
-					command-line interface to do so, therefore let's
-					simulate it by re-using the property 'argLine' to
-					specify those options.
+					Unfortunately, maven-surefire does not expose a command-line 
+					interface to do so, therefore let's simulate it by using our
+					own property 'scijava.surefire.args' to specify those options.
 					-->
 					<configuration>
-						<argLine>-Xms512m -Xmx512m -Dapple.awt.UIElement="true" ${argLine} ${argLineDebug}</argLine>
+						<argLine>-Xms512m -Xmx512m -Dapple.awt.UIElement="true" ${scijava.surefire.args}</argLine>
 					</configuration>
 				</plugin>
 
@@ -1379,7 +1374,7 @@
 				<property><name>debugPort</name></property>
 			</activation>
 			<properties>
-				<argLineDebug>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:${debugPort}</argLineDebug>
+				<scijava.surefire.args>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:${debugPort}</scijava.surefire.args>
 			</properties>
 		</profile>
 
