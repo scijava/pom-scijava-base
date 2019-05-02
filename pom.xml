@@ -495,7 +495,7 @@
 					own property 'scijava.surefire.args' to specify those options.
 					-->
 					<configuration>
-						<argLine>-Xms512m -Xmx512m -Dapple.awt.UIElement="true" ${scijava.surefire.args}</argLine>
+						<argLine>@{argLine} -Xms512m -Xmx512m -Dapple.awt.UIElement="true" ${scijava.surefire.args}</argLine>
 					</configuration>
 				</plugin>
 
