@@ -181,6 +181,12 @@
 		-->
 		<scijava.coding-style>imagej</scijava.coding-style>
 
+		<!--
+		Classifier name for referencing platform-specific artifacts.
+		By default, this matches the scijava/native-lib-loader naming scheme.
+		-->
+		<scijava.natives.classifier>natives-${scijava.natives.family.medium}_${scijava.natives.bits}</scijava.natives.classifier>
+
 		<!-- Additional configuration -->
 
 		<!-- NB: Avoid platform encoding warning when copying resources. -->
@@ -1950,70 +1956,80 @@
 		-->
 
 		<profile>
-			<id>scijava-natives-win64</id>
+			<id>scijava-natives-windows</id>
 			<activation>
 				<os>
 					<family>windows</family>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.family.short>win</scijava.natives.family.short>
+				<scijava.natives.family.medium>windows</scijava.natives.family.medium>
+				<scijava.natives.family.long>windows</scijava.natives.family.long>
+				<scijava.natives.family.longest>windows</scijava.natives.family.longest>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-natives-macos</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.family.short>mac</scijava.natives.family.short>
+				<scijava.natives.family.medium>osx</scijava.natives.family.medium>
+				<scijava.natives.family.long>macos</scijava.natives.family.long>
+				<scijava.natives.family.longest>macosx</scijava.natives.family.longest>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-natives-linux</id>
+			<activation>
+				<os>
+					<family>unix</family>
+					<name>Linux</name>
+				</os>
+			</activation>
+			<properties>
+				<scijava.natives.family.short>linux</scijava.natives.family.short>
+				<scijava.natives.family.medium>linux</scijava.natives.family.medium>
+				<scijava.natives.family.long>linux</scijava.natives.family.long>
+				<scijava.natives.family.longest>linux</scijava.natives.family.longest>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>scijava-natives-amd64</id>
+			<activation>
+				<os>
 					<arch>amd64</arch>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-win64</scijava.natives.classifier>
-				<scijava.natives.classifier.lwjgl>natives-windows</scijava.natives.classifier.lwjgl>
+				<scijava.natives.bits>64</scijava.natives.bits>
 			</properties>
 		</profile>
 		<profile>
-			<id>scijava-natives-win32</id>
+			<id>scijava-natives-x86_64</id>
 			<activation>
 				<os>
-					<family>windows</family>
-					 <arch>x86</arch>
-				</os>
-			</activation>
-			<properties>
-				<scijava.natives.classifier>natives-win32</scijava.natives.classifier>
-				<scijava.natives.classifier.lwjgl>UNSUPPORTED</scijava.natives.classifier.lwjgl>
-			</properties>
-		</profile>
-		<profile>
-			<id>scijava-natives-mac64</id>
-			<activation>
-				<os>
-					<family>mac</family>
 					<arch>x86_64</arch>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-macos</scijava.natives.classifier>
-				<scijava.natives.classifier.lwjgl>natives-macos</scijava.natives.classifier.lwjgl>
+				<scijava.natives.bits>64</scijava.natives.bits>
 			</properties>
 		</profile>
 		<profile>
-			<id>scijava-natives-linux64</id>
+			<id>scijava-natives-x86</id>
 			<activation>
 				<os>
-					<family>unix</family>
-					<name>Linux</name>
-					<arch>amd64</arch>
-				</os>
-			</activation>
-			<properties>
-				<scijava.natives.classifier>natives-linux64</scijava.natives.classifier>
-				<scijava.natives.classifier.lwjgl>natives-linux</scijava.natives.classifier.lwjgl>
-			</properties>
-		</profile>
-		<profile>
-			<id>scijava-natives-linux32</id>
-			<activation>
-				<os>
-					<family>unix</family>
-					<name>Linux</name>
 					<arch>x86</arch>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.classifier>natives-linux32</scijava.natives.classifier>
-				<scijava.natives.classifier.lwjgl>UNSUPPORTED</scijava.natives.classifier.lwjgl>
+				<scijava.natives.bits>32</scijava.natives.bits>
 			</properties>
 		</profile>
 	</profiles>
