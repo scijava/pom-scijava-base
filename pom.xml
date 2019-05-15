@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>7.0.1-SNAPSHOT</version>
+	<version>8.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -185,7 +185,7 @@
 		Classifier name for referencing platform-specific artifacts.
 		By default, this matches the scijava/native-lib-loader naming scheme.
 		-->
-		<scijava.natives.classifier>natives-${scijava.natives.family.medium}_${scijava.natives.bits}</scijava.natives.classifier>
+		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.bits}</scijava.natives.classifier>
 
 		<!-- Additional configuration -->
 
@@ -1948,43 +1948,43 @@
 		</profile>
 
 		<!--
-		The following profiles set the scijava.natives.classifier system property
-		to match the detected architecture. The main intended use case is for
+		The following profiles set the scijava.platform system properties to
+		match the detected architecture. The main intended use case is for
 		platform-specific natives artifacts, so that they can be depended on using
 		<classifier>${scijava.natives.classifier}</classifier> in the dependency.
 		See https://github.com/slim-curve/slim-curve-ops for an example.
 		-->
 
 		<profile>
-			<id>scijava-natives-windows</id>
+			<id>scijava-platform-windows</id>
 			<activation>
 				<os>
 					<family>windows</family>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.family.short>win</scijava.natives.family.short>
-				<scijava.natives.family.medium>windows</scijava.natives.family.medium>
-				<scijava.natives.family.long>windows</scijava.natives.family.long>
-				<scijava.natives.family.longest>windows</scijava.natives.family.longest>
+				<scijava.platform.family.short>win</scijava.platform.family.short>
+				<scijava.platform.family.medium>windows</scijava.platform.family.medium>
+				<scijava.platform.family.long>windows</scijava.platform.family.long>
+				<scijava.platform.family.longest>windows</scijava.platform.family.longest>
 			</properties>
 		</profile>
 		<profile>
-			<id>scijava-natives-macos</id>
+			<id>scijava-platform-macos</id>
 			<activation>
 				<os>
 					<family>mac</family>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.family.short>mac</scijava.natives.family.short>
-				<scijava.natives.family.medium>osx</scijava.natives.family.medium>
-				<scijava.natives.family.long>macos</scijava.natives.family.long>
-				<scijava.natives.family.longest>macosx</scijava.natives.family.longest>
+				<scijava.platform.family.short>mac</scijava.platform.family.short>
+				<scijava.platform.family.medium>osx</scijava.platform.family.medium>
+				<scijava.platform.family.long>macos</scijava.platform.family.long>
+				<scijava.platform.family.longest>macosx</scijava.platform.family.longest>
 			</properties>
 		</profile>
 		<profile>
-			<id>scijava-natives-linux</id>
+			<id>scijava-platform-linux</id>
 			<activation>
 				<os>
 					<family>unix</family>
@@ -1992,44 +1992,44 @@
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.family.short>linux</scijava.natives.family.short>
-				<scijava.natives.family.medium>linux</scijava.natives.family.medium>
-				<scijava.natives.family.long>linux</scijava.natives.family.long>
-				<scijava.natives.family.longest>linux</scijava.natives.family.longest>
+				<scijava.platform.family.short>linux</scijava.platform.family.short>
+				<scijava.platform.family.medium>linux</scijava.platform.family.medium>
+				<scijava.platform.family.long>linux</scijava.platform.family.long>
+				<scijava.platform.family.longest>linux</scijava.platform.family.longest>
 			</properties>
 		</profile>
 
 		<profile>
-			<id>scijava-natives-amd64</id>
+			<id>scijava-platform-amd64</id>
 			<activation>
 				<os>
 					<arch>amd64</arch>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.bits>64</scijava.natives.bits>
+				<scijava.platform.bits>64</scijava.platform.bits>
 			</properties>
 		</profile>
 		<profile>
-			<id>scijava-natives-x86_64</id>
+			<id>scijava-platform-x86_64</id>
 			<activation>
 				<os>
 					<arch>x86_64</arch>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.bits>64</scijava.natives.bits>
+				<scijava.platform.bits>64</scijava.platform.bits>
 			</properties>
 		</profile>
 		<profile>
-			<id>scijava-natives-x86</id>
+			<id>scijava-platform-x86</id>
 			<activation>
 				<os>
 					<arch>x86</arch>
 				</os>
 			</activation>
 			<properties>
-				<scijava.natives.bits>32</scijava.natives.bits>
+				<scijava.platform.bits>32</scijava.platform.bits>
 			</properties>
 		</profile>
 	</profiles>
