@@ -470,14 +470,18 @@
 					<version>${maven-source-plugin.version}</version>
 					<!-- Build source artifact in addition to main artifact. -->
 					<executions>
+						<!--
+						NB: Attach sources with jar goal, not jar-no-fork, to avoid a bug
+						where the -sources JAR gets generated and deployed twice. See:
+						https://issues.apache.org/jira/browse/MNG-5939
+						-->
 						<execution>
 							<id>attach-sources</id>
+							<phase>none</phase>
+						</execution>
+						<execution>
+							<id>attach-sources-jar</id>
 							<goals>
-								<!--
-								NB: We use jar rather than jar-no-fork to avoid a bug where
-								the -sources JAR gets generated and deployed twice. See:
-								https://issues.apache.org/jira/browse/MNG-5939
-								-->
 								<goal>jar</goal>
 							</goals>
 						</execution>
