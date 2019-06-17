@@ -1878,7 +1878,7 @@
 							<doctitle>${project.name}</doctitle>
 
 							<!-- Disable the strict Java 8 doclint. -->
-							<additionalJOption>-Xdoclint:none</additionalJOption>
+							<doclint>none</doclint>
 						</configuration>
 					</plugin>
 				</plugins>
