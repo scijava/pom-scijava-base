@@ -938,6 +938,12 @@
 				<groupId>net.revelc.code</groupId>
 				<artifactId>impsort-maven-plugin</artifactId>
 			</plugin>
+
+			<!-- JaCoCo Maven plugin - https://www.jacoco.org/jacoco/trunk/doc/maven.html -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
 		<!--
 		We use wagon-webdav-jackrabbit 1.0 for deploys, since it is
