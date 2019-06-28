@@ -125,7 +125,7 @@
 		-->
 		<main-class />
 
-		<!-- Package-Name attribute of the JAR artifact. -->
+		<!-- Package attribute of the JAR artifact. -->
 		<package-name />
 
 		<!-- Premain-Class attribute of the JAR artifact. -->
