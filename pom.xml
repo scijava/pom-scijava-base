@@ -126,7 +126,7 @@
 		<main-class />
 
 		<!-- Package attribute of the JAR artifact. -->
-		<package-name />
+		<package-name>${package-guess}</package-name>
 
 		<!-- Premain-Class attribute of the JAR artifact. -->
 		<premain-class />
@@ -534,6 +534,24 @@
 								<value>${project.version}</value>
 								<regex>^([0-9]+)\.([0-9]+)\.([0-9]+).*$</regex>
 								<replacement>$1.$2.$3</replacement>
+								<failIfNoMatch>false</failIfNoMatch>
+							</configuration>
+						</execution>
+
+						<!--
+						Make a guess at a reasonable & legal package prefix. This value
+						is used for package-name and automatic-module-name by default.
+						-->
+						<execution>
+							<id>guess-package</id>
+							<goals>
+								<goal>regex-property</goal>
+							</goals>
+							<configuration>
+								<name>package-guess</name>
+								<value>${project.groupId}.${project.artifactId}</value>
+								<regex>[^a-z0-9_.]+</regex>
+								<replacement>_</replacement>
 								<failIfNoMatch>false</failIfNoMatch>
 							</configuration>
 						</execution>
