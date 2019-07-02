@@ -186,7 +186,7 @@
 
 		<!--
 		The coding-style property defines a coding style to be used in your project.
-		Supported values as of this writing are: imagej, imglib2 and scifio.
+		Supported values as of this writing are scijava and imglib2.
 		-->
 		<scijava.coding-style>scijava</scijava.coding-style>
 
