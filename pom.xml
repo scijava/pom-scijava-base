@@ -249,7 +249,7 @@
 		<maven-graph-plugin.version>1.45</maven-graph-plugin.version>
 		<nar-maven-plugin.version>3.6.0</nar-maven-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-		<scijava-maven-plugin.version>1.1.0</scijava-maven-plugin.version>
+		<scijava-maven-plugin.version>1.1.1</scijava-maven-plugin.version>
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.1</extra-enforcer-rules.version>
