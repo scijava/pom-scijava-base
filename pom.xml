@@ -404,6 +404,7 @@
 							<link>https://javadoc.scijava.org/SciJava/</link>
 							<link>https://javadoc.scijava.org/Alida/</link>
 							<link>https://javadoc.scijava.org/Bio-Formats/</link>
+							<link>https://javadoc.scijava.org/FLIMLib/</link>
 							<link>https://javadoc.scijava.org/Fiji/</link>
 							<link>https://javadoc.scijava.org/Icy/</link>
 							<link>https://javadoc.scijava.org/ImageJ/</link>
@@ -418,7 +419,6 @@
 							<link>https://javadoc.scijava.org/MorphoLibJ/</link>
 							<link>https://javadoc.scijava.org/OMERO/</link>
 							<link>https://javadoc.scijava.org/SCIFIO/</link>
-							<link>https://javadoc.scijava.org/SLIM-Curve/</link>
 							<!-- Third party projects. -->
 							<link>https://javadoc.scijava.org/Apache-Commons-IO/</link>
 							<link>https://javadoc.scijava.org/Apache-Commons-Lang/</link>
@@ -1007,6 +1007,7 @@
 						<link>https://javadoc.scijava.org/SciJava/</link>
 						<link>https://javadoc.scijava.org/Alida/</link>
 						<link>https://javadoc.scijava.org/Bio-Formats/</link>
+						<link>https://javadoc.scijava.org/FLIMLib/</link>
 						<link>https://javadoc.scijava.org/Fiji/</link>
 						<link>https://javadoc.scijava.org/Icy/</link>
 						<link>https://javadoc.scijava.org/ImageJ/</link>
@@ -1021,7 +1022,6 @@
 						<link>https://javadoc.scijava.org/MorphoLibJ/</link>
 						<link>https://javadoc.scijava.org/OMERO/</link>
 						<link>https://javadoc.scijava.org/SCIFIO/</link>
-						<link>https://javadoc.scijava.org/SLIM-Curve/</link>
 						<!-- Third party projects. -->
 						<link>https://javadoc.scijava.org/Apache-Commons-IO/</link>
 						<link>https://javadoc.scijava.org/Apache-Commons-Lang/</link>
@@ -1976,7 +1976,7 @@
 		match the detected architecture. The main intended use case is for
 		platform-specific natives artifacts, so that they can be depended on using
 		<classifier>${scijava.natives.classifier}</classifier> in the dependency.
-		See https://github.com/slim-curve/slim-curve-ops for an example.
+		See https://github.com/flimlib/flimj-ops for an example.
 		-->
 
 		<profile>
