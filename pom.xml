@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>9.1.1-SNAPSHOT</version>
+	<version>10.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -251,7 +251,6 @@
 		<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
 		<maven-graph-plugin.version>1.45</maven-graph-plugin.version>
-		<nar-maven-plugin.version>3.6.0</nar-maven-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 		<scijava-maven-plugin.version>1.1.1</scijava-maven-plugin.version>
 
@@ -713,13 +712,6 @@
 					</configuration>
 				</plugin>
 
-				<!-- NAR Maven plugin - https://github.com/maven-nar/nar-maven-plugin -->
-				<plugin>
-					<groupId>com.github.maven-nar</groupId>
-					<artifactId>nar-maven-plugin</artifactId>
-					<version>${nar-maven-plugin.version}</version>
-				</plugin>
-
 				<!-- SciJava Maven plugin - https://github.com/scijava/scijava-maven-plugin -->
 				<plugin>
 					<groupId>org.scijava</groupId>
@@ -924,12 +916,6 @@
 			<plugin>
 				<groupId>com.zenjava</groupId>
 				<artifactId>javafx-maven-plugin</artifactId>
-			</plugin>
-
-			<!-- Enable 'nar:' goals. -->
-			<plugin>
-				<groupId>com.github.maven-nar</groupId>
-				<artifactId>nar-maven-plugin</artifactId>
 			</plugin>
 
 			<!--
