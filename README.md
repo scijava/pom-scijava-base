@@ -4,9 +4,9 @@
 The pom-scijava-base project is a Maven POM that serves as the base for all
 Maven-based SciJava software, including:
 
-| Fiji | ImageJ | ImgLib2 | KNIME | LOCI | SCIFIO | SciJava | SLIM Curve | Virtual Cell |
+| Fiji | ImageJ | ImgLib2 | KNIME | LOCI | SCIFIO | SciJava | FLIMLib | Virtual Cell |
 |:----:|:------:|:-------:|:-----:|:----:|:------:|:-------:|:----------:|:------------:|
-| [![Fiji](https://scijava.org/icons/fiji-icon-64.png)](https://github.com/fiji) | [![ImageJ](https://scijava.org/icons/imagej2-icon-64.png)](https://github.com/imagej) | [![ImgLib2](https://scijava.org/icons/imglib2-icon-64.png)](https://github.com/imglib) | [![KNIME](https://scijava.org/icons/knime-icon-64.png)](https://www.knime.com) | [![LOCI](https://scijava.org/icons/loci-icon-64.png)](https://github.com/uw-loci) | [![SCIFIO](https://scijava.org/icons/scifio-icon-64.png)](https://github.com/scifio) | [![SciJava](https://scijava.org/icons/scijava-icon-64.png)](https://github.com/scijava) | [![SLIM Curve](https://scijava.org/icons/slim-curve-icon-64.png)](https://github.com/slim-curve) | [![Virtual Cell](https://scijava.org/icons/vcell-icon-64.png)](https://github.com/virtualcell) |
+| [![Fiji](https://scijava.org/icons/fiji-icon-64.png)](https://github.com/fiji) | [![ImageJ](https://scijava.org/icons/imagej2-icon-64.png)](https://github.com/imagej) | [![ImgLib2](https://scijava.org/icons/imglib2-icon-64.png)](https://github.com/imglib) | [![KNIME](https://scijava.org/icons/knime-icon-64.png)](https://knime.org) | [![LOCI](https://scijava.org/icons/loci-icon-64.png)](https://github.com/uw-loci) | [![SCIFIO](https://scijava.org/icons/scifio-icon-64.png)](https://github.com/scifio) | [![SciJava](https://scijava.org/icons/scijava-icon-64.png)](https://github.com/scijava) | [![FLIMLib](https://scijava.org/icons/flimlib-icon-64.png)](https://github.com/flimlib) | [![Virtual Cell](https://scijava.org/icons/vcell-icon-64.png)](https://github.com/virtualcell) |
 
 ## pom-scijava-base vs. pom-scijava
 
