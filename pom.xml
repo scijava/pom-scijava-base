@@ -252,7 +252,7 @@
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
 		<maven-graph-plugin.version>1.45</maven-graph-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-		<scijava-maven-plugin.version>1.1.1</scijava-maven-plugin.version>
+		<scijava-maven-plugin.version>2.0.0</scijava-maven-plugin.version>
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
@@ -931,10 +931,10 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>copy-jars</id>
+						<id>populate-app</id>
 						<phase>install</phase>
 						<goals>
-							<goal>copy-jars</goal>
+							<goal>populate-app</goal>
 						</goals>
 					</execution>
 				</executions>
