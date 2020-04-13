@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>10.0.1-SNAPSHOT</version>
+	<version>11.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -1136,63 +1136,6 @@
 										<outputDirectory>${project.build.directory}/generated-test-sources/from-template</outputDirectory>
 									</properties>
 									<source>${basedir}/src/main/groovy/generate.groovy</source>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<!--
-		The jigsaw profile enables support for Java 9 modularization, while
-		simultaneously allowing the component to continue targeting an earlier
-		version of the JVM as the minimum.
-
-		When a src/main/java/module-info.java is present, compilation proceeds in
-		two steps: 1) all code including module-info.java is compiled with Java 9;
-		and then 2) the project is recompiled sans module-info.java to target the
-		desired bytecode version.
-
-		This profile was adapted from the following article:
-		https://maven.apache.org/plugins/maven-compiler-plugin/examples/module-info.html
-		-->
-		<profile>
-			<id>jigsaw</id>
-			<activation>
-				<file>
-					<!-- NB: No property, because profile activation is too early. -->
-					<exists>${basedir}/src/main/java/module-info.java</exists>
-				</file>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>default-compile</id>
-								<configuration>
-									<!-- NB: Compile everything with Java 9, for correctness. -->
-									<release>9</release>
-								</configuration>
-							</execution>
-							<execution>
-								<id>base-compile</id>
-								<goals>
-									<goal>compile</goal>
-								</goals>
-								<!-- NB: Recompile minus module-info.java for the target VM. -->
-								<configuration>
-									<!--
-									Workaround for a bug in maven-compiler-plugin.
-									(Naively, it seems like this flag's behavior is reversed.)
-									See https://issues.apache.org/jira/browse/MCOMPILER-209
-									-->
-									<useIncrementalCompilation>true</useIncrementalCompilation>
-									<excludes>
-										<exclude>module-info.java</exclude>
-									</excludes>
 								</configuration>
 							</execution>
 						</executions>
