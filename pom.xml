@@ -252,11 +252,13 @@
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
 		<maven-graph-plugin.version>1.45</maven-graph-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+		<revapi-maven-plugin.version>0.11.4</revapi-maven-plugin.version>
 		<scijava-maven-plugin.version>2.0.0</scijava-maven-plugin.version>
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
 		<kotlin.version>1.3.72</kotlin.version>
+		<revapi-java.version>0.20.2</revapi-java.version>
 		<scijava-coding-style.version>2.0.0</scijava-coding-style.version>
 		<velocity.version>1.7</velocity.version>
 
@@ -710,6 +712,27 @@
 						<label>Dependency Graph for ${project.name}</label>
 						<target>${project.build.directory}/dependency-graph.dot</target>
 					</configuration>
+				</plugin>
+
+				<!-- Revapi Maven Plugin - https://revapi.org/modules/revapi-maven-plugin -->
+				<plugin>
+					<groupId>org.revapi</groupId>
+					<artifactId>revapi-maven-plugin</artifactId>
+					<version>${revapi-maven-plugin.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.revapi</groupId>
+							<artifactId>revapi-java</artifactId>
+							<version>${revapi-java.version}</version>
+						</dependency>
+					</dependencies>
+					<executions>
+						<execution>
+							<goals>
+								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 
 				<!-- SciJava Maven plugin - https://github.com/scijava/scijava-maven-plugin -->
