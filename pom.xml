@@ -726,13 +726,6 @@
 							<version>${revapi-java.version}</version>
 						</dependency>
 					</dependencies>
-					<executions>
-						<execution>
-							<goals>
-								<goal>check</goal>
-							</goals>
-						</execution>
-					</executions>
 				</plugin>
 
 				<!-- SciJava Maven plugin - https://github.com/scijava/scijava-maven-plugin -->
