@@ -148,6 +148,12 @@
 		-->
 		<license.licenseName>N/A</license.licenseName>
 
+		<!--
+		Files excluded from license header updates.
+		By default, all script templates are excluded.
+		-->
+		<license.excludes>**/script_templates/**</license.excludes>
+
 		<!-- Project blurb to use in license headers atop each file. -->
 		<license.projectName>${project.description}</license.projectName>
 
