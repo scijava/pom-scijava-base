@@ -1020,6 +1020,7 @@
 					<links>
 						<!-- Core Java. -->
 						<link>https://javadoc.scijava.org/Java/</link>
+						<link>https://javadoc.scijava.org/JavaFX8/</link>
 						<!-- SciJava and related projects and forks. -->
 						<link>https://javadoc.scijava.org/SciJava/</link>
 						<link>https://javadoc.scijava.org/Alida/</link>
