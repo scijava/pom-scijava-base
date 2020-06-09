@@ -254,7 +254,7 @@
 		<dokka-maven-plugin.version>0.9.18</dokka-maven-plugin.version>
 		<formatter-maven-plugin.version>2.10.0</formatter-maven-plugin.version>
 		<impsort-maven-plugin.version>1.2.0</impsort-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
 		<maven-graph-plugin.version>1.45</maven-graph-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
