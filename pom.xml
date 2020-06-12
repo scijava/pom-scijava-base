@@ -160,12 +160,6 @@
 		<!-- Copyright owners to use in license headers atop each file. -->
 		<license.copyrightOwners>N/A</license.copyrightOwners>
 
-		<!-- Classes the enforcer allows to be duplicated on the classpath. -->
-		<allowedDuplicateClasses />
-
-		<!-- Extra maven-surefire-plugin args. -->
-		<scijava.surefire.args />
-
 		<!-- Compiler configuration. -->
 		<scijava.jvm.version>1.8</scijava.jvm.version>
 		<scijava.jvm.test.version>${scijava.jvm.version}</scijava.jvm.test.version>
@@ -181,11 +175,17 @@
 		-->
 		<maven.compiler.useIncrementalCompilation>false</maven.compiler.useIncrementalCompilation>
 
+		<!-- Extra maven-surefire-plugin args. -->
+		<scijava.surefire.args />
+
 		<!-- Minimum required Maven version to build the project. -->
 		<scijava.mvn.version>3.3.9</scijava.mvn.version>
 
 		<!-- List of groupIds for which build reproducibility is enforced. -->
 		<scijava.groupIds>org.scijava,net.imagej,net.imglib2,io.scif,sc.fiji</scijava.groupIds>
+
+		<!-- Classes the enforcer allows to be duplicated on the classpath. -->
+		<allowedDuplicateClasses />
 
 		<!--
 		List of valid developer and contributor roles.
