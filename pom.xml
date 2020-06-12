@@ -194,6 +194,16 @@
 		<scijava.team.roles>founder,lead,developer,debugger,reviewer,support,maintainer</scijava.team.roles>
 
 		<!--
+		Links to javadoc APIs, used by the maven-javadoc-plugin.
+		Change these if you need to link against different API versions.
+		E.g., for Java 11 projects, use:
+		<scijava.javadoc.url.java>https://javadoc.scijava.org/Java11/</scijava.javadoc.url.java>
+		<scijava.javadoc.url.javafx>https://javadoc.scijava.org/JavaFX11/</scijava.javadoc.url.javafx>
+		-->
+		<scijava.javadoc.url.java>https://javadoc.scijava.org/Java8/</scijava.javadoc.url.java>
+		<scijava.javadoc.url.javafx>https://javadoc.scijava.org/JavaFX8/</scijava.javadoc.url.javafx>
+
+		<!--
 		The coding-style property defines a coding style to be used in your project.
 		Supported values as of this writing are scijava and imglib2.
 		-->
@@ -410,7 +420,8 @@
 						<use>false</use>
 						<links>
 							<!-- Core Java. -->
-							<link>https://javadoc.scijava.org/Java/</link>
+							<link>${scijava.javadoc.url.java}</link>
+							<link>${scijava.javadoc.url.javafx}</link>
 							<!-- SciJava and related projects and forks. -->
 							<link>https://javadoc.scijava.org/SciJava/</link>
 							<link>https://javadoc.scijava.org/Alida/</link>
@@ -1019,8 +1030,8 @@
 					<use>false</use>
 					<links>
 						<!-- Core Java. -->
-						<link>https://javadoc.scijava.org/Java/</link>
-						<link>https://javadoc.scijava.org/JavaFX8/</link>
+						<link>${scijava.javadoc.url.java}</link>
+						<link>${scijava.javadoc.url.javafx}</link>
 						<!-- SciJava and related projects and forks. -->
 						<link>https://javadoc.scijava.org/SciJava/</link>
 						<link>https://javadoc.scijava.org/Alida/</link>
