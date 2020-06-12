@@ -244,6 +244,7 @@
 		<maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
 		<maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
 		<maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
+		<maven-project-info-reports-plugin.version>3.1.0</maven-project-info-reports-plugin.version>
 		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 		<maven-shade-plugin.version>3.2.2</maven-shade-plugin.version>
@@ -459,7 +460,10 @@
 					<artifactId>maven-plugin-plugin</artifactId>
 					<version>${maven-plugin-plugin.version}</version>
 				</plugin>
-
+				<plugin>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>${maven-project-info-reports-plugin.version}</version>
+				</plugin>
 				<plugin>
 					<artifactId>maven-release-plugin</artifactId>
 					<version>${maven-release-plugin.version}</version>
