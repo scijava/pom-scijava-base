@@ -164,7 +164,7 @@
 		<scijava.jvm.version>1.8</scijava.jvm.version>
 		<scijava.jvm.test.version>${scijava.jvm.version}</scijava.jvm.test.version>
 		<!-- NB: 1.8.0_101 is needed for SciJava Maven repository HTTPS support. -->
-		<scijava.jvm.build.version>[1.8.0-101,1.8.9999]</scijava.jvm.build.version>
+		<scijava.jvm.build.version>[1.8.0-101,14.9999.9999]</scijava.jvm.build.version>
 		<maven.compiler.source>${scijava.jvm.version}</maven.compiler.source>
 		<maven.compiler.target>${scijava.jvm.version}</maven.compiler.target>
 		<maven.compiler.testSource>${scijava.jvm.test.version}</maven.compiler.testSource>
