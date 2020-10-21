@@ -698,7 +698,7 @@
 				SonarScanner Maven plugin -
 				https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
 				SonarQube scanner for java projects.
-			  -->
+				-->
 				<plugin>
 					<groupId>org.sonarsource.scanner.maven</groupId>
 					<artifactId>sonar-maven-plugin</artifactId>
