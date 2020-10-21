@@ -271,6 +271,7 @@
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 		<revapi-maven-plugin.version>0.11.5</revapi-maven-plugin.version>
 		<scijava-maven-plugin.version>2.0.0</scijava-maven-plugin.version>
+		<sonarscanner-maven-plugin.version>3.7.0.1746</sonarscanner-maven-plugin.version>
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
@@ -281,6 +282,9 @@
 
 		<!-- Build extensions -->
 		<wagon-webdav-jackrabbit.version>1.0</wagon-webdav-jackrabbit.version>
+
+		<!-- SonarQube server instance -->
+		<sonar.host.url>https://fiji-qa.mpi-cbg.de/</sonar.host.url>
 	</properties>
 
 	<build>
@@ -519,7 +523,7 @@
 					Sometimes, one needs to pass JVM options to the JVM running the
 					unit tests, such as -verbose:class or -Djava.awt.headless=true.
 
-					Unfortunately, maven-surefire does not expose a command-line 
+					Unfortunately, maven-surefire does not expose a command-line
 					interface to do so, therefore let's simulate it by using our
 					own property 'scijava.surefire.args' to specify those options.
 					-->
@@ -688,6 +692,17 @@
 							</goals>
 						</execution>
 					</executions>
+				</plugin>
+
+				<!--
+				SonarScanner Maven plugin -
+				https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
+				SonarQube scanner for java projects.
+			  -->
+				<plugin>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>${sonarscanner-maven-plugin.version}</version>
 				</plugin>
 
 				<!--
@@ -1390,7 +1405,7 @@
 								</configuration>
 							</execution>
 						</executions>
-					</plugin>	
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -1874,7 +1889,6 @@
 		folder. It may catch some undangerous bugs, so it is better to set the
 		failOnError variable to false.
 		-->
-
 		<profile>
 			<id>findbugs</id>
 			<activation>
