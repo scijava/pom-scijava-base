@@ -275,7 +275,7 @@
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
-		<kotlin.version>1.4-M2</kotlin.version>
+		<kotlin.version>1.4.21</kotlin.version>
 		<revapi-java.version>0.20.2</revapi-java.version>
 		<scijava-coding-style.version>2.0.0</scijava-coding-style.version>
 		<velocity.version>1.7</velocity.version>
