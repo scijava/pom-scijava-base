@@ -1,5 +1,5 @@
 [![](https://img.shields.io/maven-central/v/org.scijava/pom-scijava-base.svg)](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.scijava%22%20AND%20a%3A%22pom-scijava-base%22)
-[![](https://travis-ci.org/scijava/pom-scijava-base.svg?branch=master)](https://travis-ci.org/scijava/pom-scijava-base)
+[![](https://github.com/scijava/pom-scijava-base/actions/workflows/build-main.yml/badge.svg)](https://github.com/scijava/pom-scijava-base/actions/workflows/build-main.yml)
 
 The pom-scijava-base project is a Maven POM that serves as the base for all
 Maven-based SciJava software, including:
