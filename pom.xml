@@ -27,7 +27,7 @@
 		<developer>
 			<id>ctrueden</id>
 			<name>Curtis Rueden</name>
-			<url>https://imagej.net/User:Rueden</url>
+			<url>https://imagej.net/people/ctrueden</url>
 			<roles>
 				<role>founder</role>
 				<role>lead</role>
@@ -42,42 +42,42 @@
 	<contributors>
 		<contributor>
 			<name>Mark Hiner</name>
-			<url>https://imagej.net/User:Hinerm</url>
+			<url>https://imagej.net/people/hinerm</url>
 			<properties><id>hinerm</id></properties>
 		</contributor>
 		<contributor>
 			<name>Johannes Schindelin</name>
-			<url>https://imagej.net/User:Schindelin</url>
+			<url>https://imagej.net/people/dscho</url>
 			<properties><id>dscho</id></properties>
 		</contributor>
 		<contributor>
 			<name>Barry DeZonia</name>
-			<url>https://imagej.net/User:Bdezonia</url>
+			<url>https://imagej.net/people/bdezonia</url>
 			<properties><id>bdezonia</id></properties>
 		</contributor>
 		<contributor>
 			<name>Stefan Helfrich</name>
-			<url>https://imagej.net/User:Stelfrich</url>
+			<url>https://imagej.net/people/stelfrich</url>
 			<properties><id>stelfrich</id></properties>
 		</contributor>
 		<contributor>
 			<name>Jean-Yves Tinevez</name>
-			<url>https://imagej.net/User:JeanYvesTinevez</url>
+			<url>https://imagej.net/people/tinevez</url>
 			<properties><id>tinevez</id></properties>
 		</contributor>
 		<contributor>
 			<name>Lorenzo Scianatico</name>
-			<url>https://imagej.net/User:LoreScianatico</url>
+			<url>https://imagej.net/people/LoreScianatico</url>
 			<properties><id>LoreScianatico</id></properties>
 		</contributor>
 		<contributor>
 			<name>Jan Eglinger</name>
-			<url>https://imagej.net/User:Eglinger</url>
+			<url>https://imagej.net/people/imagejan</url>
 			<properties><id>imagejan</id></properties>
 		</contributor>
 		<contributor>
 			<name>Ulrik Günther</name>
-			<url>https://imagej.net/User:Skalarproduktraum</url>
+			<url>https://imagej.net/people/skalarproduktraum</url>
 			<properties><id>skalarproduktraum</id></properties>
 		</contributor>
 		<contributor>
@@ -1404,7 +1404,7 @@
 										<filter>
 											<!--
 											Shading signed JARs will fail without this.
-											http://stackoverflow.com/questions/999489/invalid-signature-file-when-attempting-to-run-a-jar
+											https://stackoverflow.com/q/999489
 											-->
 											<artifact>*:*</artifact>
 											<excludes>
