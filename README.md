@@ -190,6 +190,7 @@ how best to override those values accordingly. The most common scenarios are:
     ```xml
     <scm>
       <system>None</system>
+      <url>None</url>
     </scm>
     ```
     But as an aside, in this case, we strongly encourage you to adopt an SCM;
