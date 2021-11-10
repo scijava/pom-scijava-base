@@ -893,12 +893,6 @@
 						</enforceBytecodeVersion>
 
 						<!--
-						Do not allow circular dependencies.
-						Mostly impossible anyway, but... just in case.
-						-->
-						<banCircularDependencies />
-
-						<!--
 						SciJava Maven Plugin
 						org.scijava:scijava-maven-plugin
 						https://github.com/scijava/scijava-maven-plugin
