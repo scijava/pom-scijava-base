@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>13.0.1-SNAPSHOT</version>
+	<version>14.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -283,9 +283,6 @@
 
 		<!-- Build extensions -->
 		<wagon-webdav-jackrabbit.version>1.0</wagon-webdav-jackrabbit.version>
-
-		<!-- SonarQube server instance -->
-		<sonar.host.url>https://fiji-qa.mpi-cbg.de/</sonar.host.url>
 	</properties>
 
 	<build>
