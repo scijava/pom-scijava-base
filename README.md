@@ -65,8 +65,8 @@ we believe make SciJava-based projects more reproducible and more consistent:
   today, but not build tomorrow, if the snapshot is later changed. The best way
   to avoid this conundrum is to _never depend on `SNAPSHOT` versions_. Snapshot
   are best used for testing only; they can be used transiently, but their use
-  should never make it onto the main integration branch (i.e., `master`) of a
-  project. See also
+  should never make it onto the main integration branch
+  (e.g., `main` or `master`) of a project. See also
   [Using snapshot couplings during development](https://imagej.net/Architecture#Using_snapshot_couplings_during_development).
 
 * __Developer roles.__ SciJava-based projects define developers and
