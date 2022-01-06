@@ -152,7 +152,14 @@
 		Files excluded from license header updates.
 		By default, all script templates are excluded.
 		-->
-		<license.excludes>**/script_templates/**</license.excludes>
+		<scijava.excludedLicensePatterns>**/script_templates/**</scijava.excludedLicensePatterns>
+		<!--
+		NB: The scijava.excludedLicensePatterns property above makes it easier to
+		append to the list of excluded license patterns in downstream projects.
+		Override the license.excludes property in your POM with something like this:
+		<license.excludes>${scijava.excludedLicensePatterns},**/*.json,**/*.xml</license.excludes>
+		-->
+		<license.excludes>${scijava.excludedLicensePatterns}</license.excludes>
 
 		<!-- Project blurb to use in license headers atop each file. -->
 		<license.projectName>${project.description}</license.projectName>
