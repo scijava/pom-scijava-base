@@ -2019,6 +2019,17 @@
 			</properties>
 		</profile>
 		<profile>
+			<id>scijava-platform-arm64</id>
+			<activation>
+				<os>
+					<arch>arm64</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.platform.bits>64</scijava.platform.bits>
+			</properties>
+		</profile>
+		<profile>
 			<id>scijava-platform-x86_64</id>
 			<activation>
 				<os>
