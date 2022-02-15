@@ -4,9 +4,9 @@
 The pom-scijava-base project is a Maven POM that serves as the base for all
 Maven-based SciJava software, including:
 
-| Fiji | ImageJ | ImgLib2 | KNIME | LOCI | SCIFIO | SciJava | FLIMLib | Virtual Cell |
-|:----:|:------:|:-------:|:-----:|:----:|:------:|:-------:|:----------:|:------------:|
-| [![Fiji](https://scijava.org/icons/fiji-icon-64.png)](https://github.com/fiji) | [![ImageJ](https://scijava.org/icons/imagej2-icon-64.png)](https://github.com/imagej) | [![ImgLib2](https://scijava.org/icons/imglib2-icon-64.png)](https://github.com/imglib) | [![KNIME](https://scijava.org/icons/knime-icon-64.png)](https://knime.org) | [![LOCI](https://scijava.org/icons/loci-icon-64.png)](https://github.com/uw-loci) | [![SCIFIO](https://scijava.org/icons/scifio-icon-64.png)](https://github.com/scifio) | [![SciJava](https://scijava.org/icons/scijava-icon-64.png)](https://github.com/scijava) | [![FLIMLib](https://scijava.org/icons/flimlib-icon-64.png)](https://github.com/flimlib) | [![Virtual Cell](https://scijava.org/icons/vcell-icon-64.png)](https://github.com/virtualcell) |
+| Fiji | ImageJ2 | ImgLib2 | KNIME | LOCI | SCIFIO | SciJava | FLIMLib | Virtual Cell |
+|:----:|:-------:|:-------:|:-----:|:----:|:------:|:-------:|:----------:|:------------:|
+| [![Fiji](https://scijava.org/icons/fiji-icon-64.png)](https://github.com/fiji) | [![ImageJ2](https://scijava.org/icons/imagej2-icon-64.png)](https://github.com/imagej) | [![ImgLib2](https://scijava.org/icons/imglib2-icon-64.png)](https://github.com/imglib) | [![KNIME](https://scijava.org/icons/knime-icon-64.png)](https://knime.org) | [![LOCI](https://scijava.org/icons/loci-icon-64.png)](https://github.com/uw-loci) | [![SCIFIO](https://scijava.org/icons/scifio-icon-64.png)](https://github.com/scifio) | [![SciJava](https://scijava.org/icons/scijava-icon-64.png)](https://github.com/scijava) | [![FLIMLib](https://scijava.org/icons/flimlib-icon-64.png)](https://github.com/flimlib) | [![Virtual Cell](https://scijava.org/icons/vcell-icon-64.png)](https://github.com/virtualcell) |
 
 ## pom-scijava-base vs. pom-scijava
 
@@ -19,9 +19,9 @@ use [pom-scijava](https://github.com/scijava/pom-scijava) as parent.
 
 See these examples for guidance:
 
-* [ImageJ command template](https://github.com/imagej/example-imagej-command)
+* [ImageJ2 command template](https://github.com/imagej/example-imagej-command)
 * [ImageJ 1.x plugin template](https://github.com/imagej/example-legacy-plugin)
-* [ImageJ tutorials](https://github.com/imagej/tutorials)
+* [ImageJ2 tutorials](https://github.com/imagej/tutorials)
 
 ## Enforcer rules declared in this parent
 
@@ -67,7 +67,7 @@ we believe make SciJava-based projects more reproducible and more consistent:
   are best used for testing only; they can be used transiently, but their use
   should never make it onto the main integration branch
   (e.g., `main` or `master`) of a project. See also
-  [Using snapshot couplings during development](https://imagej.net/Architecture#Using_snapshot_couplings_during_development).
+  [Using snapshot couplings during development](https://imagej.net/develop/architecture#using-snapshot-couplings-during-development).
 
 * __Developer roles.__ SciJava-based projects define developers and
   contributors with roles matching the
@@ -76,10 +76,13 @@ we believe make SciJava-based projects more reproducible and more consistent:
   careful about which developers are pledging which sorts of responsibility,
   the social status of each project becomes much clearer, and which social
   actions to take in various circumstances becomes a more tractable problem.
-  We have [automated tooling](https://github.com/scijava/mediawiki-maven-info)
-  which generates MediaWiki sidebar templates for all components of the
-  [ImageJ software stack](https://imagej.net/Architecture#Definitions); this
-  tooling requires SciJava developer roles to be present for sensible results.
+  We have
+  [automated tooling](https://github.com/imagej/imagej.github.io/blob/main/assets/js/maven.js)
+  which can populates a statbox sidebar for any component built on SciJava,
+  including all components of the
+  [ImageJ2 software stack](https://imagej.net/develop/architecture#definitions);
+  this tooling requires SciJava developer roles to be present for sensible
+  results.
 
 * __Required metadata.__ Every SciJava-based project must override key pieces
   of metadata, including the `name`, `description`, `url`, `inceptionYear`,
@@ -135,8 +138,8 @@ we believe make SciJava-based projects more reproducible and more consistent:
       to clearly communicate the project license, to clearly document community
       expectations, to give credit where credit is due, etc.
 
-The full set of Enforcer rules as of `pom-scijava-base` version 3.0.0 can be
-[seen here](https://github.com/scijava/pom-scijava-base/blob/pom-scijava-base-3.0.0/pom.xml#L542-L638).
+The full set of Enforcer rules as of `pom-scijava-base` version 14.0.0 can be
+[seen here](https://github.com/scijava/pom-scijava-base/blob/pom-scijava-base-14.0.0/pom.xml#L831-L926).
 
 ### How to override a field with an "empty" value
 
@@ -170,10 +173,12 @@ how best to override those values accordingly. The most common scenarios are:
     <mailingLists>
       <mailingList>
         <name>Image.sc Forum</name>
-        <archive>https://forum.image.sc/</archive>
+        <archive>https://forum.image.sc/tag/your-tag</archive>
       </mailingList>
     </mailingLists>
     ```
+    Where `your-tag` is the tag you want to
+    be used when discussing your project.
 *   If your project has no CI, write:
     ```xml
     <ciManagement>
@@ -194,11 +199,11 @@ how best to override those values accordingly. The most common scenarios are:
     </scm>
     ```
     But as an aside, in this case, we strongly encourage you to adopt an SCM;
-    [check yourself before you wreck yourself](https://imagej.net/Distribution).
+    [check yourself before you wreck yourself](https://imagej.net/contribute/distributing).
 
 ## Getting help with Maven
 
 For more information about Maven, see:
 
-* [ImageJ Maven overview](https://imagej.net/Maven)
-* [ImageJ Maven FAQ](https://imagej.net/Maven_-_Frequently_Asked_Questions)
+* [ImageJ Maven overview](https://imagej.net/develop/maven)
+* [ImageJ Maven FAQ](https://imagej.net/develop/maven-faq)
