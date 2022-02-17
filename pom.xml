@@ -268,6 +268,7 @@
 		<exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
 		<groovy-maven-plugin.version>1.5</groovy-maven-plugin.version>
 		<license-maven-plugin.version>2.0.0</license-maven-plugin.version>
+		<tidy-maven-plugin.version>1.1.0</tidy-maven-plugin.version>
 		<versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
 
 		<!-- Other Maven plugins -->
@@ -686,6 +687,17 @@
 							<ijm>java</ijm>
 						</extraExtensions>
 					</configuration>
+				</plugin>
+
+				<!--
+				Tidy Maven plugin -
+				https://www.mojohaus.org/tidy-maven-plugin/
+				Fix the ordering of POM elements using "mvn tidy:pom".
+				-->
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>tidy-maven-plugin</artifactId>
+					<version>${tidy-maven-plugin.version}</version>
 				</plugin>
 
 				<!--
