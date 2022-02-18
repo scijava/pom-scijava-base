@@ -222,6 +222,22 @@
 		-->
 		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.bits}</scijava.natives.classifier>
 
+		<!--
+		NB: The javadoc.runtimeAccessPackages property allows downstream
+		projects to identify directories whose Javadoc should be made available
+		at runtime. This javadoc can then be accessed through
+		therapi-runtime-javadoc. By default, Javadoc is not available for any
+		packages. Downstream projects can identify a comma-delineated set of
+		packages to make those packages' Javadoc available. To retain some
+		packages, override the javadoc.runtimeAccessPackages property in your
+		POM with something like this:
+		<javadoc.runtimeAccessPackages>com.example.foo,com.example.bar</javadoc.runtimeAccessPackages>
+		To retain all packages, override the javadoc.runtimeAccessPackages
+		property in your POM with:
+		<javadoc.runtimeAccessPackages/>
+		-->
+		<javadoc.runtimeAccessPackages>-</javadoc.runtimeAccessPackages>
+
 		<!-- Additional configuration -->
 
 		<!-- NB: Avoid platform encoding warning when copying resources. -->
@@ -289,6 +305,8 @@
 		<kotlin.version>1.4.21</kotlin.version>
 		<revapi-java.version>0.20.2</revapi-java.version>
 		<scijava-coding-style.version>2.0.0</scijava-coding-style.version>
+		<therapi.version>0.12.0</therapi.version>
+		<com.github.therapi.therapi-runtime-javadoc-scribe.version>${therapi.version}</com.github.therapi.therapi-runtime-javadoc-scribe.version>
 		<velocity.version>1.7</velocity.version>
 
 		<!-- Build extensions -->
@@ -318,6 +336,19 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<annotationProcessorPaths>
+							<path>
+								<groupId>com.github.therapi</groupId>
+								<artifactId>therapi-runtime-javadoc-scribe</artifactId>
+								<version>${com.github.therapi.therapi-runtime-javadoc-scribe.version}</version>
+							</path>
+						</annotationProcessorPaths>
+						<fork>true</fork>
+						<compilerArgs>
+							<arg>-Ajavadoc.packages="${javadoc.runtimeAccessPackages}"</arg>
+						</compilerArgs>
+					</configuration>
 				</plugin>
 
 				<plugin>
