@@ -223,15 +223,19 @@
 		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.bits}</scijava.natives.classifier>
 
 		<!--
-		NB: The javadoc.retainDirectories property allows downstream projects
-		to identify directories whose Javadoc should be made available at
-		runtime. By default, Javadoc is not available for any packages.
+		NB: The javadoc.runtimeAccessPackages property allows downstream
+		projects to identify directories whose Javadoc should be made available
+		at runtime. By default, Javadoc is not available for any packages.
 		Downstream projects can identify a comma-delineated set of packages
-		to make those packages' Javadoc available.
-		Override the javadoc.retainPackages property in your POM with something like this:
-		<javadoc.retainPackages>com.example.foo, com.example.bar</license.excludes>
+		to make those packages' Javadoc available. To retain some packages,
+		override the javadoc.runtimeAccessPackages property in your POM
+		with something like this:
+		<javadoc.runtimeAccessPackages>com.example.foo,com.example.bar</javadoc.runtimeAccessPackages>
+		To retain all packages, override the javadoc.runtimeAccessPackages
+		property in your POM with:
+		<javadoc.runtimeAccessPackages/>
 		-->
-		<javadoc.retainPackages>-</javadoc.retainPackages>
+		<javadoc.runtimeAccessPackages>-</javadoc.runtimeAccessPackages>
 
 		<!-- Additional configuration -->
 
@@ -341,7 +345,7 @@
 						</annotationProcessorPaths>
 						<fork>true</fork>
 						<compilerArgs>
-							<arg>-Ajavadoc.packages="${javadoc.retainPackages}"</arg>
+							<arg>-Ajavadoc.packages="${javadoc.runtimeAccessPackages}"</arg>
 						</compilerArgs>
 					</configuration>
 				</plugin>
