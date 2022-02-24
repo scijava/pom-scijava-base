@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>15.0.1-SNAPSHOT</version>
+	<version>999</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -194,6 +194,9 @@
 		<!-- Classes the enforcer allows to be duplicated on the classpath. -->
 		<allowedDuplicateClasses />
 
+		<!-- Components the enforcer refuses to allow as dependencies. -->
+		<bannedDependencies>log4j</bannedDependencies>
+
 		<!--
 		List of valid developer and contributor roles.
 		See: https://imagej.net/Team
@@ -301,7 +304,7 @@
 		<sonar-maven-plugin.version>3.9.0.2155</sonar-maven-plugin.version>
 
 		<!-- Plugin dependencies -->
-		<maven-dependency-tree.version>2.2</maven-dependency-tree.version>
+		<maven-dependency-tree.version>3.1.0</maven-dependency-tree.version>
 		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
 		<kotlin.version>1.4.21</kotlin.version>
 		<revapi-java.version>0.20.2</revapi-java.version>
@@ -899,6 +902,9 @@
 						Standard Rules
 						https://maven.apache.org/enforcer/enforcer-rules/
 						-->
+						<bannedDependencies>
+							<excludes>${bannedDependencies}</excludes>
+						</bannedDependencies>
 						<requireMavenVersion>
 							<version>${scijava.mvn.version}</version>
 						</requireMavenVersion>
