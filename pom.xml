@@ -250,7 +250,7 @@
 
 		<!-- NB: Deploy to OSS Sonatype repository by default when releasing. -->
 		<releaseProfiles>sonatype-oss-release</releaseProfiles>
-		<sonatype-oss-repository>https://s01.oss.sonatype.org/</sonatype-oss-repository>
+		<sonatype-oss-repository>https://s01.oss.sonatype.org</sonatype-oss-repository>
 
 		<!-- Plugin versions -->
 
@@ -1617,7 +1617,7 @@
 						<extensions>true</extensions>
 						<configuration>
 							<serverId>sonatype-nexus-releases</serverId>
-							<nexusUrl>${sonatype-oss-repository}</nexusUrl>
+							<nexusUrl>${sonatype-oss-repository}/</nexusUrl>
 							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 							<stagingProgressTimeoutMinutes>15</stagingProgressTimeoutMinutes>
 							<stagingProgressPauseDurationSeconds>12</stagingProgressPauseDurationSeconds>
