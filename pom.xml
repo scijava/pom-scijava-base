@@ -337,6 +337,26 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven-compiler-plugin.version}</version>
+					<!--
+					TEMP: Disable therapi until we solve why it fails on OpenJDK 8.
+					The error is:
+
+						Compilation failure
+						[ERROR] javac: invalid flag: -
+						[ERROR] Usage: javac <options> <source files>
+						[ERROR] use -help for a list of possible options
+
+					Or if you override javadoc.runtimeAccessPackages to anything else:
+
+						Compilation failure
+						[ERROR] javac: invalid flag:
+						[ERROR] Usage: javac <options> <source files>
+						[ERROR] use -help for a list of possible options
+
+					Either way, it seems the -Ajavadoc.packages=... argument is not
+					being passed to javac properly by the maven-compiler-plugin, even
+					though the "mvn -X" looks correct and works standalone copy-pasted.
+
 					<configuration>
 						<annotationProcessorPaths>
 							<path>
@@ -350,6 +370,7 @@
 							<arg>-Ajavadoc.packages=${javadoc.runtimeAccessPackages}</arg>
 						</compilerArgs>
 					</configuration>
+					-->
 				</plugin>
 
 				<plugin>
