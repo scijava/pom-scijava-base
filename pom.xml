@@ -210,6 +210,9 @@
 		<scijava.javadoc.url.java>https://javadoc.scijava.org/Java8/</scijava.javadoc.url.java>
 		<scijava.javadoc.url.javafx>https://javadoc.scijava.org/JavaFX8/</scijava.javadoc.url.javafx>
 
+		<!-- Command to use when invoking java via "mvn -Pexec". -->
+		<scijava.exec.java>java</scijava.exec.java>
+
 		<!--
 		The coding-style property defines a coding style to be used in your project.
 		Supported values as of this writing are scijava and imglib2.
@@ -1386,7 +1389,7 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
 						<configuration>
-							<executable>java</executable>
+							<executable>${scijava.exec.java}</executable>
 							<arguments>
 								<argument>-classpath</argument>
 								<classpath />
