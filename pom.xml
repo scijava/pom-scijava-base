@@ -255,6 +255,9 @@
 		<releaseProfiles>sonatype-oss-release</releaseProfiles>
 		<sonatype-oss-repository>https://s01.oss.sonatype.org</sonatype-oss-repository>
 
+		<!-- Let "mvn exec:java" launch the project's main class. -->
+		<exec.mainClass>${main-class}</exec.mainClass>
+
 		<!-- Plugin versions -->
 
 		<!-- Core Maven plugins -->
