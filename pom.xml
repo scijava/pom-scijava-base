@@ -1825,6 +1825,19 @@
 										</pluginExecution>
 										<pluginExecution>
 											<pluginExecutionFilter>
+												<groupId>org.apache.maven.plugins</groupId>
+												<artifactId>maven-help-plugin</artifactId>
+												<versionRange>${maven-help-plugin.version}</versionRange>
+												<goals>
+													<goal>active-profiles</goal>
+												</goals>
+											</pluginExecutionFilter>
+											<action>
+												<ignore />
+											</action>
+										</pluginExecution>
+										<pluginExecution>
+											<pluginExecutionFilter>
 												<groupId>org.codehaus.mojo</groupId>
 												<artifactId>exec-maven-plugin</artifactId>
 												<versionRange>${exec-maven-plugin.version}</versionRange>
