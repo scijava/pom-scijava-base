@@ -222,9 +222,14 @@
 		<!--
 		Classifier name for referencing platform-specific artifacts.
 		By default, this matches the scijava/native-lib-loader naming scheme.
+		But properties are also defined for other popular naming schemes.
 		-->
 		<scijava.platform.arch>${os.arch}</scijava.platform.arch>
+		<scijava.platform.arch.javacpp>${os.arch}</scijava.platform.arch.javacpp>
+		<scijava.platform.arch.jogamp>${os.arch}</scijava.platform.arch.jogamp>
 		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.arch}</scijava.natives.classifier>
+		<scijava.natives.classifier.javacpp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.javacpp}</scijava.natives.classifier.javacpp>
+		<scijava.natives.classifier.jogamp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.jogamp}</scijava.natives.classifier.jogamp>
 
 		<!--
 		NB: The javadoc.runtimeAccessPackages property allows downstream
@@ -2098,6 +2103,8 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>32</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
@@ -2109,6 +2116,8 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>32</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
@@ -2120,6 +2129,8 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>32</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
@@ -2131,6 +2142,8 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>32</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
@@ -2142,6 +2155,8 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>32</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
@@ -2153,6 +2168,8 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>64</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
@@ -2164,6 +2181,8 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>64</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
@@ -2192,6 +2211,7 @@
 				<scijava.platform.family.medium>osx</scijava.platform.family.medium>
 				<scijava.platform.family.long>macos</scijava.platform.family.long>
 				<scijava.platform.family.longest>macosx</scijava.platform.family.longest>
+				<scijava.platform.arch.jogamp>universal</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
