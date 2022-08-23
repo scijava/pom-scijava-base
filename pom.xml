@@ -2160,6 +2160,19 @@
 			</properties>
 		</profile>
 		<profile>
+			<id>scijava-platform-aarch64</id>
+			<activation>
+				<os>
+					<arch>aarch64</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.platform.arch>arm64</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>arm64</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>aarch64</scijava.platform.arch.jogamp>
+			</properties>
+		</profile>
+		<profile>
 			<id>scijava-platform-amd64</id>
 			<activation>
 				<os>
@@ -2170,6 +2183,19 @@
 				<scijava.platform.arch>64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-platform-arm64</id>
+			<activation>
+				<os>
+					<arch>arm64</arch>
+				</os>
+			</activation>
+			<properties>
+				<scijava.platform.arch>arm64</scijava.platform.arch>
+				<scijava.platform.arch.javacpp>arm64</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.jogamp>aarch64</scijava.platform.arch.jogamp>
 			</properties>
 		</profile>
 		<profile>
