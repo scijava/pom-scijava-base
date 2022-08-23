@@ -228,7 +228,7 @@
 		<scijava.platform.arch.javacpp>${os.arch}</scijava.platform.arch.javacpp>
 		<scijava.platform.arch.jogamp>${os.arch}</scijava.platform.arch.jogamp>
 		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.arch}</scijava.natives.classifier>
-		<scijava.natives.classifier.javacpp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.javacpp}</scijava.natives.classifier.javacpp>
+		<scijava.natives.classifier.javacpp>${scijava.platform.family.longest}-${scijava.platform.arch.javacpp}</scijava.natives.classifier.javacpp>
 		<scijava.natives.classifier.jogamp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.jogamp}</scijava.natives.classifier.jogamp>
 
 		<!--
