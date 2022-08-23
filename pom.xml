@@ -2089,51 +2089,6 @@
 		<classifier>${scijava.natives.classifier}</classifier> in the dependency.
 		See https://github.com/flimlib/flimj-ops for an example.
 		-->
-
-		<profile>
-			<id>scijava-platform-windows</id>
-			<activation>
-				<os>
-					<family>windows</family>
-				</os>
-			</activation>
-			<properties>
-				<scijava.platform.family.short>win</scijava.platform.family.short>
-				<scijava.platform.family.medium>windows</scijava.platform.family.medium>
-				<scijava.platform.family.long>windows</scijava.platform.family.long>
-				<scijava.platform.family.longest>windows</scijava.platform.family.longest>
-			</properties>
-		</profile>
-		<profile>
-			<id>scijava-platform-macos</id>
-			<activation>
-				<os>
-					<family>mac</family>
-				</os>
-			</activation>
-			<properties>
-				<scijava.platform.family.short>mac</scijava.platform.family.short>
-				<scijava.platform.family.medium>osx</scijava.platform.family.medium>
-				<scijava.platform.family.long>macos</scijava.platform.family.long>
-				<scijava.platform.family.longest>macosx</scijava.platform.family.longest>
-			</properties>
-		</profile>
-		<profile>
-			<id>scijava-platform-linux</id>
-			<activation>
-				<os>
-					<family>unix</family>
-					<name>Linux</name>
-				</os>
-			</activation>
-			<properties>
-				<scijava.platform.family.short>linux</scijava.platform.family.short>
-				<scijava.platform.family.medium>linux</scijava.platform.family.medium>
-				<scijava.platform.family.long>linux</scijava.platform.family.long>
-				<scijava.platform.family.longest>linux</scijava.platform.family.longest>
-			</properties>
-		</profile>
-
 		<profile>
 			<id>scijava-platform-x86</id>
 			<activation>
@@ -2209,6 +2164,49 @@
 			</activation>
 			<properties>
 				<scijava.platform.arch>64</scijava.platform.arch>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-platform-windows</id>
+			<activation>
+				<os>
+					<family>windows</family>
+				</os>
+			</activation>
+			<properties>
+				<scijava.platform.family.short>win</scijava.platform.family.short>
+				<scijava.platform.family.medium>windows</scijava.platform.family.medium>
+				<scijava.platform.family.long>windows</scijava.platform.family.long>
+				<scijava.platform.family.longest>windows</scijava.platform.family.longest>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-platform-macos</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<properties>
+				<scijava.platform.family.short>mac</scijava.platform.family.short>
+				<scijava.platform.family.medium>osx</scijava.platform.family.medium>
+				<scijava.platform.family.long>macos</scijava.platform.family.long>
+				<scijava.platform.family.longest>macosx</scijava.platform.family.longest>
+			</properties>
+		</profile>
+		<profile>
+			<id>scijava-platform-linux</id>
+			<activation>
+				<os>
+					<family>unix</family>
+					<name>Linux</name>
+				</os>
+			</activation>
+			<properties>
+				<scijava.platform.family.short>linux</scijava.platform.family.short>
+				<scijava.platform.family.medium>linux</scijava.platform.family.medium>
+				<scijava.platform.family.long>linux</scijava.platform.family.long>
+				<scijava.platform.family.longest>linux</scijava.platform.family.longest>
 			</properties>
 		</profile>
 	</profiles>
