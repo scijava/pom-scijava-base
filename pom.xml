@@ -2059,6 +2059,31 @@
 		</profile>
 
 		<!--
+		The java-9 profile includes adjustments for Java 9+; in particular, it
+		configures the release value, and fixes the path to the javadoc executable.
+		-->
+		<profile>
+			<id>java-9</id>
+			<activation>
+				<jdk>[9,)</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.release>${scijava.jvm.version}</maven.compiler.release>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!--
 		The following profiles set the scijava.platform system properties to
 		match the detected architecture. The main intended use case is for
 		platform-specific natives artifacts, so that they can be depended on using
@@ -2186,26 +2211,6 @@
 			<properties>
 				<scijava.platform.arch>64</scijava.platform.arch>
 			</properties>
-		</profile>
-		<profile>
-			<id>java-9</id>
-			<activation>
-				<jdk>[9,)</jdk>
-			</activation>
-			<properties>
-				<maven.compiler.release>${scijava.jvm.version}</maven.compiler.release>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<configuration>
-							<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
 		</profile>
 	</profiles>
 </project>
