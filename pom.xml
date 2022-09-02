@@ -301,6 +301,7 @@
 
 		<!-- Other Maven plugins -->
 		<dokka-maven-plugin.version>1.5.0</dokka-maven-plugin.version>
+		<exists-maven-plugin.version>0.8.0</exists-maven-plugin.version>
 		<formatter-maven-plugin.version>2.16.0</formatter-maven-plugin.version>
 		<impsort-maven-plugin.version>1.6.2</impsort-maven-plugin.version>
 		<jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
@@ -873,6 +874,20 @@
 							<phase>validate</phase>
 							<goals>
 								<goal>set-rootdir</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- Exists Maven Plugin - https://github.com/chonton/exists-maven-plugin -->
+				<plugin>
+					<groupId>org.honton.chas</groupId>
+					<artifactId>exists-maven-plugin</artifactId>
+					<version>${exists-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>remote</goal>
 							</goals>
 						</execution>
 					</executions>
