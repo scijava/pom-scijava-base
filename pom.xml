@@ -456,15 +456,6 @@
 				<plugin>
 					<artifactId>maven-help-plugin</artifactId>
 					<version>${maven-help-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>show-active-profiles</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>active-profiles</goal>
-							</goals>
-						</execution>
-					</executions>
 				</plugin>
 
 				<plugin>
@@ -1042,10 +1033,6 @@
 
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-help-plugin</artifactId>
 			</plugin>
 
 			<!-- Create -sources.jar when building. -->
