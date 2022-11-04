@@ -230,6 +230,7 @@
 		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.arch}</scijava.natives.classifier>
 		<scijava.natives.classifier.javacpp>${scijava.platform.family.longest}-${scijava.platform.arch.javacpp}</scijava.natives.classifier.javacpp>
 		<scijava.natives.classifier.jogamp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.jogamp}</scijava.natives.classifier.jogamp>
+		<scijava.natives.artifactId.humble>arch-${scijava.platform.arch.humble}-${scijava.platform.os-linker.humble}</scijava.natives.artifactId.humble>
 
 		<!--
 		NB: The javadoc.runtimeAccessPackages property allows downstream
@@ -2137,6 +2138,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>i686</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2150,6 +2152,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>i686</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2163,6 +2166,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>i686</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2176,6 +2180,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>i686</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2189,6 +2194,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>i686</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2215,6 +2221,7 @@
 				<scijava.platform.arch>64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>x86_64</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2228,6 +2235,7 @@
 				<scijava.platform.arch>arm64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>arm64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>aarch64</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>UNAVAILABLE</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2241,6 +2249,7 @@
 				<scijava.platform.arch>64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.humble>x86_64</scijava.platform.arch.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2255,6 +2264,7 @@
 				<scijava.platform.family.medium>windows</scijava.platform.family.medium>
 				<scijava.platform.family.long>windows</scijava.platform.family.long>
 				<scijava.platform.family.longest>windows</scijava.platform.family.longest>
+				<scijava.platform.os-linker.humble>w64-mingw32</scijava.platform.os-linker.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2270,6 +2280,7 @@
 				<scijava.platform.family.long>macos</scijava.platform.family.long>
 				<scijava.platform.family.longest>macosx</scijava.platform.family.longest>
 				<scijava.platform.arch.jogamp>universal</scijava.platform.arch.jogamp>
+				<scijava.platform.os-linker.humble>apple-darwin18</scijava.platform.os-linker.humble>
 			</properties>
 		</profile>
 		<profile>
@@ -2285,6 +2296,7 @@
 				<scijava.platform.family.medium>linux</scijava.platform.family.medium>
 				<scijava.platform.family.long>linux</scijava.platform.family.long>
 				<scijava.platform.family.longest>linux</scijava.platform.family.longest>
+				<scijava.platform.os-linker.humble>pc-linux-gnu6</scijava.platform.os-linker.humble>
 			</properties>
 		</profile>
 	</profiles>
