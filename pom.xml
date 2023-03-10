@@ -317,7 +317,7 @@
 		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
 		<kotlin.version>1.7.20</kotlin.version>
 		<revapi-java.version>0.20.2</revapi-java.version>
-		<scijava-coding-style.version>2.1.0</scijava-coding-style.version>
+		<scijava-coding-style.version>2.1.1</scijava-coding-style.version>
 		<therapi.version>0.12.0</therapi.version>
 		<com.github.therapi.therapi-runtime-javadoc-scribe.version>${therapi.version}</com.github.therapi.therapi-runtime-javadoc-scribe.version>
 		<velocity.version>1.7</velocity.version>
