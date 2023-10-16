@@ -304,18 +304,20 @@
 		<tidy-maven-plugin.version>1.2.0</tidy-maven-plugin.version>
 		<versions-maven-plugin.version>2.16.0</versions-maven-plugin.version>
 
-		<!-- Other Maven plugins -->
-		<dokka-maven-plugin.version>1.8.20</dokka-maven-plugin.version>
-		<exists-maven-plugin.version>0.9.0</exists-maven-plugin.version>
-		<formatter-maven-plugin.version>2.23.0</formatter-maven-plugin.version>
-		<impsort-maven-plugin.version>1.9.0</impsort-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
-		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version>
-		<maven-graph-plugin.version>1.45</maven-graph-plugin.version>
-		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
-		<revapi-maven-plugin.version>0.15.0</revapi-maven-plugin.version>
+		<!-- SciJava Maven plugins -->
 		<scijava-maven-plugin.version>2.2.0</scijava-maven-plugin.version>
-		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+
+		<!-- Other Maven plugins -->
+		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version> <!-- com.zenjava -->
+		<impsort-maven-plugin.version>1.9.0</impsort-maven-plugin.version> <!-- net.revelc.code -->
+		<formatter-maven-plugin.version>2.23.0</formatter-maven-plugin.version> <!-- net.revelc.code.formatter -->
+		<maven-graph-plugin.version>1.45</maven-graph-plugin.version> <!-- org.fusesource.mvnplugins -->
+		<exists-maven-plugin.version>0.9.0</exists-maven-plugin.version> <!-- org.honton.chas -->
+		<jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version> <!-- org.jacoco -->
+		<dokka-maven-plugin.version>1.8.20</dokka-maven-plugin.version> <!-- org.jetbrains.jetbrains -->
+		<revapi-maven-plugin.version>0.15.0</revapi-maven-plugin.version> <!-- org.revapi -->
+		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version> <!-- org.sonarsource.scanner.maven -->
+		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version> <!-- org.sonatype.plugins -->
 
 		<!-- Plugin dependencies -->
 		<maven-dependency-tree.version>2.2</maven-dependency-tree.version>
@@ -336,6 +338,8 @@
 		<defaultGoal>install</defaultGoal>
 		<pluginManagement>
 			<plugins>
+				<!-- Core Maven plugins -->
+
 				<plugin>
 					<artifactId>maven-antrun-plugin</artifactId>
 					<version>${maven-antrun-plugin.version}</version>
@@ -626,6 +630,8 @@
 					</configuration>
 				</plugin>
 
+				<!-- Codehaus Maven plugins -->
+
 				<!--
 				Build Helper Maven plugin -
 				https://www.mojohaus.org/build-helper-maven-plugin/
@@ -803,6 +809,109 @@
 					<version>${versions-maven-plugin.version}</version>
 				</plugin>
 
+				<!-- SciJava Maven plugins -->
+
+				<!-- SciJava Maven plugin - https://github.com/scijava/scijava-maven-plugin -->
+				<plugin>
+					<groupId>org.scijava</groupId>
+					<artifactId>scijava-maven-plugin</artifactId>
+					<version>${scijava-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>set-rootdir</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>set-rootdir</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- Other Maven plugins -->
+
+				<!--
+				JavaFX Maven plugin -
+				https://github.com/javafx-maven-plugin/javafx-maven-plugin
+				Generate platform-specific application bundles using "mvn jfx:native"
+				-->
+				<plugin>
+					<groupId>com.zenjava</groupId>
+					<artifactId>javafx-maven-plugin</artifactId>
+					<version>${javafx-maven-plugin.version}</version>
+					<configuration>
+						<appName>${project.name}</appName>
+						<identifier>${project.name}</identifier>
+						<jfxMainAppJarName>${project.name}.jar</jfxMainAppJarName>
+						<mainClass>${main-class}</mainClass>
+						<nativeReleaseVersion>${sanitizedVersion}</nativeReleaseVersion>
+						<verbose>true</verbose>
+					</configuration>
+				</plugin>
+
+				<!-- ImpSort Maven Plugin - https://github.com/revelc/impsort-maven-plugin -->
+				<plugin>
+					<groupId>net.revelc.code</groupId>
+					<artifactId>impsort-maven-plugin</artifactId>
+					<version>${impsort-maven-plugin.version}</version>
+					<configuration>
+						<groups>java.,javax.,com.,net.,org.</groups>
+						<staticGroups>java,*</staticGroups>
+						<removeUnused>true</removeUnused>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>none</phase>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- Formatter Maven Plugin - https://github.com/revelc/formatter-maven-plugin -->
+				<plugin>
+					<groupId>net.revelc.code.formatter</groupId>
+					<artifactId>formatter-maven-plugin</artifactId>
+					<version>${formatter-maven-plugin.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.scijava</groupId>
+							<artifactId>scijava-coding-style</artifactId>
+							<version>${scijava-coding-style.version}</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<configFile>eclipse-formatter-settings/${scijava.coding-style}-coding-style.xml</configFile>
+					</configuration>
+				</plugin>
+
+				<!--
+				Maven Graph Plugin -
+				Generate a dependency graph using "mvn graph:reactor"
+				-->
+				<plugin>
+					<groupId>org.fusesource.mvnplugins</groupId>
+					<artifactId>maven-graph-plugin</artifactId>
+					<version>${maven-graph-plugin.version}</version>
+					<configuration>
+						<hideScopes>provided,runtime,system,test</hideScopes>
+						<hideTransitive>true</hideTransitive>
+						<label>Dependency Graph for ${project.name}</label>
+						<target>${project.build.directory}/dependency-graph.dot</target>
+					</configuration>
+				</plugin>
+
+				<!-- Exists Maven Plugin - https://github.com/chonton/exists-maven-plugin -->
+				<plugin>
+					<groupId>org.honton.chas</groupId>
+					<artifactId>exists-maven-plugin</artifactId>
+					<version>${exists-maven-plugin.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>remote</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
 				<!--
 				JaCoCo Maven plugin -
 				https://www.jacoco.org/jacoco/trunk/doc/maven.html
@@ -829,52 +938,6 @@
 					</executions>
 				</plugin>
 
-				<!--
-				SonarScanner Maven plugin -
-				https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
-				SonarQube scanner for java projects.
-				-->
-				<plugin>
-					<groupId>org.sonarsource.scanner.maven</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>${sonar-maven-plugin.version}</version>
-				</plugin>
-
-				<!--
-				JavaFX Maven plugin -
-				https://github.com/javafx-maven-plugin/javafx-maven-plugin
-				Generate platform-specific application bundles using "mvn jfx:native"
-				-->
-				<plugin>
-					<groupId>com.zenjava</groupId>
-					<artifactId>javafx-maven-plugin</artifactId>
-					<version>${javafx-maven-plugin.version}</version>
-					<configuration>
-						<appName>${project.name}</appName>
-						<identifier>${project.name}</identifier>
-						<jfxMainAppJarName>${project.name}.jar</jfxMainAppJarName>
-						<mainClass>${main-class}</mainClass>
-						<nativeReleaseVersion>${sanitizedVersion}</nativeReleaseVersion>
-						<verbose>true</verbose>
-					</configuration>
-				</plugin>
-
-				<!--
-				Maven Graph Plugin -
-				Generate a dependency graph using "mvn graph:reactor"
-				-->
-				<plugin>
-					<groupId>org.fusesource.mvnplugins</groupId>
-					<artifactId>maven-graph-plugin</artifactId>
-					<version>${maven-graph-plugin.version}</version>
-					<configuration>
-						<hideScopes>provided,runtime,system,test</hideScopes>
-						<hideTransitive>true</hideTransitive>
-						<label>Dependency Graph for ${project.name}</label>
-						<target>${project.build.directory}/dependency-graph.dot</target>
-					</configuration>
-				</plugin>
-
 				<!-- Revapi Maven Plugin - https://revapi.org/modules/revapi-maven-plugin -->
 				<plugin>
 					<groupId>org.revapi</groupId>
@@ -889,72 +952,21 @@
 					</dependencies>
 				</plugin>
 
-				<!-- SciJava Maven plugin - https://github.com/scijava/scijava-maven-plugin -->
+				<!--
+				SonarScanner Maven plugin -
+				https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/
+				SonarQube scanner for java projects.
+				-->
 				<plugin>
-					<groupId>org.scijava</groupId>
-					<artifactId>scijava-maven-plugin</artifactId>
-					<version>${scijava-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>set-rootdir</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>set-rootdir</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-
-				<!-- Exists Maven Plugin - https://github.com/chonton/exists-maven-plugin -->
-				<plugin>
-					<groupId>org.honton.chas</groupId>
-					<artifactId>exists-maven-plugin</artifactId>
-					<version>${exists-maven-plugin.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>remote</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-
-				<!-- Formatter Maven Plugin - https://github.com/revelc/formatter-maven-plugin -->
-				<plugin>
-					<groupId>net.revelc.code.formatter</groupId>
-					<artifactId>formatter-maven-plugin</artifactId>
-					<version>${formatter-maven-plugin.version}</version>
-					<dependencies>
-						<dependency>
-							<groupId>org.scijava</groupId>
-							<artifactId>scijava-coding-style</artifactId>
-							<version>${scijava-coding-style.version}</version>
-						</dependency>
-					</dependencies>
-					<configuration>
-						<configFile>eclipse-formatter-settings/${scijava.coding-style}-coding-style.xml</configFile>
-					</configuration>
-				</plugin>
-
-				<!-- ImpSort Maven Plugin - https://github.com/revelc/impsort-maven-plugin -->
-				<plugin>
-					<groupId>net.revelc.code</groupId>
-					<artifactId>impsort-maven-plugin</artifactId>
-					<version>${impsort-maven-plugin.version}</version>
-					<configuration>
-						<groups>java.,javax.,com.,net.,org.</groups>
-						<staticGroups>java,*</staticGroups>
-						<removeUnused>true</removeUnused>
-					</configuration>
-					<executions>
-						<execution>
-							<phase>none</phase>
-						</execution>
-					</executions>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>${sonar-maven-plugin.version}</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
+			<!-- Core Maven plugins -->
+
 			<!-- Check desired rules during maven lifecycle. -->
 			<plugin>
 				<artifactId>maven-enforcer-plugin</artifactId>
@@ -1079,6 +1091,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 			</plugin>
 
+			<!-- Codehaus Maven plugins -->
+
 			<!-- Generate a package-friendly version property. -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -1091,17 +1105,7 @@
 				<artifactId>buildnumber-maven-plugin</artifactId>
 			</plugin>
 
-			<!-- Enable 'graph:' goals. -->
-			<plugin>
-				<groupId>org.fusesource.mvnplugins</groupId>
-				<artifactId>maven-graph-plugin</artifactId>
-			</plugin>
-
-			<!-- Enable 'jfx:' goals. -->
-			<plugin>
-				<groupId>com.zenjava</groupId>
-				<artifactId>javafx-maven-plugin</artifactId>
-			</plugin>
+			<!-- SciJava Maven plugins -->
 
 			<!--
 			Enable 'scijava:' goals and copying the artifacts
@@ -1125,16 +1129,30 @@
 				</executions>
 			</plugin>
 
-			<!-- Formatter Maven Plugin - https://github.com/revelc/formatter-maven-plugin -->
+			<!-- Other Maven plugins -->
+
+			<!-- Enable 'jfx:' goals. -->
 			<plugin>
-				<groupId>net.revelc.code.formatter</groupId>
-				<artifactId>formatter-maven-plugin</artifactId>
+				<groupId>com.zenjava</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
 			</plugin>
 
 			<!-- ImpSort Maven Plugin - https://github.com/revelc/impsort-maven-plugin -->
 			<plugin>
 				<groupId>net.revelc.code</groupId>
 				<artifactId>impsort-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- Formatter Maven Plugin - https://github.com/revelc/formatter-maven-plugin -->
+			<plugin>
+				<groupId>net.revelc.code.formatter</groupId>
+				<artifactId>formatter-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- Enable 'graph:' goals. -->
+			<plugin>
+				<groupId>org.fusesource.mvnplugins</groupId>
+				<artifactId>maven-graph-plugin</artifactId>
 			</plugin>
 
 			<!-- JaCoCo Maven plugin - https://www.jacoco.org/jacoco/trunk/doc/maven.html -->
