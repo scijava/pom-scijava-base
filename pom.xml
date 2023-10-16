@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>18.0.1-SNAPSHOT</version>
+	<version>18.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -308,6 +308,7 @@
 		<scijava-maven-plugin.version>2.2.0</scijava-maven-plugin.version>
 
 		<!-- Other Maven plugins -->
+		<jshell-maven-plugin.version>1.4</jshell-maven-plugin.version> <!-- com.github.johnpoth -->
 		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version> <!-- com.zenjava -->
 		<impsort-maven-plugin.version>1.9.0</impsort-maven-plugin.version> <!-- net.revelc.code -->
 		<formatter-maven-plugin.version>2.23.0</formatter-maven-plugin.version> <!-- net.revelc.code.formatter -->
@@ -1594,6 +1595,31 @@
 							<execution>
 								<goals>
 									<goal>exec</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!--
+		The jshell profile launches jshell with the project's runtime classpath.
+		Launch it using: mvn -Pjshell
+		-->
+		<profile>
+			<id>jshell</id>
+			<build>
+				<plugins>
+					<!-- JShell Maven plugin - https://github.com/johnpoth/jshell-maven-plugin -->
+					<plugin>
+						<groupId>com.github.johnpoth</groupId>
+						<artifactId>jshell-maven-plugin</artifactId>
+						<version>${jshell-maven-plugin.version}</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>run</goal>
 								</goals>
 							</execution>
 						</executions>
