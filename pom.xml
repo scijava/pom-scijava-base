@@ -314,8 +314,8 @@
 		<formatter-maven-plugin.version>2.23.0</formatter-maven-plugin.version> <!-- net.revelc.code.formatter -->
 		<maven-graph-plugin.version>1.45</maven-graph-plugin.version> <!-- org.fusesource.mvnplugins -->
 		<exists-maven-plugin.version>0.9.0</exists-maven-plugin.version> <!-- org.honton.chas -->
-		<jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version> <!-- org.jacoco -->
-		<dokka-maven-plugin.version>1.8.20</dokka-maven-plugin.version> <!-- org.jetbrains.jetbrains -->
+		<jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version> <!-- org.jacoco -->
+		<dokka-maven-plugin.version>1.9.10</dokka-maven-plugin.version> <!-- org.jetbrains.jetbrains -->
 		<revapi-maven-plugin.version>0.15.0</revapi-maven-plugin.version> <!-- org.revapi -->
 		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version> <!-- org.sonarsource.scanner.maven -->
 		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version> <!-- org.sonatype.plugins -->
@@ -323,7 +323,7 @@
 		<!-- Plugin dependencies -->
 		<maven-dependency-tree.version>2.2</maven-dependency-tree.version>
 		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
-		<kotlin.version>1.8.22</kotlin.version>
+		<kotlin.version>1.9.22</kotlin.version>
 		<revapi-java.version>0.20.2</revapi-java.version>
 		<scijava-coding-style.version>2.1.1</scijava-coding-style.version>
 		<therapi.version>0.12.0</therapi.version>
