@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>18.2.1-SNAPSHOT</version>
+	<version>19.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -305,7 +305,7 @@
 		<versions-maven-plugin.version>2.16.0</versions-maven-plugin.version>
 
 		<!-- SciJava Maven plugins -->
-		<scijava-maven-plugin.version>2.2.0</scijava-maven-plugin.version>
+		<scijava-maven-plugin.version>3.0.0</scijava-maven-plugin.version>
 
 		<!-- Other Maven plugins -->
 		<jshell-maven-plugin.version>1.4</jshell-maven-plugin.version> <!-- com.github.johnpoth -->
@@ -321,8 +321,7 @@
 		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version> <!-- org.sonatype.plugins -->
 
 		<!-- Plugin dependencies -->
-		<maven-dependency-tree.version>2.2</maven-dependency-tree.version>
-		<extra-enforcer-rules.version>1.2</extra-enforcer-rules.version>
+		<extra-enforcer-rules.version>1.7.0</extra-enforcer-rules.version>
 		<kotlin.version>1.9.22</kotlin.version>
 		<revapi-java.version>0.20.2</revapi-java.version>
 		<scijava-coding-style.version>2.1.1</scijava-coding-style.version>
@@ -409,17 +408,6 @@
 					<artifactId>maven-enforcer-plugin</artifactId>
 					<version>${maven-enforcer-plugin.version}</version>
 					<dependencies>
-						<!--
-						HACK - Work around the enforcer error:
-						Cannot create instance of class
-						org.apache.maven.plugins.enforcer.BanDuplicateClasses:
-						org/apache/maven/shared/dependency/tree/DependencyTreeBuilderException
-						-->
-						<dependency>
-							<groupId>org.apache.maven.shared</groupId>
-							<artifactId>maven-dependency-tree</artifactId>
-							<version>${maven-dependency-tree.version}</version>
-						</dependency>
 						<dependency>
 							<groupId>org.codehaus.mojo</groupId>
 							<artifactId>extra-enforcer-rules</artifactId>
