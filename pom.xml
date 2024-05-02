@@ -309,7 +309,6 @@
 
 		<!-- Other Maven plugins -->
 		<jshell-maven-plugin.version>1.4</jshell-maven-plugin.version> <!-- com.github.johnpoth -->
-		<javafx-maven-plugin.version>8.8.3</javafx-maven-plugin.version> <!-- com.zenjava -->
 		<impsort-maven-plugin.version>1.9.0</impsort-maven-plugin.version> <!-- net.revelc.code -->
 		<formatter-maven-plugin.version>2.23.0</formatter-maven-plugin.version> <!-- net.revelc.code.formatter -->
 		<maven-graph-plugin.version>1.45</maven-graph-plugin.version> <!-- org.fusesource.mvnplugins -->
@@ -818,25 +817,6 @@
 
 				<!-- Other Maven plugins -->
 
-				<!--
-				JavaFX Maven plugin -
-				https://github.com/javafx-maven-plugin/javafx-maven-plugin
-				Generate platform-specific application bundles using "mvn jfx:native"
-				-->
-				<plugin>
-					<groupId>com.zenjava</groupId>
-					<artifactId>javafx-maven-plugin</artifactId>
-					<version>${javafx-maven-plugin.version}</version>
-					<configuration>
-						<appName>${project.name}</appName>
-						<identifier>${project.name}</identifier>
-						<jfxMainAppJarName>${project.name}.jar</jfxMainAppJarName>
-						<mainClass>${main-class}</mainClass>
-						<nativeReleaseVersion>${sanitizedVersion}</nativeReleaseVersion>
-						<verbose>true</verbose>
-					</configuration>
-				</plugin>
-
 				<!-- ImpSort Maven Plugin - https://github.com/revelc/impsort-maven-plugin -->
 				<plugin>
 					<groupId>net.revelc.code</groupId>
@@ -1119,12 +1099,6 @@
 			</plugin>
 
 			<!-- Other Maven plugins -->
-
-			<!-- Enable 'jfx:' goals. -->
-			<plugin>
-				<groupId>com.zenjava</groupId>
-				<artifactId>javafx-maven-plugin</artifactId>
-			</plugin>
 
 			<!-- ImpSort Maven Plugin - https://github.com/revelc/impsort-maven-plugin -->
 			<plugin>
