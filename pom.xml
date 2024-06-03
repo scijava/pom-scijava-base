@@ -450,6 +450,13 @@
 						<links>
 							<link>${scijava.javadoc.url.java}</link>
 						</links>
+						<tags>
+							<tag>
+								<name>implNote</name>
+								<placement>a</placement>
+								<head>Implementation Note:</head>
+							</tag>
+						</tags>
 					</configuration>
 				</plugin>
 
