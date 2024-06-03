@@ -448,48 +448,7 @@
 					<configuration>
 						<maxmemory>1024m</maxmemory>
 						<links>
-							<!-- Core Java. -->
 							<link>${scijava.javadoc.url.java}</link>
-							<link>${scijava.javadoc.url.javafx}</link>
-							<!-- SciJava and related projects and forks. -->
-							<link>https://javadoc.scijava.org/SciJava/</link>
-							<link>https://javadoc.scijava.org/Alida/</link>
-							<link>https://javadoc.scijava.org/Bio-Formats/</link>
-							<link>https://javadoc.scijava.org/FLIMLib/</link>
-							<link>https://javadoc.scijava.org/Fiji/</link>
-							<link>https://javadoc.scijava.org/Icy/</link>
-							<link>https://javadoc.scijava.org/ImageJ/</link>
-							<link>https://javadoc.scijava.org/ImageJ1/</link>
-							<link>https://javadoc.scijava.org/ImgLib2/</link>
-							<link>https://javadoc.scijava.org/Java3D/</link>
-							<link>https://javadoc.scijava.org/KNIME/</link>
-							<link>https://javadoc.scijava.org/LOCI/</link>
-							<link>https://javadoc.scijava.org/MiToBo/</link>
-							<link>https://javadoc.scijava.org/Micro-Manager-Core/</link>
-							<link>https://javadoc.scijava.org/Micro-Manager-Studio/</link>
-							<link>https://javadoc.scijava.org/MorphoLibJ/</link>
-							<link>https://javadoc.scijava.org/OMERO/</link>
-							<link>https://javadoc.scijava.org/SCIFIO/</link>
-							<!-- Third party projects. -->
-							<link>https://javadoc.scijava.org/Apache-Commons-IO/</link>
-							<link>https://javadoc.scijava.org/Apache-Commons-Lang/</link>
-							<link>https://javadoc.scijava.org/Apache-Commons-Math/</link>
-							<link>https://javadoc.scijava.org/Apache-Commons-Text/</link>
-							<link>https://javadoc.scijava.org/BoneJ/</link>
-							<link>https://javadoc.scijava.org/Eclipse/</link>
-							<link>https://javadoc.scijava.org/Guava/</link>
-							<link>https://javadoc.scijava.org/JAMA/</link>
-							<link>https://javadoc.scijava.org/JFreeChart/</link>
-							<link>https://javadoc.scijava.org/JGraphT/</link>
-							<link>https://javadoc.scijava.org/JHotDraw/</link>
-							<link>https://javadoc.scijava.org/JOML/</link>
-							<link>https://javadoc.scijava.org/Javassist/</link>
-							<link>https://javadoc.scijava.org/MigLayout/</link>
-							<link>https://javadoc.scijava.org/NetBeans/</link>
-							<link>https://javadoc.scijava.org/Pivot/</link>
-							<link>https://javadoc.scijava.org/VisAD/</link>
-							<link>https://javadoc.scijava.org/Weka/</link>
-							<link>https://javadoc.scijava.org/ojAlgo/</link>
 						</links>
 					</configuration>
 				</plugin>
