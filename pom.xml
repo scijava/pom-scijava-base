@@ -231,22 +231,6 @@
 		<scijava.natives.classifier.javacpp>${scijava.platform.family.longest}-${scijava.platform.arch.javacpp}</scijava.natives.classifier.javacpp>
 		<scijava.natives.classifier.jogamp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.jogamp}</scijava.natives.classifier.jogamp>
 
-		<!--
-		NB: The javadoc.runtimeAccessPackages property allows downstream
-		projects to identify directories whose Javadoc should be made available
-		at runtime. This javadoc can then be accessed through
-		therapi-runtime-javadoc. By default, Javadoc is not available for any
-		packages. Downstream projects can identify a comma-delineated set of
-		packages to make those packages' Javadoc available. To retain some
-		packages, override the javadoc.runtimeAccessPackages property in your
-		POM with something like this:
-		<javadoc.runtimeAccessPackages>com.example.foo,com.example.bar</javadoc.runtimeAccessPackages>
-		To retain all packages, override the javadoc.runtimeAccessPackages
-		property in your POM with:
-		<javadoc.runtimeAccessPackages />
-		-->
-		<javadoc.runtimeAccessPackages>-</javadoc.runtimeAccessPackages>
-
 		<!-- Additional configuration -->
 
 		<!-- NB: Avoid platform encoding warning when copying resources. -->
@@ -324,8 +308,6 @@
 		<kotlin.version>1.9.22</kotlin.version>
 		<revapi-java.version>0.28.1</revapi-java.version>
 		<scijava-coding-style.version>2.1.1</scijava-coding-style.version>
-		<therapi.version>0.12.0</therapi.version>
-		<com.github.therapi.therapi-runtime-javadoc-scribe.version>${therapi.version}</com.github.therapi.therapi-runtime-javadoc-scribe.version>
 		<velocity.version>1.7</velocity.version>
 
 		<!-- Build extensions -->
@@ -357,40 +339,6 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven-compiler-plugin.version}</version>
-					<!--
-					TEMP: Disable therapi until we solve why it fails on OpenJDK 8.
-					The error is:
-
-						Compilation failure
-						[ERROR] javac: invalid flag: -
-						[ERROR] Usage: javac <options> <source files>
-						[ERROR] use -help for a list of possible options
-
-					Or if you override javadoc.runtimeAccessPackages to anything else:
-
-						Compilation failure
-						[ERROR] javac: invalid flag:
-						[ERROR] Usage: javac <options> <source files>
-						[ERROR] use -help for a list of possible options
-
-					Either way, it seems the -Ajavadoc.packages=... argument is not
-					being passed to javac properly by the maven-compiler-plugin, even
-					though the "mvn -X" looks correct and works standalone copy-pasted.
-
-					<configuration>
-						<annotationProcessorPaths>
-							<path>
-								<groupId>com.github.therapi</groupId>
-								<artifactId>therapi-runtime-javadoc-scribe</artifactId>
-								<version>${com.github.therapi.therapi-runtime-javadoc-scribe.version}</version>
-							</path>
-						</annotationProcessorPaths>
-						<fork>true</fork>
-						<compilerArgs>
-							<arg>-Ajavadoc.packages=${javadoc.runtimeAccessPackages}</arg>
-						</compilerArgs>
-					</configuration>
-					-->
 				</plugin>
 
 				<plugin>
