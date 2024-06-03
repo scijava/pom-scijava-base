@@ -859,106 +859,106 @@
 						<goals>
 							<goal>enforce</goal>
 						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<rules>
-						<!--
-						Standard Rules
-						https://maven.apache.org/enforcer/enforcer-rules/
-						-->
-						<requireMavenVersion>
-							<version>${scijava.mvn.version}</version>
-						</requireMavenVersion>
-						<requirePluginVersions>
-							<message>Plugins need to be versioned!</message>
-						</requirePluginVersions>
-						<requireJavaVersion>
-							<version>${scijava.jvm.build.version}</version>
-						</requireJavaVersion>
+						<configuration>
+							<rules>
+								<!--
+								Standard Rules
+								https://maven.apache.org/enforcer/enforcer-rules/
+								-->
+								<requireMavenVersion>
+									<version>${scijava.mvn.version}</version>
+								</requireMavenVersion>
+								<requirePluginVersions>
+									<message>Plugins need to be versioned!</message>
+								</requirePluginVersions>
+								<requireJavaVersion>
+									<version>${scijava.jvm.build.version}</version>
+								</requireJavaVersion>
 
-						<!--
-						Extra Enforcer Rules
-						org.codehaus.mojo:extra-enforcer-rules
-						https://www.mojohaus.org/extra-enforcer-rules/
-						-->
+								<!--
+								Extra Enforcer Rules
+								org.codehaus.mojo:extra-enforcer-rules
+								https://www.mojohaus.org/extra-enforcer-rules/
+								-->
 
-						<!--
-						Ensure no two dependencies ship the same class.
-						Otherwise, much havoc may be wreaked at runtime.
-						-->
-						<banDuplicateClasses>
-							<message>No Duplicate Classes Allowed!
+								<!--
+								Ensure no two dependencies ship the same class.
+								Otherwise, much havoc may be wreaked at runtime.
+								-->
+								<banDuplicateClasses>
+									<message>No Duplicate Classes Allowed!
 - For duplicate transitive dependencies, add dependency exclusions.
 - For duplications between direct dependencies, resolve or add
   ignored classes to this rule's configuration.</message>
-							<findAllDuplicates>true</findAllDuplicates>
-							<ignoreClasses>${allowedDuplicateClasses}</ignoreClasses>
-						</banDuplicateClasses>
+									<findAllDuplicates>true</findAllDuplicates>
+									<ignoreClasses>${allowedDuplicateClasses}</ignoreClasses>
+								</banDuplicateClasses>
 
-						<!--
-						Require developers and contributors to use SciJava team roles.
-						See: https://imagej.net/Team
-						-->
-						<requireDeveloperRoles>
-							<validRoles>${scijava.team.roles}</validRoles>
-						</requireDeveloperRoles>
-						<requireContributorRoles>
-							<validRoles>${scijava.team.roles}</validRoles>
-						</requireContributorRoles>
+								<!--
+								Require developers and contributors to use SciJava team roles.
+								See: https://imagej.net/Team
+								-->
+								<requireDeveloperRoles>
+									<validRoles>${scijava.team.roles}</validRoles>
+								</requireDeveloperRoles>
+								<requireContributorRoles>
+									<validRoles>${scijava.team.roles}</validRoles>
+								</requireContributorRoles>
 
-						<!--
-						Fail if a dependency requires a too-new version of Java.
-						-->
-						<enforceBytecodeVersion>
-							<maxJdkVersion>${scijava.jvm.version}</maxJdkVersion>
-							<excludes>
-								<exclude>com.headius:invokebinder</exclude>
-								<exclude>com.sun:tools</exclude>
-							</excludes>
-							<ignoreClasses>
-								<ignoreClass>module-info</ignoreClass>
-							</ignoreClasses>
-							<ignoredScopes>
-								<ignoredScope>test</ignoredScope>
-							</ignoredScopes>
-						</enforceBytecodeVersion>
+								<!--
+								Fail if a dependency requires a too-new version of Java.
+								-->
+								<enforceBytecodeVersion>
+									<maxJdkVersion>${scijava.jvm.version}</maxJdkVersion>
+									<excludes>
+										<exclude>com.headius:invokebinder</exclude>
+										<exclude>com.sun:tools</exclude>
+									</excludes>
+									<ignoreClasses>
+										<ignoreClass>module-info</ignoreClass>
+									</ignoreClasses>
+									<ignoredScopes>
+										<ignoredScope>test</ignoredScope>
+									</ignoredScopes>
+								</enforceBytecodeVersion>
 
-						<!--
-						SciJava Maven Plugin
-						org.scijava:scijava-maven-plugin
-						https://github.com/scijava/scijava-maven-plugin
-						-->
+								<!--
+								SciJava Maven Plugin
+								org.scijava:scijava-maven-plugin
+								https://github.com/scijava/scijava-maven-plugin
+								-->
 
-						<!-- Require inheriting POMs to populate key elements. -->
-						<requireElements implementation="org.scijava.maven.plugin.enforcer.RequireElements">
-							<elements>
-								<element>name</element>
-								<element>description</element>
-								<element>url</element>
-								<element>inceptionYear</element>
-								<element>organization</element>
-								<element>licenses</element>
-								<element>developers</element>
-								<element>contributors</element>
-								<element>mailingLists</element>
-								<element>scm</element>
-								<element>issueManagement</element>
-								<element>ciManagement</element>
-								<element>properties//license.licenseName</element>
-								<element>properties//license.copyrightOwners</element>
-							</elements>
-						</requireElements>
+								<!-- Require inheriting POMs to populate key elements. -->
+								<requireElements implementation="org.scijava.maven.plugin.enforcer.RequireElements">
+									<elements>
+										<element>name</element>
+										<element>description</element>
+										<element>url</element>
+										<element>inceptionYear</element>
+										<element>organization</element>
+										<element>licenses</element>
+										<element>developers</element>
+										<element>contributors</element>
+										<element>mailingLists</element>
+										<element>scm</element>
+										<element>issueManagement</element>
+										<element>ciManagement</element>
+										<element>properties//license.licenseName</element>
+										<element>properties//license.copyrightOwners</element>
+									</elements>
+								</requireElements>
 
-						<!--
-						Require builds to be reproducible.
-						This means no snapshot dependencies!
-						-->
-						<requireReproducibleBuilds implementation="org.scijava.maven.plugin.enforcer.RequireReproducibleBuilds">
-							<groupIds>${scijava.groupIds}</groupIds>
-						</requireReproducibleBuilds>
-					</rules>
-				</configuration>
+								<!--
+								Require builds to be reproducible.
+								This means no snapshot dependencies!
+								-->
+								<requireReproducibleBuilds implementation="org.scijava.maven.plugin.enforcer.RequireReproducibleBuilds">
+									<groupIds>${scijava.groupIds}</groupIds>
+								</requireReproducibleBuilds>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
