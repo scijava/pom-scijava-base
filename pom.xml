@@ -227,9 +227,11 @@
 		<scijava.platform.arch>${os.arch}</scijava.platform.arch>
 		<scijava.platform.arch.javacpp>${os.arch}</scijava.platform.arch.javacpp>
 		<scijava.platform.arch.jogamp>${os.arch}</scijava.platform.arch.jogamp>
+		<scijava.platform.arch.lwjgl>-${os.arch}</scijava.platform.arch.lwjgl>
 		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.arch}</scijava.natives.classifier>
 		<scijava.natives.classifier.javacpp>${scijava.platform.family.longest}-${scijava.platform.arch.javacpp}</scijava.natives.classifier.javacpp>
 		<scijava.natives.classifier.jogamp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.jogamp}</scijava.natives.classifier.jogamp>
+		<scijava.natives.classifier.lwjgl>natives-${scijava.platform.family.long}${scijava.platform.arch.lwjgl}</scijava.natives.classifier.lwjgl>
 
 		<!-- Additional configuration -->
 
@@ -2062,6 +2064,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl>-x86</scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2075,6 +2078,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl>-x86</scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2088,6 +2092,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl>-x86</scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2101,6 +2106,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl>-x86</scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2114,6 +2120,7 @@
 				<scijava.platform.arch>32</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>i586</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl>-x86</scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2127,6 +2134,7 @@
 				<scijava.platform.arch>arm64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>arm64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>aarch64</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl>-arm64</scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2140,6 +2148,7 @@
 				<scijava.platform.arch>64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl></scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2153,6 +2162,7 @@
 				<scijava.platform.arch>arm64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>arm64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>aarch64</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl>-arm64</scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
@@ -2166,6 +2176,7 @@
 				<scijava.platform.arch>64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
+				<scijava.platform.arch.lwjgl></scijava.platform.arch.lwjgl>
 			</properties>
 		</profile>
 		<profile>
