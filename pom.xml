@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>20.0.0-SNAPSHOT</version>
+	<version>20.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -2106,7 +2106,7 @@
 				<scijava.platform.arch>64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
-				<scijava.platform.arch.lwjgl></scijava.platform.arch.lwjgl>
+				<scijava.platform.arch.lwjgl />
 			</properties>
 		</profile>
 		<profile>
@@ -2134,7 +2134,7 @@
 				<scijava.platform.arch>64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>x86_64</scijava.platform.arch.javacpp>
 				<scijava.platform.arch.jogamp>amd64</scijava.platform.arch.jogamp>
-				<scijava.platform.arch.lwjgl></scijava.platform.arch.lwjgl>
+				<scijava.platform.arch.lwjgl />
 			</properties>
 		</profile>
 		<profile>
