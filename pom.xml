@@ -1352,48 +1352,6 @@
 		</profile>
 
 		<!--
-		The dist profile augments the package phase to produce self-contained
-		Java application bundles, using the standard Java packaging mechanism.
-		Exactly which bundles are produced depends on the underlying platform
-		configuration. But this configuration will always produce two sets of
-		bundles: one with JRE included (in target/jfx/native) and
-		another without a bundled JRE (in target/jfx/native-nojre).
-		-->
-		<profile>
-			<id>dist</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.zenjava</groupId>
-						<artifactId>javafx-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>dist-with-jre</id>
-								<phase>package</phase>
-								<goals>
-									<goal>native</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>dist-no-jre</id>
-								<phase>package</phase>
-								<goals>
-									<goal>native</goal>
-								</goals>
-								<configuration>
-									<bundleArguments>
-										<runtime />
-									</bundleArguments>
-									<nativeOutputDir>${project.build.directory}/jfx/native-nojre</nativeOutputDir>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<!--
 		The uberjar profile augments the package phase to build an unshaded uber-JAR
 		or "fat JAR" using the maven-shade-plugin. The default classifier is "all";
 		override the ${uberjar-classifier} property to change it.
