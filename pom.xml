@@ -170,8 +170,13 @@
 		<!-- Compiler configuration. -->
 		<scijava.jvm.version>8</scijava.jvm.version>
 		<scijava.jvm.test.version>${scijava.jvm.version}</scijava.jvm.test.version>
-		<!-- NB: 1.8.0_101 is needed for SciJava Maven repository HTTPS support. -->
-		<scijava.jvm.build.version>[1.8.0-101,)</scijava.jvm.build.version>
+		<!--
+		Note:
+		* 1.8.0_101 is needed for SciJava Maven repository HTTPS support.
+		* 1.8.0_411 is needed for javac's -proc:full flag to exist;
+			see https://inside.java/2024/06/18/quality-heads-up/
+		-->
+		<scijava.jvm.build.version>[1.8.0-411,)</scijava.jvm.build.version>
 		<maven.compiler.source>${scijava.jvm.version}</maven.compiler.source>
 		<maven.compiler.target>${scijava.jvm.version}</maven.compiler.target>
 		<maven.compiler.testSource>${scijava.jvm.test.version}</maven.compiler.testSource>
@@ -181,6 +186,9 @@
 		See https://issues.apache.org/jira/browse/MCOMPILER-209
 		-->
 		<maven.compiler.useIncrementalCompilation>false</maven.compiler.useIncrementalCompilation>
+
+		<!-- Enable annotation processing even with Java 23+. -->
+		<maven.compiler.proc>full</maven.compiler.proc>
 
 		<!-- Extra maven-surefire-plugin args. -->
 		<scijava.surefire.args />
