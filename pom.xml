@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>20.0.1-SNAPSHOT</version>
+	<version>20.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -234,10 +234,12 @@
 		-->
 		<scijava.platform.arch>${os.arch}</scijava.platform.arch>
 		<scijava.platform.arch.javacpp>${os.arch}</scijava.platform.arch.javacpp>
+		<scijava.platform.arch.javafx />
 		<scijava.platform.arch.jogamp>${os.arch}</scijava.platform.arch.jogamp>
 		<scijava.platform.arch.lwjgl>-${os.arch}</scijava.platform.arch.lwjgl>
 		<scijava.natives.classifier>natives-${scijava.platform.family.medium}_${scijava.platform.arch}</scijava.natives.classifier>
 		<scijava.natives.classifier.javacpp>${scijava.platform.family.longest}-${scijava.platform.arch.javacpp}</scijava.natives.classifier.javacpp>
+		<scijava.natives.classifier.javafx>${scijava.platform.family.short}${scijava.platform.arch.javafx}</scijava.natives.classifier.javafx>
 		<scijava.natives.classifier.jogamp>natives-${scijava.platform.family.longest}-${scijava.platform.arch.jogamp}</scijava.natives.classifier.jogamp>
 		<scijava.natives.classifier.lwjgl>natives-${scijava.platform.family.long}${scijava.platform.arch.lwjgl}</scijava.natives.classifier.lwjgl>
 
@@ -2099,6 +2101,7 @@
 			<properties>
 				<scijava.platform.arch>arm64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>arm64</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.javafx>-aarch64</scijava.platform.arch.javafx>
 				<scijava.platform.arch.jogamp>aarch64</scijava.platform.arch.jogamp>
 				<scijava.platform.arch.lwjgl>-arm64</scijava.platform.arch.lwjgl>
 			</properties>
@@ -2127,6 +2130,7 @@
 			<properties>
 				<scijava.platform.arch>arm64</scijava.platform.arch>
 				<scijava.platform.arch.javacpp>arm64</scijava.platform.arch.javacpp>
+				<scijava.platform.arch.javafx>-aarch64</scijava.platform.arch.javafx>
 				<scijava.platform.arch.jogamp>aarch64</scijava.platform.arch.jogamp>
 				<scijava.platform.arch.lwjgl>-arm64</scijava.platform.arch.lwjgl>
 			</properties>
