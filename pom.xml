@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>20.1.1-SNAPSHOT</version>
+	<version>21.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -246,9 +246,8 @@
 		<!-- NB: Specify formatting of the maven.build.timestamp property. -->
 		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
 
-		<!-- NB: Deploy to OSS Sonatype repository by default when releasing. -->
+		<!-- NB: Deploy to Maven Central by default when releasing. -->
 		<releaseProfiles>sonatype-oss-release</releaseProfiles>
-		<sonatype-oss-repository>https://s01.oss.sonatype.org</sonatype-oss-repository>
 
 		<!-- Let "mvn exec:java" launch the project's main class. -->
 		<exec.mainClass>${main-class}</exec.mainClass>
@@ -307,7 +306,7 @@
 		<dokka-maven-plugin.version>1.9.10</dokka-maven-plugin.version> <!-- org.jetbrains.jetbrains -->
 		<revapi-maven-plugin.version>0.15.0</revapi-maven-plugin.version> <!-- org.revapi -->
 		<sonar-maven-plugin.version>4.0.0.4121</sonar-maven-plugin.version> <!-- org.sonarsource.scanner.maven -->
-		<nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version> <!-- org.sonatype.plugins -->
+		<central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version> <!-- org.sonatype.central -->
 
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.10.0</extra-enforcer-rules.version>
@@ -1564,21 +1563,14 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>${nexus-staging-maven-plugin.version}</version>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>${central-publishing-maven-plugin.version}</version>
 						<extensions>true</extensions>
 						<configuration>
-							<serverId>sonatype-nexus-releases</serverId>
-							<nexusUrl>${sonatype-oss-repository}/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
-							<stagingProgressTimeoutMinutes>15</stagingProgressTimeoutMinutes>
-							<stagingProgressPauseDurationSeconds>12</stagingProgressPauseDurationSeconds>
-							<!--
-							By having no explicit stagingProfileId, we use
-							Staging V2 in "auto" mode, profile will be
-							matched server side
-							-->
+							 <publishingServerId>central</publishingServerId>
+							 <autoPublish>true</autoPublish>
+							 <waitUntil>published</waitUntil>
 						</configuration>
 					</plugin>
 					<plugin>
@@ -1604,44 +1596,6 @@
 					</plugin>
 				</plugins>
 			</build>
-
-			<repositories>
-				<repository>
-					<id>sonatype-nexus-snapshots</id>
-					<name>Sonatype Nexus Snapshots</name>
-					<url>${sonatype-oss-repository}/content/repositories/snapshots</url>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-				</repository>
-				<repository>
-					<id>sonatype-nexus-releases</id>
-					<name>Sonatype Nexus Releases</name>
-					<url>${sonatype-oss-repository}/content/repositories/releases</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</repository>
-			</repositories>
-
-			<distributionManagement>
-				<snapshotRepository>
-					<id>sonatype-nexus-snapshots</id>
-					<name>Sonatype Nexus Snapshots</name>
-					<url>${sonatype-oss-repository}/content/repositories/snapshots/</url>
-				</snapshotRepository>
-				<repository>
-					<id>sonatype-nexus-staging</id>
-					<name>Nexus Release Repository</name>
-					<url>${sonatype-oss-repository}/service/local/staging/deploy/maven2/</url>
-				</repository>
-			</distributionManagement>
 		</profile>
 
 		<!--
