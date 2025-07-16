@@ -294,7 +294,7 @@
 		<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
 
 		<!-- SciJava Maven plugins -->
-		<scijava-maven-plugin.version>3.0.0</scijava-maven-plugin.version>
+		<scijava-maven-plugin.version>3.0.1</scijava-maven-plugin.version>
 
 		<!-- Other Maven plugins -->
 		<jshell-maven-plugin.version>1.4</jshell-maven-plugin.version> <!-- com.github.johnpoth -->
@@ -311,7 +311,7 @@
 		<!-- Plugin dependencies -->
 		<extra-enforcer-rules.version>1.10.0</extra-enforcer-rules.version>
 		<kotlin.version>1.9.22</kotlin.version>
-		<revapi-java.version>0.28.1</revapi-java.version>
+		<revapi-java.version>0.28.4</revapi-java.version>
 		<scijava-coding-style.version>2.1.1</scijava-coding-style.version>
 		<velocity.version>1.7</velocity.version>
 
