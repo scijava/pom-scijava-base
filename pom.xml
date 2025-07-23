@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>21.0.1-SNAPSHOT</version>
+	<version>21.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -184,7 +184,13 @@
 		-->
 		<maven.compiler.useIncrementalCompilation>false</maven.compiler.useIncrementalCompilation>
 
-		<!-- Extra maven-surefire-plugin args. -->
+		<!-- Arguments to pass to all JVM launches for better behavior. -->
+		<scijava.jvm.args />
+
+		<!-- Extra arguments affecting JPMS behavior. Only used with Java 9+. -->
+		<scijava.jvm.jpms-args>--add-opens=java.base/java.lang=ALL-UNNAMED</scijava.jvm.jpms-args>
+
+		<!-- Extra arguments specific to maven-surefire-plugin. -->
 		<scijava.surefire.args />
 
 		<!-- Minimum required Maven version to build the project. -->
@@ -533,7 +539,7 @@
 					own property 'scijava.surefire.args' to specify those options.
 					-->
 					<configuration>
-						<argLine>@{argLine} -Xms512m -Xmx512m -Dapple.awt.UIElement=true ${scijava.surefire.args}</argLine>
+						<argLine>@{argLine} -Xms512m -Xmx512m -Dapple.awt.UIElement=true ${scijava.jvm.args} ${scijava.surefire.args}</argLine>
 					</configuration>
 				</plugin>
 
@@ -1328,6 +1334,9 @@
 		-->
 		<profile>
 			<id>exec</id>
+			<properties>
+				<exec.args>${scijava.jvm.args}</exec.args>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -1940,7 +1949,8 @@
 
 		<!--
 		The java-9 profile includes adjustments for Java 9+; in particular, it
-		configures the release value, and fixes the path to the javadoc executable.
+		configures the release value, fixes the path to the javadoc executable,
+		and overrides JPMS restrictions to re-enable Java reflection.
 		-->
 		<profile>
 			<id>java-9</id>
@@ -1949,6 +1959,7 @@
 			</activation>
 			<properties>
 				<maven.compiler.release>${scijava.jvm.version}</maven.compiler.release>
+				<scijava.jvm.args>${scijava.jvm.jpms-args}</scijava.jvm.args>
 			</properties>
 			<build>
 				<plugins>
