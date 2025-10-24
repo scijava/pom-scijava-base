@@ -4,7 +4,7 @@
 
 	<groupId>org.scijava</groupId>
 	<artifactId>pom-scijava-base</artifactId>
-	<version>21.1.1-SNAPSHOT</version>
+	<version>21.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>SciJava Base POM</name>
@@ -1488,6 +1488,40 @@
 			<properties>
 				<scijava.surefire.args>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:${debugPort}</scijava.surefire.args>
 			</properties>
+		</profile>
+
+		<!--
+		The pretty-test profile makes it easier to read the output of unit tests.
+		Activate it by passing `-Ppretty-test` to the mvn execution.
+		-->
+		<profile>
+			<id>pretty-test</id>
+			<properties>
+				<maven-surefire-junit5-tree-reporter.version>1.1.0</maven-surefire-junit5-tree-reporter.version>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<dependencies>
+							<dependency>
+								<groupId>me.fabriciorby</groupId>
+								<artifactId>maven-surefire-junit5-tree-reporter</artifactId>
+								<version>${maven-surefire-junit5-tree-reporter.version}</version>
+							</dependency>
+						</dependencies>
+						<configuration>
+							<reportFormat>plain</reportFormat>
+							<!-- The following block suppresses all console output during unit testing.
+							<consoleOutputReporter>
+								<disable>true</disable>
+							</consoleOutputReporter>
+							-->
+							<statelessTestsetInfoReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoTreeReporterUnicode"/>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 
 		<!--
