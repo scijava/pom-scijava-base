@@ -1477,7 +1477,7 @@
 		</profile>
 
 		<!--
-		For debugging. E.g. for Eclipse, pass -DdebugPort=8000,suspend=y
+		The debug-port profile is for debugging. E.g. for Eclipse, pass -DdebugPort=8000,suspend=y
 		and add a Debug Configuration for a Remote Java Application.
 		-->
 		<profile>
@@ -1491,8 +1491,8 @@
 		</profile>
 
 		<!--
-		Run integration tests when "-Prun-its" is passed.
-		This works using the maven-invoker-plugin.
+		The run-its profile enables execution of maven-invoker-plugin-based
+		integration tests. Activate it by passing `-Prun-its` to the mvn execution.
 		-->
 		<profile>
 			<id>run-its</id>
@@ -1530,7 +1530,7 @@
 			</build>
 		</profile>
 
-		<!-- This profile enables deployment to the SciJava Maven repository. -->
+		<!-- The deploy-to-scijava profile enables deployment to the SciJava Maven repository. -->
 		<profile>
 			<id>deploy-to-scijava</id>
 			<build>
@@ -1566,7 +1566,7 @@
 			</distributionManagement>
 		</profile>
 
-		<!-- This profile enables releasing to the OSS Sonatype repository. -->
+		<!-- The sonatype-oss-release profile enables releasing to the OSS Sonatype repository. -->
 		<profile>
 			<id>sonatype-oss-release</id>
 			<build>
@@ -1608,7 +1608,7 @@
 		</profile>
 
 		<!--
-		This profile lets Eclipse parse SciJava annotations of imported projects,
+		This only-eclipse profile lets Eclipse parse SciJava annotations of imported projects,
 		and maps Maven plugin goals to Eclipse executions.
 		-->
 		<profile>
@@ -1839,7 +1839,7 @@
 		</profile>
 
 		<!--
-		This profile signs artifacts using GPG.
+		This sign profile signs artifacts using GPG.
 		-->
 		<profile>
 			<id>sign</id>
@@ -1853,7 +1853,7 @@
 		</profile>
 
 		<!--
-		This profile aggregates javadocs for the project
+		This build-javadoc profile aggregates javadocs for the project
 		and its direct dependencies.
 		-->
 		<profile>
