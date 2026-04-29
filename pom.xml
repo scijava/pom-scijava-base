@@ -830,8 +830,6 @@
 								<excludes>
 									<exclude>META-INF/**/*</exclude>
 								</excludes>
-								<dataFile>${jacoco.data.file.ut}</dataFile>
-								<outputDirectory>${jacoco.report.folder.ut}</outputDirectory>
 							</configuration>
 						</execution>
 					</executions>
