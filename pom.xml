@@ -825,6 +825,12 @@
 							<goals>
 								<goal>report</goal>
 							</goals>
+							<configuration>
+								<!-- Exclude alternate versions for multi-release modules-->
+								<excludes>
+									<exclude>META-INF/**/*</exclude>
+								</excludes>
+							</configuration>
 						</execution>
 					</executions>
 				</plugin>
