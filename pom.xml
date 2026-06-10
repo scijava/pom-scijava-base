@@ -219,6 +219,15 @@
 		<scijava.javadoc.url.java>https://javadoc.scijava.org/Java8/</scijava.javadoc.url.java>
 		<scijava.javadoc.url.javafx>https://javadoc.scijava.org/JavaFX8/</scijava.javadoc.url.javafx>
 
+		<!--
+		Lifecycle phase at which Kotlin projects build their javadoc JAR via
+		Dokka (see the kotlin profile). Defaults to "none" so a normal build
+		does not pay the cost; the javadoc-attaching profiles (deploy-to-scijava,
+		sonatype-oss-release, build-javadoc) override it to "package", matching
+		when the maven-javadoc-plugin runs for non-Kotlin projects.
+		-->
+		<scijava.javadoc.kotlin.phase>none</scijava.javadoc.kotlin.phase>
+
 		<!-- Command to use when invoking java via "mvn -Pexec". -->
 		<scijava.exec.java>java</scijava.exec.java>
 
@@ -1196,6 +1205,13 @@
 				<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 				<kotlin.compiler.jvmTarget>${scijava.jvm.version}</kotlin.compiler.jvmTarget>
 				<kotlin-maven-plugin.version>${kotlin.version}</kotlin-maven-plugin.version>
+				<!--
+				NB: The maven-javadoc-plugin cannot document Kotlin sources, so for
+				Kotlin (and mixed Kotlin/Java) projects we skip it and let Dokka's
+				javadocJar goal (below) produce the javadoc JAR instead. This is
+				honored by the deploy-to-scijava and sonatype-oss-release profiles.
+				-->
+				<javadoc.skip>true</javadoc.skip>
 			</properties>
 			<dependencies>
 				<dependency>
@@ -1313,11 +1329,34 @@
 						<artifactId>dokka-maven-plugin</artifactId>
 						<version>${dokka-maven-plugin.version}</version>
 						<executions>
+							<!-- Generate HTML and Javadoc-style docs for the project site. -->
 							<execution>
+								<id>generate-site-docs</id>
 								<phase>pre-site</phase>
 								<goals>
 									<goal>dokka</goal>
 									<goal>javadoc</goal>
+								</goals>
+							</execution>
+							<!--
+							Build and attach the javadoc JAR. Dokka documents both
+							Kotlin and Java sources, replacing the maven-javadoc-plugin
+							(which cannot read Kotlin) for the release artifact that
+							Maven Central requires. The Kotlin source root is registered
+							by build-helper at generate-sources, so it is available here.
+
+							The phase is a property defaulting to "none" (see the main
+							properties block), so this does not run on a normal build.
+							The same profiles that attach javadocs via the
+							maven-javadoc-plugin (deploy-to-scijava, sonatype-oss-release,
+							build-javadoc) flip it to "package", so Dokka runs in exactly
+							the same circumstances the maven-javadoc-plugin would.
+							-->
+							<execution>
+								<id>attach-javadoc-jar</id>
+								<phase>${scijava.javadoc.kotlin.phase}</phase>
+								<goals>
+									<goal>javadocJar</goal>
 								</goals>
 							</execution>
 						</executions>
@@ -1574,6 +1613,10 @@
 		<!-- The deploy-to-scijava profile enables deployment to the SciJava Maven repository. -->
 		<profile>
 			<id>deploy-to-scijava</id>
+			<properties>
+				<!-- Build the Dokka javadoc JAR here too, for Kotlin projects. -->
+				<scijava.javadoc.kotlin.phase>package</scijava.javadoc.kotlin.phase>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -1610,6 +1653,10 @@
 		<!-- The sonatype-oss-release profile enables releasing to the OSS Sonatype repository. -->
 		<profile>
 			<id>sonatype-oss-release</id>
+			<properties>
+				<!-- Build the Dokka javadoc JAR here too, for Kotlin projects. -->
+				<scijava.javadoc.kotlin.phase>package</scijava.javadoc.kotlin.phase>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -1635,6 +1682,10 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<!-- NB: Skipped for Kotlin projects; see the kotlin profile. -->
+							<skip>${javadoc.skip}</skip>
+						</configuration>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
@@ -1899,6 +1950,10 @@
 		-->
 		<profile>
 			<id>build-javadoc</id>
+			<properties>
+				<!-- For Kotlin projects: build the Dokka javadoc JAR here too. -->
+				<scijava.javadoc.kotlin.phase>package</scijava.javadoc.kotlin.phase>
+			</properties>
 			<build>
 				<defaultGoal>package</defaultGoal>
 				<plugins>
@@ -1913,6 +1968,9 @@
 							</execution>
 						</executions>
 						<configuration>
+							<!-- NB: Skipped for Kotlin projects; see the kotlin profile. -->
+							<skip>${javadoc.skip}</skip>
+
 							<!-- Include direct dependencies -->
 							<includeDependencySources>true</includeDependencySources>
 
