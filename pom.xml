@@ -212,12 +212,12 @@
 		<!--
 		Links to javadoc APIs, used by the maven-javadoc-plugin.
 		Change these if you need to link against different API versions.
-		E.g., for Java 11 projects, use:
+		E.g., for Java 17 projects, use:
+		<scijava.javadoc.url.java>https://javadoc.scijava.org/Java17/</scijava.javadoc.url.java>
+		<scijava.javadoc.url.javafx>https://javadoc.scijava.org/JavaFX17/</scijava.javadoc.url.javafx>
+		-->
 		<scijava.javadoc.url.java>https://javadoc.scijava.org/Java11/</scijava.javadoc.url.java>
 		<scijava.javadoc.url.javafx>https://javadoc.scijava.org/JavaFX11/</scijava.javadoc.url.javafx>
-		-->
-		<scijava.javadoc.url.java>https://javadoc.scijava.org/Java8/</scijava.javadoc.url.java>
-		<scijava.javadoc.url.javafx>https://javadoc.scijava.org/JavaFX8/</scijava.javadoc.url.javafx>
 
 		<!--
 		Lifecycle phase at which Kotlin projects build their javadoc JAR via
