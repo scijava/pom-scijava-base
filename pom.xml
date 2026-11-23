@@ -2089,6 +2089,79 @@
 		</profile>
 
 		<!--
+		The jpms-annotation-processing profile keeps annotation processors (e.g.
+		the SciJava plugin indexer) working for modular projects. It turns on
+		automatically when a src/main/java/module-info.java file is present.
+
+		When no processor path is given, javac discovers annotation processors on
+		the class path. But when compiling a module, maven-compiler-plugin puts
+		the module's requirements on the module path instead, so processors in
+		those dependencies are never found. This profile appends all dependencies
+		to javac's class path too, restoring the non-modular discovery behavior.
+		Code in the module still cannot see anything it does not require.
+
+		As before, if a project declares its own annotationProcessorPaths, javac
+		uses only those processors and does not search the class path.
+		-->
+		<profile>
+			<id>jpms-annotation-processing</id>
+			<activation>
+				<file>
+					<exists>${basedir}/src/main/java/module-info.java</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>jpms-processor-classpath</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>build-classpath</goal>
+								</goals>
+								<configuration>
+									<includeScope>compile</includeScope>
+									<outputProperty>scijava.jpms.compile.classpath</outputProperty>
+								</configuration>
+							</execution>
+							<execution>
+								<id>jpms-processor-test-classpath</id>
+								<phase>generate-test-sources</phase>
+								<goals>
+									<goal>build-classpath</goal>
+								</goals>
+								<configuration>
+									<includeScope>test</includeScope>
+									<outputProperty>scijava.jpms.test.classpath</outputProperty>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<!--
+							NB: This -classpath comes after the one maven-compiler-plugin
+							generates, so javac uses it instead; hence it must also include
+							the output directories. The compilerArguments map is used rather
+							than the compilerArgs list because maps merge by key, whereas a
+							project's own compilerArgs would replace these list entries.
+							-->
+							<compilerArguments>
+								<classpath>${project.build.outputDirectory}${path.separator}${scijava.jpms.compile.classpath}</classpath>
+							</compilerArguments>
+							<testCompilerArguments>
+								<classpath>${project.build.testOutputDirectory}${path.separator}${project.build.outputDirectory}${path.separator}${scijava.jpms.test.classpath}</classpath>
+							</testCompilerArguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!--
 		The following profiles set the scijava.platform system properties to
 		match the detected architecture. The main intended use case is for
 		platform-specific natives artifacts, so that they can be depended on using
